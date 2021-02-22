@@ -31,9 +31,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/css/material-dashboard.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/material-dashboard.min.js"
+            ]
           },
           "configurations": {
             "production": {
