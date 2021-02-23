@@ -28,6 +28,10 @@ export class CustomerService {
       return ev;
   }
 
+  create(customer: Customer): Observable<Customer> {
+    return this.http.post<Customer>(this.apiUrl, customer);
+  }
+
 
 
 }
