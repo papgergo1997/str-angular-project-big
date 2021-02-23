@@ -122,7 +122,7 @@
         }
     ],
 
-    "categories": [   
+    "categories": [
 
         {
             "id": 0,
@@ -182,7 +182,7 @@
             "orderID": 16,
             "amount": 37880,
             "status": "paid"
-        } 
+        }
     ],
 
     "customers": [
@@ -591,6 +591,51 @@
                 "notes": "56"
             },
             "active": true
+        }
+    ],
+
+    "orders": [
+        {
+            "id": 11,
+            "customerID": 3,
+            "productID": 1,
+            "amount": 2,
+            "status": "new"
+        },
+        {
+            "id": 12,
+            "customerID": 7,
+            "productID": 3,
+            "amount": 4,
+            "status": "new"
+        },
+        {
+            "id": 13,
+            "customerID": 11,
+            "productID": 4,
+            "amount": 12,
+            "status": "shipped"
+        },
+        {
+            "id": 14,
+            "customerID": 14,
+            "productID": 6,
+            "amount": 7,
+            "status": "shipped"
+        },
+        {
+            "id": 15,
+            "customerID": 15,
+            "productID": 7,
+            "amount": 5,
+            "status": "paid"
+        },
+        {
+            "id": 16,
+            "customerID": 16,
+            "productID": 9,
+            "amount": 8,
+            "status": "paid"
         }
     ]
 }
