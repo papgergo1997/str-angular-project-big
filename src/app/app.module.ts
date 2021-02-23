@@ -4,18 +4,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { OrderListComponent } from './common/order-list/order-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SidebarComponent } from './page-components/sidebar/sidebar.component';
+import { NavbarComponent } from './page-components/navbar/navbar.component';
+import { FooterComponent } from './page-components/footer/footer.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    OrderListComponent
+    OrderListComponent,
+    SidebarComponent,
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule,   
+    AppRoutingModule,
 
   ],
   providers: [],
