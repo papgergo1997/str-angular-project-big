@@ -136,37 +136,37 @@
     "bills": [
         {
             "id": 1,
-            "orderId": 11,
+            "orderID": 11,
             "amount": 31000,
             "status": "new"
         },
         {
             "id": 2,
-            "orderId": 12,
+            "orderID": 12,
             "amount": 13340,
             "status": "new"
         },
         {
             "id": 3,
-            "orderId": 13,
+            "orderID": 13,
             "amount": 54270,
             "status": "new"
         },
         {
             "id": 4,
-            "orderId": 14,
+            "orderID": 14,
             "amount": 55417,
             "status": "paid"
         },
         {
             "id": 5,
-            "orderId": 15,
+            "orderID": 15,
             "amount": 78000,
             "status": "paid"
         },
         {
             "id": 6,
-            "orderId": 16,
+            "orderID": 16,
             "amount": 37880,
             "status": "paid"
         }
