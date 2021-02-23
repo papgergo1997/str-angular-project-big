@@ -19,5 +19,15 @@ export class CustomerService {
     return this.http.get<Customer[]>(this.apiUrl);
   }
 
+  get(id: number): Observable<Customer> {
+    id = typeof id === 'string' ? parseInt(id, 10) : id;
+    const ev: Observable<Customer> | undefined = this.http.get<Customer>(`${this.apiUrl}/${id}`);
+    if (id == 0) {
+      return of(new Customer());
+    } else
+      return ev;
+  }
+
+
 
 }
