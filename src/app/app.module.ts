@@ -5,14 +5,15 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
 
+
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
+    AppRoutingModule,   
 
   ],
   providers: [],

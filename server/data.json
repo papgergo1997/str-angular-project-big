@@ -109,9 +109,21 @@
             "price": 50000,
             "featured": false,
             "active": false
+        },
+        {
+            "id": 10,
+            "name": "Megseverő",
+            "type": "Emberes",
+            "catID": 3,
+            "description": "Gyenge vagy, mindenki, bárki és akárki megver? Erre a hősre van szükséged! Megseverő szuperereje, hogy erősengyenge. Ő egy ember, aki biztosan nem fog megverni.",
+            "price": 1100000,
+            "featured": false,
+            "active": false
         }
     ],
-    "categorys": [
+
+    "categories": [   
+
         {
             "id": 0,
             "name": "",

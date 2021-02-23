@@ -1,12 +1,12 @@
 export class Product {
-  private type: string;
-  private featured: boolean;
-  private name: string;
-  private active: boolean;
-  private id: number;
-  private catID: number;
-  private description: string;
-  private price: number;
+  type: string;
+  featured: boolean;
+  name: string;
+  active: boolean;
+  id: number;
+  catID: number;
+  description: string;
+  price: number;
 
   constructor(id: number, name: string, type: string, catID: number, description: string, price: number,
               active: boolean, featured: boolean) {
