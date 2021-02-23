@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { Product } from '../models/Product';
 
 @Injectable({
@@ -12,7 +12,9 @@ export class ProductService {
 
   list$: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>([]);
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.getAll();
+  }
 
   getAll(): void {
     this.http.get<Product[]>(this.apiUrl).subscribe(
@@ -20,10 +22,19 @@ export class ProductService {
     );
   }
 
-  get(id: number | string): Observable<Product> {
-    id = parseInt(('' + id), 10);
-    return this.http.get<Product>(`${this.apiUrl}/${id}`);
+  get(id: number): Observable<Product> {
+    id = typeof id === 'string' ? parseInt(id, 10) : id;
+    const product: Product | undefined = this.list$.value.find(item => item.id === id);
+    if (product) {
+      return of(product);
+    }
+    return of(new Product());
   }
+
+  // get(id: number | string): Observable<Product> {
+  //   id = parseInt(('' + id), 10);
+  //   return this.http.get<Product>(`${this.apiUrl}/${id}`);
+  // }
 
   update(product: Product): void {
     this.http.patch<Product>(`${this.apiUrl}/${product.id}`, product).subscribe(
