@@ -1,7 +1,7 @@
 import {Address} from './Address';
 
 export class Customer {
-  constructor(private id: number, private firstName: string, private lastName: string, private email: string,
-              private adress: Address, private active: boolean) {
+  constructor(public  id: number, public  firstName: string, public  lastName: string, public  email: string,
+              public  adress: Address, public  active: boolean) {
   }
 }
