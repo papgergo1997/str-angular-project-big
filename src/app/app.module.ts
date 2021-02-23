@@ -6,15 +6,16 @@ import { OrderListComponent } from './common/order-list/order-list.component';
 import { HttpClientModule } from '@angular/common/http';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     OrderListComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
+    AppRoutingModule,   
 
   ],
   providers: [],
