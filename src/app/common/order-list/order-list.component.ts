@@ -10,10 +10,17 @@ export class OrderListComponent implements OnInit {
 
   orderProperties: string[] = Object.keys(new Order());
 
-  constructor() { }
+  constructor(
+    //orderService: ,
+  ) { }
 
   ngOnInit(): void {
     console.log(this.orderProperties);
   }
+
+  //removeOrder(order: Order) {
+    //this.orderService.remove(order.id);
+    //this.orderService.getAll();
+  //}
 
 }

@@ -1,7 +1,28 @@
 <div class="content">
   <div class="container-fluid">
     <div class="row">
+      <div class="col-5 offset-3">
+        <form class="form-inline">
+          <div class="form-group">
+            <select name="searchingProp" class="form-control">
+              <option *ngFor="let prop of orderProperties"> {{ prop }} </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+
+        </form>
+      </div>
+    </div>
+    <div class="row">
       <div class="col-md-12">
+        <button [routerLink]="['order/0']" class="btn btn-success btn-block mb-5">
+          <span class="material-icons">
+            library_add
+          </span> Add an order
+        </button>
+
         <div class="card">
           <div class="card-header card-header-warning">
             <h4 class="card-title">Order list</h4>
@@ -16,16 +37,19 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>id</td>
-                    <td>customerID</td>
-                    <td>productID</td>
-                    <td>amount</td>
-                    <td>status</td>
+                    <td> id</td>
+                    <td> customerID</td>
+                    <td> productID</td>
+                    <td> amount</td>
+                    <td> status</td>
                     <td>
                       <div class="btn-group w-100">
+                        <!-- [routerLink]="['order/' + order.id]" -->
                         <button type="submit" class="btn btn-success ml-auto">
                           <span class="material-icons">create</span>
                         </button>
+
+                        <!-- (click)="removeOrder(order)" -->
                         <button type="submit" class="btn btn-danger">
                           <span class="material-icons">delete</span>
                         </button>
