@@ -111,7 +111,6 @@
             "active": false
         }
     ],
-
     "categorys": [
         {
             "id": 0,
@@ -132,6 +131,44 @@
             "id": 3,
             "name": "Emberes",
             "description": "Bérelhető emberek, valódi élő hősök, akik segítenek valamiben, vagy nem."
+        }
+    ],
+    "bills": [
+        {
+            "id": 1,
+            "orderId": 11,
+            "amount": 31000,
+            "status": "new"
+        },
+        {
+            "id": 2,
+            "orderId": 12,
+            "amount": 13340,
+            "status": "new"
+        },
+        {
+            "id": 3,
+            "orderId": 13,
+            "amount": 54270,
+            "status": "new"
+        },
+        {
+            "id": 4,
+            "orderId": 14,
+            "amount": 55417,
+            "status": "paid"
+        },
+        {
+            "id": 5,
+            "orderId": 15,
+            "amount": 78000,
+            "status": "paid"
+        },
+        {
+            "id": 6,
+            "orderId": 16,
+            "amount": 37880,
+            "status": "paid"
         }
     ]
 }
