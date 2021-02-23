@@ -3,14 +3,11 @@
     <div class="row">
       <div class="col-5 offset-3">
         <form class="form-inline">
-          <div class="form-group">
-            <select name="searchingProp" class="form-control">
-              <option *ngFor="let prop of orderProperties"> {{ prop }} </option>
+            <label>Search</label>
+            <select name="searchingProp" class="form-control mx-3 px-3">
+              <option *ngFor="let prop of orderProperties" class="m-3"> {{ prop }} </option>
             </select>
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
-          </div>
+            <input (keyup)="onChangePhrase($event)" type="text" class="form-control" placeholder="Search">
 
         </form>
       </div>
@@ -36,21 +33,19 @@
                   <th></th>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td> id</td>
-                    <td> customerID</td>
-                    <td> productID</td>
-                    <td> amount</td>
-                    <td> status</td>
+                  <tr *ngFor="let order of orderList$ | async | filter:phrase:'id'">
+                    <td> {{ order.id }} </td>
+                    <td> {{ order.customerID }} </td>
+                    <td> {{ order.productID }} </td>
+                    <td> {{ order.amount }} </td>
+                    <td> {{ order.status }} </td>
                     <td>
                       <div class="btn-group w-100">
-                        <!-- [routerLink]="['order/' + order.id]" -->
-                        <button type="submit" class="btn btn-success ml-auto">
+                        <button [routerLink]="['order/' + order.id]" type="submit" class="btn btn-success ml-auto">
                           <span class="material-icons">create</span>
                         </button>
 
-                        <!-- (click)="removeOrder(order)" -->
-                        <button type="submit" class="btn btn-danger">
+                        <button (click)="removeOrder(order)" type="submit" class="btn btn-danger">
                           <span class="material-icons">delete</span>
                         </button>
                       </div>

@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SidebarComponent } from './page-components/sidebar/sidebar.component';
 import { NavbarComponent } from './page-components/navbar/navbar.component';
 import { FooterComponent } from './page-components/footer/footer.component';
+import { FilterPipe } from './pipe/filter.pipe';
 
 
 
@@ -16,7 +17,8 @@ import { FooterComponent } from './page-components/footer/footer.component';
     OrderListComponent,
     SidebarComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    FilterPipe
   ],
   imports: [
     HttpClientModule,
