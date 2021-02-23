@@ -3,14 +3,14 @@
     <div class="row">
       <div class="col-md-12">
         <div class="card">
-          <div class="card-header card-header-primary">
+          <div class="card-header card-header-warning">
             <h4 class="card-title">Order list</h4>
             <p class="card-category">This is a list of orders.</p>
           </div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-hover">
-                <thead class="text-primary">
+                <thead class="text-warning">
                   <th *ngFor="let prop of orderProperties">{{ prop }}</th>
                   <th></th>
                 </thead>
@@ -24,7 +24,7 @@
                     <td>
                       <div class="btn-group w-100">
                         <button type="submit" class="btn btn-success ml-auto">
-                          <span class="material-icons">save_alt</span>
+                          <span class="material-icons">create</span>
                         </button>
                         <button type="submit" class="btn btn-danger">
                           <span class="material-icons">delete</span>
