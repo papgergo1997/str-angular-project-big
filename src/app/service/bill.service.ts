@@ -29,12 +29,12 @@ export class BillService {
     return of(new Bill());
   }
 
-  update(bill: Bill): Observable<Event> {
-    return this.http.patch<Event>(`${this.apiUrl}/${bill.id}`, bill)
+  update(bill: Bill): Observable<Bill> {
+    return this.http.patch<Bill>(`${this.apiUrl}/${bill.id}`, bill)
   }
 
   create(bill: Bill): void {
-    this.http.post<Event>(this.apiUrl, bill).subscribe(() => this.getAll())
+    this.http.post<Bill>(this.apiUrl, bill).subscribe(() => this.getAll())
   }
 
   remove(bill: Bill): void {
