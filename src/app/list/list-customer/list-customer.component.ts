@@ -19,8 +19,5 @@ export class ListCustomerComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onDeleteClick(customer: Customer): void {
-    this.customerService.remove(customer);
-    this.router.navigate(['customers']);
-  }
+
 }
