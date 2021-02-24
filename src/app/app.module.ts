@@ -12,6 +12,7 @@ import { FilterPipe } from './pipe/filter.pipe';
 import { ListBillComponent } from './list/list-bill/list-bill.component';
 import { EditBillComponent } from './edit/edit-bill/edit-bill.component';
 import { ListCustomerComponent } from './list/list-customer/list-customer.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ListCustomerComponent } from './list/list-customer/list-customer.compon
     ListBillComponent,
     EditBillComponent,
     ListCustomerComponent,
+    DashboardComponent,
   ],
   imports: [
     HttpClientModule,

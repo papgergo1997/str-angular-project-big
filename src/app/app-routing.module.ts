@@ -5,8 +5,13 @@ import { EditOrderComponent } from './edit/edit-order/edit-order.component';
 import { EditBillComponent } from './edit/edit-bill/edit-bill.component';
 import { ListBillComponent } from './list/list-bill/list-bill.component';
 import { ListCustomerComponent } from './list/list-customer/list-customer.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    component: DashboardComponent,
+  },
   {
     path: 'orders',
     component: ListOrderComponent,
