@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators'
 import { Customer } from 'src/app/models/Customer';
 import { CustomerService } from 'src/app/service/customer.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-edit-customer',
@@ -21,7 +22,8 @@ export class EditCustomerComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private customerService: CustomerService
+    private customerService: CustomerService,
+    private toaster: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -33,11 +35,13 @@ export class EditCustomerComponent implements OnInit {
       this.customerService.update(customer).subscribe(
         ev => this.router.navigate(['customers'])
       );
+      this.toaster.info('You have successfully updated a customer!', 'Updated', { timeOut: 3000 });
     } else {
       this.submitted = true;
       this.customerService.create(customer).subscribe(
         ev => this.router.navigate(['customers'])
       );
+      this.toaster.success('You have successfully created a customer!', 'Created', { timeOut: 3000 });
     }
   }
 

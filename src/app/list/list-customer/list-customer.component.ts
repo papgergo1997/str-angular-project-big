@@ -23,8 +23,8 @@ export class ListCustomerComponent implements OnInit {
 
   onDeleteClick(customer: Customer): void {
     this.customerService.remove(customer).subscribe();
-    this.toastr.warning('You have successfully deleted a customer', 'Deleted', { timeOut: 3000 })
     this.router.navigate(['customers']);
+    this.toastr.warning('You have successfully deleted a customer', 'Deleted', { timeOut: 3000 })
     this.customerService.getAll();
   }
 }
