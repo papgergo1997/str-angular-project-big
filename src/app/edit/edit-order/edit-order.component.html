@@ -3,10 +3,18 @@
         <form #orderForm="ngForm" (ngSubmit)="onUpdate(order)">
 
             <div class="form-group">
-                <label for="">OrderID</label>
-                <input name="orderid" [(ngModel)]="order.orderID" type="number" class="form-control" pattern="[0-9]{1,}"
+                <label for="">CustomerID</label>
+                <input name="orderid" [(ngModel)]="order.customerID" type="number" class="form-control" pattern="[0-9]{1,}"
                     required>
-                <div [hidden]="orderForm.controls.orderid?.valid" class="error-message">
+                <div [hidden]="orderForm.controls.customerid?.valid" class="error-message">
+                    must be
+                </div>
+            </div>
+          <div class="form-group">
+                <label for="">ProductID</label>
+                <input name="orderid" [(ngModel)]="order.productID" type="number" class="form-control" pattern="[0-9]{1,}"
+                    required>
+                <div [hidden]="orderForm.controls.productid?.valid" class="error-message">
                     must be
                 </div>
             </div>
