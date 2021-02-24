@@ -4,9 +4,11 @@ import { ListOrderComponent } from './list/list-order/list-order.component';
 import { EditOrderComponent } from './edit/edit-order/edit-order.component';
 import { EditBillComponent } from './edit/edit-bill/edit-bill.component';
 import { ListBillComponent } from './list/list-bill/list-bill.component';
+import { ListProductComponent } from './list/list-product/list-product.component';
 import { ListCustomerComponent } from './list/list-customer/list-customer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EditCustomerComponent } from './edit/edit-customer/edit-customer.component';
+
 
 const routes: Routes = [
   {
@@ -30,6 +32,9 @@ const routes: Routes = [
     component: EditBillComponent
   },
   {
+    path: 'products',
+    component: ListProductComponent
+  },
     path: 'customers',
     component: ListCustomerComponent
   },
