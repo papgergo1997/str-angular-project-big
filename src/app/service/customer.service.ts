@@ -8,16 +8,16 @@ import { Customer } from '../models/Customer';
 })
 export class CustomerService {
 
-  customerList$: BehaviorSubject<Customer[]> = new BehaviorSubject<Customer[]>([]);
+  list$: BehaviorSubject<Customer[]> = new BehaviorSubject<Customer[]>([]);
   apiUrl: string = 'http://localhost:3000/customers';
 
   constructor(private http: HttpClient) {
-
+    this.getAll();
   }
 
   getAll(): void {
     this.http.get<Customer[]>(this.apiUrl).subscribe(
-      customer => this.customerList$.next(customer)
+      customers => this.list$.next(customers)
     );
   }
 

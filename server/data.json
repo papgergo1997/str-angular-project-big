@@ -1,5 +1,4 @@
 {
-
     "products": [
         {
             "id": 0,
@@ -122,9 +121,7 @@
             "active": false
         }
     ],
-
     "categories": [
-
         {
             "id": 0,
             "name": "",
@@ -146,7 +143,6 @@
             "description": "Bérelhető emberek, valódi élő hősök, akik segítenek valamiben, vagy nem."
         }
     ],
-
     "bills": [
         {
             "id": 1,
@@ -185,12 +181,11 @@
             "status": "paid"
         }
     ],
-
     "customers": [
         {
             "id": 1,
-            "first_name": "Claudianus",
-            "last_name": "Mullin",
+            "firstName": "Claudianus",
+            "lastName": "Mullin",
             "email": "cmullin0@java.com",
             "address": {
                 "zip": "RG11",
@@ -203,8 +198,8 @@
         },
         {
             "id": 2,
-            "first_name": "Jarred",
-            "last_name": "Reoch",
+            "firstName": "Jarred",
+            "lastName": "Reoch",
             "email": "jreoch1@cisco.com",
             "address": {
                 "zip": "31103",
@@ -217,8 +212,8 @@
         },
         {
             "id": 3,
-            "first_name": "Thedrick",
-            "last_name": "Royall",
+            "firstName": "Thedrick",
+            "lastName": "Royall",
             "email": "troyall2@globo.com",
             "address": {
                 "zip": "221354",
@@ -231,8 +226,8 @@
         },
         {
             "id": 4,
-            "first_name": "Hurley",
-            "last_name": "Attack",
+            "firstName": "Hurley",
+            "lastName": "Attack",
             "email": "hattack3@irs.gov",
             "address": {
                 "zip": "US1450",
@@ -245,8 +240,8 @@
         },
         {
             "id": 5,
-            "first_name": "Vin",
-            "last_name": "Nasi",
+            "firstName": "Vin",
+            "lastName": "Nasi",
             "email": "vnasi4@netvibes.com",
             "address": {
                 "zip": "RG34",
@@ -259,8 +254,8 @@
         },
         {
             "id": 6,
-            "first_name": "Idell",
-            "last_name": "Abramson",
+            "firstName": "Idell",
+            "lastName": "Abramson",
             "email": "iabramson5@technorati.com",
             "address": {
                 "zip": "GH314",
@@ -287,8 +282,8 @@
         },
         {
             "id": 8,
-            "first_name": "Collen",
-            "last_name": "Tordoff",
+            "firstName": "Collen",
+            "lastName": "Tordoff",
             "email": "ctordoff7@myspace.com",
             "address": {
                 "zip": "US965767",
@@ -301,8 +296,8 @@
         },
         {
             "id": 9,
-            "first_name": "Mireille",
-            "last_name": "Taile",
+            "firstName": "Mireille",
+            "lastName": "Taile",
             "email": "mtaile8@a8.net",
             "address": {
                 "zip": "AU6462",
@@ -315,8 +310,8 @@
         },
         {
             "id": 10,
-            "first_name": "Koenraad",
-            "last_name": "Corss",
+            "firstName": "Koenraad",
+            "lastName": "Corss",
             "email": "kcorss9@wsj.com",
             "address": {
                 "zip": "4256",
@@ -329,8 +324,8 @@
         },
         {
             "id": 11,
-            "first_name": "Brigida",
-            "last_name": "Train",
+            "firstName": "Brigida",
+            "lastName": "Train",
             "email": "btraina@toplist.cz",
             "address": {
                 "zip": "CZ523",
@@ -343,8 +338,8 @@
         },
         {
             "id": 12,
-            "first_name": "Willetta",
-            "last_name": "Ferie",
+            "firstName": "Willetta",
+            "lastName": "Ferie",
             "email": "wferieb@prweb.com",
             "address": {
                 "zip": "RG4522",
@@ -357,8 +352,8 @@
         },
         {
             "id": 13,
-            "first_name": "Tremayne",
-            "last_name": "Jankovic",
+            "firstName": "Tremayne",
+            "lastName": "Jankovic",
             "email": "tjankovicc@huffingtonpost.com",
             "address": {
                 "zip": "3141",
@@ -371,8 +366,8 @@
         },
         {
             "id": 14,
-            "first_name": "Barnard",
-            "last_name": "Rubke",
+            "firstName": "Barnard",
+            "lastName": "Rubke",
             "email": "brubked@weebly.com",
             "address": {
                 "zip": "RG884",
@@ -385,8 +380,8 @@
         },
         {
             "id": 15,
-            "first_name": "Dayle",
-            "last_name": "Rawles",
+            "firstName": "Dayle",
+            "lastName": "Rawles",
             "email": "drawlese@networkadvertising.org",
             "address": {
                 "zip": "GR7579",
@@ -413,8 +408,8 @@
         },
         {
             "id": 17,
-            "first_name": "Eldin",
-            "last_name": "Pimblett",
+            "firstName": "Eldin",
+            "lastName": "Pimblett",
             "email": "epimblettg@cornell.edu",
             "address": {
                 "zip": "RG5636236",
@@ -427,8 +422,8 @@
         },
         {
             "id": 18,
-            "first_name": "Freddie",
-            "last_name": "Kupis",
+            "firstName": "Freddie",
+            "lastName": "Kupis",
             "email": "fkupish@shop-pro.jp",
             "address": {
                 "zip": "J968",
@@ -441,8 +436,8 @@
         },
         {
             "id": 19,
-            "first_name": "Henry",
-            "last_name": "Pierre",
+            "firstName": "Henry",
+            "lastName": "Pierre",
             "email": "fruecastlei@naver.fr",
             "address": {
                 "zip": "FR747",
@@ -455,8 +450,8 @@
         },
         {
             "id": 20,
-            "first_name": "Roslyn",
-            "last_name": "Krikorian",
+            "firstName": "Roslyn",
+            "lastName": "Krikorian",
             "email": "rkrikorianj@joomla.org",
             "address": {
                 "zip": "IT88",
@@ -469,8 +464,8 @@
         },
         {
             "id": 21,
-            "first_name": "Byrom",
-            "last_name": "Emanuele",
+            "firstName": "Byrom",
+            "lastName": "Emanuele",
             "email": "bemanuelel@nydailynews.com",
             "address": {
                 "zip": "US67564",
@@ -497,8 +492,8 @@
         },
         {
             "id": 23,
-            "first_name": "Melonie",
-            "last_name": "O' Lone",
+            "firstName": "Melonie",
+            "lastName": "O' Lone",
             "email": "molonen@friendfeed.com",
             "address": {
                 "zip": "IC723577",
@@ -511,8 +506,8 @@
         },
         {
             "id": 24,
-            "first_name": "Donnell",
-            "last_name": "Wennam",
+            "firstName": "Donnell",
+            "lastName": "Wennam",
             "email": "dwennamo@tiny.cc",
             "address": {
                 "zip": "C314",
@@ -525,8 +520,8 @@
         },
         {
             "id": 25,
-            "first_name": "Dwayne",
-            "last_name": "Weekland",
+            "firstName": "Dwayne",
+            "lastName": "Weekland",
             "email": "dweeklandp@theguardian.com",
             "address": {
                 "zip": "US5256673",
@@ -539,8 +534,8 @@
         },
         {
             "id": 26,
-            "first_name": "Pauline",
-            "last_name": "Marti",
+            "firstName": "Pauline",
+            "lastName": "Marti",
             "email": "pmartiq@wired.com",
             "address": {
                 "zip": "N57732786",
@@ -594,7 +589,6 @@
             "active": true
         }
     ],
-
     "orders": [
         {
             "id": 1,
@@ -640,4 +634,3 @@
         }
     ]
 }
-
