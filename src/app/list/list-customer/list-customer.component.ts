@@ -20,7 +20,8 @@ export class ListCustomerComponent implements OnInit {
   }
 
   onDeleteClick(customer: Customer): void {
-    this.customerService.remove(customer);
+    this.customerService.remove(customer).subscribe();
     this.router.navigate(['customers']);
+    this.customerService.getAll();
   }
 }
