@@ -146,7 +146,7 @@
   "bills": [
     {
       "id": 1,
-      "orderID": 11123,
+      "orderID": 11123456,
       "amount": 31000,
       "status": "new"
     },
@@ -197,12 +197,18 @@
       "orderID": 345,
       "amount": 3200,
       "status": "new"
+    },
+    {
+      "id": 10,
+      "orderID": 56,
+      "amount": 45,
+      "status": "new"
     }
   ],
   "customers": [
     {
       "id": 1,
-      "firstName": "Claudianus   dfgg",
+      "firstName": "Claudianus",
       "lastName": "Mullin",
       "email": "cmullin0@java.com",
       "address": {
