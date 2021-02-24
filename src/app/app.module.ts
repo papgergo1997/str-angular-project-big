@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -12,6 +13,8 @@ import { FilterPipe } from './pipe/filter.pipe';
 import { ListBillComponent } from './list/list-bill/list-bill.component';
 import { EditBillComponent } from './edit/edit-bill/edit-bill.component';
 import { ListCustomerComponent } from './list/list-customer/list-customer.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { EditCustomerComponent } from './edit/edit-customer/edit-customer.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +28,14 @@ import { ListCustomerComponent } from './list/list-customer/list-customer.compon
     ListBillComponent,
     EditBillComponent,
     ListCustomerComponent,
+    DashboardComponent,
+    EditCustomerComponent,
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
