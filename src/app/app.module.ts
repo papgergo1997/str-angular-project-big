@@ -13,6 +13,7 @@ import { ListBillComponent } from './list/list-bill/list-bill.component';
 import { EditBillComponent } from './edit/edit-bill/edit-bill.component';
 import { ListCustomerComponent } from './list/list-customer/list-customer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { EditCustomerComponent } from './edit/edit-customer/edit-customer.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     EditBillComponent,
     ListCustomerComponent,
     DashboardComponent,
+    EditCustomerComponent,
   ],
   imports: [
     HttpClientModule,
