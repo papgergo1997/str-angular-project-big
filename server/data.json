@@ -623,8 +623,8 @@
     },
     {
       "id": 2,
-      "customerID": 7,
-      "productID": 3,
+      "customerID": 8,
+      "productID": 4,
       "amount": 4,
       "status": "new"
     },
