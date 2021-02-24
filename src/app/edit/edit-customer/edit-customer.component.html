@@ -1,0 +1,88 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/customers">Customers List</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Customer Editor</li>
+    </ol>
+</nav>
+<div class="row">
+    <div *ngIf="(customers$ | async) as customer" class="col-6 offset-3">
+        <form #customerForm="ngForm" (ngSubmit)="onUpdate(customerForm, customer)">
+            <div class="form-group">
+                <label for="">FirstName</label>
+                <input name="firstName" [(ngModel)]="customer.firstName" type="text" class="form-control" required>
+                <div [hidden]="customerForm.controls.firstName?.valid || customerForm.controls.firstName?.pristine"
+                    class="error-feedback">
+                    ....
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">LastName</label>
+                <input name="lastName" [(ngModel)]="customer.lastName" type="text" class="form-control" required>
+                <div [hidden]="customerForm.controls.lastName?.valid || customerForm.controls.lastName?.pristine"
+                    class="error-feedback">
+                    ....
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">Email</label>
+                <input name="email" [(ngModel)]="customer.email" type="text" class="form-control" required>
+                <div [hidden]="customerForm.controls.email?.valid || customerForm.controls.email?.pristine"
+                    class="error-feedback">
+                    ....
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">Country</label>
+                <input name="country" [(ngModel)]="customer.address.country" type="text" class="form-control"
+                    pattern="[A-Z ]{5,25}" required>
+                <div [hidden]="customerForm.controls.country?.valid || customerForm.controls.country?.pristine"
+                    class="error-feedback">
+                    The country must be 5-25 characters long / Use only UPPERCASE characters
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">City</label>
+                <input name="city" [(ngModel)]="customer.address.city" type="text" class="form-control"
+                    pattern="^[A-Z]{1}[A-Za-zÁÉŐÚŰÖÜÓÍáéőúűöüóí ]{4,24}$" required>
+                <div [hidden]="customerForm.controls.city?.valid || customerForm.controls.city?.pristine"
+                    class="error-feedback">
+                    The city must be 5-25 characters long.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">Street</label>
+                <input name="street" [(ngModel)]="customer.address.street" type="text" class="form-control" required>
+                <div [hidden]="customerForm.controls.street?.valid || customerForm.controls.street?.pristine"
+                    class="error-feedback">
+                    ....
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">Number</label>
+                <input name="notes" [(ngModel)]="customer.address.notes" type="text" class="form-control" required>
+                <div [hidden]="customerForm.controls.notes?.valid || customerForm.controls.notes?.pristine"
+                    class="error-feedback">
+                    ....
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">Zip code</label>
+                <input name="zip" [(ngModel)]="customer.address.zip" type="text" class="form-control" required>
+                <div [hidden]="customerForm.controls.zip?.valid || customerForm.controls.zip?.pristine"
+                    class="error-feedback">
+                    ....
+                </div>
+            </div>
+            <button *ngIf="customer.id != 0" [disabled]="customerForm.invalid || submitted" type="submit"
+                class="btn btn-info btn-block btn-lg">
+                <i *ngIf="!submitted" class="fa fa-save"></i>
+                <i *ngIf="submitted" class="fa fa-refresh"></i>
+            </button>
+            <button *ngIf="customer.id == 0" [disabled]="customerForm.invalid || submitted" type="submit"
+                class="btn btn-success btn-block btn-lg">
+                <i *ngIf="!submitted" class="fa fa-save"></i>
+                <i *ngIf="submitted" class="fa fa-refresh"></i>
+            </button>
+        </form>
+    </div>
+</div>
