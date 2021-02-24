@@ -29,9 +29,7 @@ export class EditProductComponent implements OnInit {
       this.productService.create(product);
       this.router.navigate(['products']);
     } else {
-      this.productService.update(product)//*.subscribe(
-        //*() => this.router.navigate(['products'])
-      );
+      this.productService.update(product);
     }
   }
 }
