@@ -159,12 +159,12 @@
     {
       "id": 3,
       "orderID": "111",
-      "amount": 31000,     
+      "amount": 31000,
       "status": "new"
     },
     {
       "id": 4,
-      "orderID": 45,   
+      "orderID": 45,
       "amount": 55417,
       "status": "paid"
     },
@@ -202,11 +202,11 @@
   "customers": [
     {
       "id": 1,
-      "firstName": "Claudianus",
+      "firstName": "Claudianus   dfgg",
       "lastName": "Mullin",
       "email": "cmullin0@java.com",
       "address": {
-        "zip": "RG11",       
+        "zip": "RG11",
         "country": "ENGLAND",
         "city": "London",
         "street": "Commercial Center",
