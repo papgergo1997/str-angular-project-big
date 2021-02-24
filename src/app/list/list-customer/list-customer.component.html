@@ -1,0 +1,66 @@
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <button class="btn btn-success btn-block mb-5" [routerLink]="['/customers/'+0]"><span
+                        class="material-icons">library_add</span> Új vásárló
+                    felvitele</button>
+                <div class="card">
+                    <div class="card-header card-header-warning">
+                        <h4 class="card-title ">Customer's list</h4>
+                        <p class="card-category"> Itt lehet új vásárlót rögzíteni, módosítani vagy törölni</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row m-3">
+
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead class=" text-primary">
+                                    <th> ID </th>
+                                    <th> FirstName </th>
+                                    <th> LastName </th>
+                                    <th> Email </th>
+                                    <th> Address </th>
+                                    <th></th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let customer of customerList$ | async">
+                                        <td>
+                                            {{ customer.id }}
+                                        </td>
+                                        <td>
+                                            {{customer.firstName}}
+                                        </td>
+                                        <td>
+                                            {{customer.lastName}}
+                                        </td>
+                                        <td>
+                                            {{customer.email}}
+                                        </td>
+                                        <td>
+                                            {{customer.address.zip}},
+                                            {{customer.address.notes}}.
+                                            {{customer.address.street}},
+                                            {{customer.address.city}},
+                                            {{customer.address.country}}
+                                        </td>
+                                        <td>
+                                            <div class="btn-group w-100">
+                                                <button [routerLink]="['/customers/' + customer.id]"
+                                                    class="btn btn-info">
+                                                    <span class="material-icons">create</span></button>
+                                                <button (click)="onDeleteClick(customer)" class="btn btn-danger"><span
+                                                        class="material-icons">delete</span></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

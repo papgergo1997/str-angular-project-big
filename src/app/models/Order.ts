@@ -1,5 +1,7 @@
 export class Order {
-  constructor(public id: number, public customerID: number, public productID: number, public amount: number,
-              public status: 'new' | 'shipped' | 'paid') {
-  }
+  id: number = 0;
+  customerID: number = 0;
+  productID: number = 0;
+  amount: number = 0;
+  status: string = "new" || "shipped" || "paid";
 }
