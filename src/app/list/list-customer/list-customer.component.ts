@@ -14,13 +14,14 @@ export class ListCustomerComponent implements OnInit {
   customerList$: BehaviorSubject<Customer[]> = this.customerService.list$
 
   constructor(private customerService: CustomerService,
-    private router: Router) { }
+    private router: Router) { this.customerService.getAll(); }
 
   ngOnInit(): void {
   }
 
   onDeleteClick(customer: Customer): void {
-    this.customerService.remove(customer);
+    this.customerService.remove(customer).subscribe();
     this.router.navigate(['customers']);
+    this.customerService.getAll();
   }
 }
