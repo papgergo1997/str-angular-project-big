@@ -16,6 +16,7 @@ import { ListCustomerComponent } from './list/list-customer/list-customer.compon
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EditCustomerComponent } from './edit/edit-customer/edit-customer.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
