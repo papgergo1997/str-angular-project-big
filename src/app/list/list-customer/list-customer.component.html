@@ -2,6 +2,9 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
+                <button class="btn btn-success btn-block" [routerLink]="['/customers/'+0]"><span
+                        class="material-icons">library_add</span> Új vásárló
+                    felvitele</button>
                 <div class="card">
                     <div class="card-header card-header-primary">
                         <h4 class="card-title ">Customer's list</h4>
@@ -9,8 +12,7 @@
                     </div>
                     <div class="card-body">
                         <div class="row m-3">
-                            <button class="btn btn-success" [routerLink]="['/customers/'+0]">Új vásárló
-                                felvitele</button>
+
                         </div>
                         <div class="table-responsive">
                             <table class="table table-striped">
