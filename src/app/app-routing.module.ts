@@ -4,6 +4,7 @@ import { ListOrderComponent } from './list/list-order/list-order.component';
 import { EditOrderComponent } from './edit/edit-order/edit-order.component';
 import { EditBillComponent } from './edit/edit-bill/edit-bill.component';
 import { ListBillComponent } from './list/list-bill/list-bill.component';
+import { ListCustomerComponent } from './list/list-customer/list-customer.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'bills/:id',
     component: EditBillComponent
+  },
+  {
+    path: 'customers',
+    component: ListCustomerComponent
   }
 ];
 

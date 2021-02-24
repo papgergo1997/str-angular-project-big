@@ -11,6 +11,7 @@ import { EditOrderComponent } from './edit/edit-order/edit-order.component';
 import { FilterPipe } from './pipe/filter.pipe';
 import { ListBillComponent } from './list/list-bill/list-bill.component';
 import { EditBillComponent } from './edit/edit-bill/edit-bill.component';
+import { ListCustomerComponent } from './list/list-customer/list-customer.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { EditBillComponent } from './edit/edit-bill/edit-bill.component';
     FilterPipe,
     ListBillComponent,
     EditBillComponent,
+    ListCustomerComponent,
   ],
   imports: [
     HttpClientModule,
