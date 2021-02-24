@@ -6,6 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { SidebarComponent } from './page-components/sidebar/sidebar.component';
 import { NavbarComponent } from './page-components/navbar/navbar.component';
 import { FooterComponent } from './page-components/footer/footer.component';
+import { ListBillComponent } from './list/list-bill/list-bill.component';
+import { EditBillComponent } from './edit/edit-bill/edit-bill.component';
 
 
 
@@ -14,7 +16,9 @@ import { FooterComponent } from './page-components/footer/footer.component';
     AppComponent,
     SidebarComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    ListBillComponent,
+    EditBillComponent
   ],
   imports: [
     HttpClientModule,
