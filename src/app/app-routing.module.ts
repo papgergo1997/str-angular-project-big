@@ -35,6 +35,7 @@ const routes: Routes = [
     path: 'products',
     component: ListProductComponent
   },
+  {
     path: 'customers',
     component: ListCustomerComponent
   },
