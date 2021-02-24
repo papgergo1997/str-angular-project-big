@@ -17,11 +17,7 @@
                         <div class="table-responsive">
                             <table class="table table-striped">
                                 <thead class=" text-primary">
-                                    <th> ID </th>
-                                    <th> FirstName </th>
-                                    <th> LastName </th>
-                                    <th> Email </th>
-                                    <th> Address </th>
+                                    <th *ngFor="let prop of customerProps">{{prop}}</th>
                                     <th></th>
                                 </thead>
                                 <tbody>
@@ -45,6 +41,7 @@
                                             {{customer.address.city}},
                                             {{customer.address.country}}
                                         </td>
+                                        <td>{{customer.active}}</td>
                                         <td>
                                             <div class="btn-group w-100">
                                                 <button [routerLink]="['/customers/' + customer.id]"

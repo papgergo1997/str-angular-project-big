@@ -11,19 +11,16 @@
 
 
                 <div class="card">
-                    <div class="card-header card-header-warning">
-                        <h4 class="card-title ">Bill's List</h4>
+                    <div class="card-header card-header-grey">
+                        <h4 class="card-title text-white">Bill's List</h4>
                         <p class="card-category"> Itt lehet új számlát rögzíteni, módosítani vagy törölni</p>
                     </div>
                     <div class="card-body">
 
                         <div class="table-responsive">
                             <table class="table table-hover">
-                                <thead class=" text-primary">
-                                    <th> ID </th>
-                                    <th> OrderID </th>
-                                    <th> Amount </th>
-                                    <th> Status </th>
+                                <thead class="color-grey">
+                                    <th *ngFor="let prop of billProperties">{{ prop }}</th>
                                     <th></th>
                                 </thead>
                                 <tbody>
@@ -37,7 +34,7 @@
                                         <td>
                                             {{ bill.amount}}
                                         </td>
-                                        <td class="text-primary">
+                                        <td>
                                             {{ bill.status }}
                                         </td>
                                         <td>

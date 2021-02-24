@@ -1,0 +1,73 @@
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-success">
+                        <h4 class="card-title ">Termék Lista</h4>
+                        <p class="card-category"> Itt lehet új terméket létrehozni, módosítani vagy törölni</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row m-3">
+                            <button class="btn btn-success" [routerLink]="['/products/'+0]">Új termék felvitele</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class=" text-primary">
+                                    <!-- <th> ID </th>
+                                    <th> KatID </th>
+                                    <th> Név </th>
+                                    <th> Típus </th>
+                                    <th> Leírás </th>
+                                    <th> Ár </th>
+                                    <th> Aktív </th>
+                                    <th> Kiemelt </th> -->
+                                    <th *ngFor="let prop of productProperties">{{ prop }}</th>
+                                    <th></th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let product of productList | async">
+                                        <td>
+                                            {{ product.id }}
+                                        </td>
+                                        <td>
+                                            {{ product.KatID }}
+                                        </td>
+                                        <td>
+                                            {{ product.name }}
+                                        </td>
+                                        <td>
+                                            {{ product.type }}
+                                        </td>
+                                        <td>
+                                            {{ product.description }}
+                                        </td>
+                                        <td>
+                                            {{ product.price }}
+                                        </td>
+                                        <td>
+                                            {{ product.active }}
+                                        </td>
+                                        <td>
+                                            {{ product.featured }}
+                                        </td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button [routerLink]="['/products/' + product.id]" class="btn btn-info">
+                                                <span class="material-icons">create</span></button>
+                                                <button (click)="onDelete(product)" class="btn btn-danger">
+                                                    <span class="material-icons">delete</span>
+                                                </button>
+
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
