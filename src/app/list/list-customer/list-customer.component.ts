@@ -12,6 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ListCustomerComponent implements OnInit {
 
+  customerProps: string[] = Object.keys(new Customer());
   customerList$: BehaviorSubject<Customer[]> = this.customerService.list$
 
   constructor(private customerService: CustomerService,

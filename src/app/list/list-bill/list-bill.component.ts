@@ -12,6 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ListBillComponent implements OnInit {
 
+  billProperties: string[] = Object.keys(new Bill());
   billList: BehaviorSubject<Bill[]> = this.billService.list$;
 
   constructor(
