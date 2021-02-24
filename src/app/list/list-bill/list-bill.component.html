@@ -2,22 +2,25 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
+
+
+                <button class="btn btn-success btn-block mb-5" [routerLink]="['/bills/'+0]">
+                    <span class="material-icons">
+                        library_add
+                    </span> Új termék felvitele</button>
+
+
                 <div class="card">
-                    <div class="card-header card-header-primary">
-                        <h4 class="card-title ">Bill's List</h4>
+                    <div class="card-header card-header-grey">
+                        <h4 class="card-title text-white">Bill's List</h4>
                         <p class="card-category"> Itt lehet új számlát rögzíteni, módosítani vagy törölni</p>
                     </div>
                     <div class="card-body">
-                        <div class="row m-3">
-                            <button class="btn btn-success" [routerLink]="['bills/'+0]">Új termék felvitele</button>
-                        </div>
+
                         <div class="table-responsive">
                             <table class="table table-hover">
-                                <thead class=" text-primary">
-                                    <th> ID </th>
-                                    <th> OrderID </th>
-                                    <th> Amount </th>
-                                    <th> Status </th>
+                                <thead class="color-grey">
+                                    <th *ngFor="let prop of billProperties">{{ prop }}</th>
                                     <th></th>
                                 </thead>
                                 <tbody>
@@ -31,13 +34,17 @@
                                         <td>
                                             {{ bill.amount}}
                                         </td>
-                                        <td class="text-primary">
+                                        <td>
                                             {{ bill.status }}
                                         </td>
                                         <td>
-                                            <button [routerLink]="['bills/' + bill.id]" class="btn btn-info">
-                                                Update</button>
-                                            <button (click)="onDelete(bill)" class="btn btn-danger">Delete</button>
+                                            <div class="btn-group w-100">
+                                                <button [routerLink]="['/bills/' + bill.id]"
+                                                    class="btn btn-info ml-auto">
+                                                    <span class="material-icons">create</span></button>
+                                                <button (click)="onDelete(bill)" class="btn btn-danger"><span
+                                                        class="material-icons">delete</span></button>
+                                            </div>
                                         </td>
                                     </tr>
                                 </tbody>

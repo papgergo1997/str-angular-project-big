@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { Bill } from 'src/app/models/Bill';
 import { BillService } from 'src/app/service/bill.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-list-bill',
@@ -11,11 +12,13 @@ import { BillService } from 'src/app/service/bill.service';
 })
 export class ListBillComponent implements OnInit {
 
+  billProperties: string[] = Object.keys(new Bill());
   billList: BehaviorSubject<Bill[]> = this.billService.list$;
 
   constructor(
     private billService: BillService,
     private router: Router,
+    private toastr: ToastrService,
   ) { }
 
   ngOnInit(): void {
@@ -23,7 +26,12 @@ export class ListBillComponent implements OnInit {
 
   onDelete(bill: Bill): void {
     this.billService.remove(bill);
+    this.showWarning();
     this.router.navigate(['bills']);
+  }
+
+  showWarning() {
+    this.toastr.warning('Sikeresen törölted az eseményt!', 'Üzenet', { timeOut: 4000 })
   }
 
 }
