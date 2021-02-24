@@ -17,6 +17,7 @@ import { ListCustomerComponent } from './list/list-customer/list-customer.compon
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EditCustomerComponent } from './edit/edit-customer/edit-customer.component';
 import { ToastrModule } from 'ngx-toastr';
+import { EditProductComponent } from './edit/edit-product/edit-product.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { ToastrModule } from 'ngx-toastr';
     ListCustomerComponent,
     DashboardComponent,
     EditCustomerComponent,
+    EditProductComponent,
   ],
   imports: [
     HttpClientModule,
