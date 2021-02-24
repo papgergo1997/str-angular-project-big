@@ -1,6 +1,7 @@
 <div class="content">
   <div class="container-fluid">
-    <div class="row">
+
+<!--     <div class="row">
       <div class="col-5 offset-3">
         <form class="form-inline">
             <label>Search</label>
@@ -8,13 +9,13 @@
               <option *ngFor="let prop of orderProperties" class="m-3"> {{ prop }} </option>
             </select>
             <input (keyup)="onChangePhrase($event)" type="text" class="form-control" placeholder="Search">
-
         </form>
       </div>
-    </div>
+    </div> -->
+
     <div class="row">
       <div class="col-md-12">
-        <button [routerLink]="['order/0']" class="btn btn-success btn-block mb-5">
+        <button [routerLink]="['0']" class="btn btn-success btn-block mb-5">
           <span class="material-icons">
             library_add
           </span> Add an order
@@ -23,7 +24,7 @@
         <div class="card">
           <div class="card-header card-header-warning">
             <h4 class="card-title">Order list</h4>
-            <p class="card-category">This is a list of orders.</p>
+            <p class="card-category">This is a list of orders. You can add, modify and delete an order.</p>
           </div>
           <div class="card-body">
             <div class="table-responsive">
@@ -33,7 +34,8 @@
                   <th></th>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let order of orderList$ | async | filter:phrase:'id'">
+                  <!-- <tr *ngFor="let order of orderList$ | async | filter:phrase:'id'"> -->
+                  <tr *ngFor="let order of orderList$ | async">
                     <td> {{ order.id }} </td>
                     <td> {{ order.customerID }} </td>
                     <td> {{ order.productID }} </td>
@@ -41,7 +43,7 @@
                     <td> {{ order.status }} </td>
                     <td>
                       <div class="btn-group w-100">
-                        <button [routerLink]="['order/' + order.id]" type="submit" class="btn btn-success ml-auto">
+                        <button [routerLink]="[order.id]" type="submit" class="btn btn-success ml-auto">
                           <span class="material-icons">create</span>
                         </button>
 
