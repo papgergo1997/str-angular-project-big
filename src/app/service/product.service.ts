@@ -54,9 +54,14 @@ export class ProductService {
     );
   }
 
-  randomize(sourceArray: any[]): any[] {
-    return sourceArray.sort( () => Math.random() - 0.5);
-  }
+  // getFeatured(randomized?: boolean): Product[] {
+  //   const featured = this.list$.filter( item => item.featured );
+  //   return randomized ? this.randomize(featured) : featured;
+  // }
+
+  // randomize(sourceArray: any[]): any[] {
+  //   return sourceArray.sort( () => Math.random() - 0.5);
+  // }
 
 }
 
