@@ -44,9 +44,10 @@
                                             {{customer.address.country}}
                                         </td>
                                         <td>
-                                            <button class="btn btn-info">
+                                            <button [routerLink]="['/customers/' + customer.id]" class="btn btn-info">
                                                 Update</button>
-                                            <button class="btn btn-danger">Delete</button>
+                                            <button (click)="onDeleteClick(customer)"
+                                                class="btn btn-danger">Delete</button>
                                         </td>
                                     </tr>
                                 </tbody>
