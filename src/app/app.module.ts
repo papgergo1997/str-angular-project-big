@@ -8,6 +8,8 @@ import { NavbarComponent } from './page-components/navbar/navbar.component';
 import { FooterComponent } from './page-components/footer/footer.component';
 import { ListBillComponent } from './list/list-bill/list-bill.component';
 import { EditBillComponent } from './edit/edit-bill/edit-bill.component';
+import { ListCustomerComponent } from './list/list-customer/list-customer.component';
+import { EditCustomerComponent } from './edit/edit-customer/edit-customer.component';
 
 
 
@@ -18,7 +20,9 @@ import { EditBillComponent } from './edit/edit-bill/edit-bill.component';
     NavbarComponent,
     FooterComponent,
     ListBillComponent,
-    EditBillComponent
+    EditBillComponent,
+    ListCustomerComponent,
+    EditCustomerComponent
   ],
   imports: [
     HttpClientModule,
