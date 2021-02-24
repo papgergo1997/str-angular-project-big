@@ -11,7 +11,7 @@
     </div>
     <div class="sidebar-wrapper">
         <ul class="nav">
-            <li class="nav-item active  ">
+            <li class="nav-item">
                 <a class="nav-link" href="#0">
                     <i class="material-icons">analytics</i>
                     <p>Dashboard</p>
@@ -30,8 +30,8 @@
                     <p>Products</p>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#0">
+            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a class="nav-link" routerLink="/orders">
                     <i class="material-icons">credit_card</i>
                     <p>Orders</p>
                 </a>
