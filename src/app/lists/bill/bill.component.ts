@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {BillService} from '../../service/bill.service';
-import {Bill} from "../../models/Bill";
+import {Bill} from '../../models/Bill';
 
 @Component({
   selector: 'app-bill',
@@ -8,9 +8,9 @@ import {Bill} from "../../models/Bill";
   styleUrls: ['./bill.component.scss']
 })
 export class BillComponent implements OnInit {
-data: Bill[];
-  constructor(billService: BillService) {
-    this.data = billService.getAll();
+  data: any;
+  constructor(public billService: BillService) {
+    this.data  = billService.list$[];
   }
 
   ngOnInit(): void {
