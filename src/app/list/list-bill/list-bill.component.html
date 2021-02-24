@@ -1,0 +1,61 @@
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+
+
+                <button class="btn btn-success btn-block mb-5" [routerLink]="['/bills/'+0]">
+                    <span class="material-icons">
+                        library_add
+                    </span> Új termék felvitele</button>
+
+
+                <div class="card">
+                    <div class="card-header card-header-warning">
+                        <h4 class="card-title ">Bill's List</h4>
+                        <p class="card-category"> Itt lehet új számlát rögzíteni, módosítani vagy törölni</p>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class=" text-primary">
+                                    <th> ID </th>
+                                    <th> OrderID </th>
+                                    <th> Amount </th>
+                                    <th> Status </th>
+                                    <th></th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let bill of billList | async">
+                                        <td>
+                                            {{ bill.id }}
+                                        </td>
+                                        <td>
+                                            {{ bill.orderID }}
+                                        </td>
+                                        <td>
+                                            {{ bill.amount}}
+                                        </td>
+                                        <td class="text-primary">
+                                            {{ bill.status }}
+                                        </td>
+                                        <td>
+                                            <div class="btn-group w-100">
+                                                <button [routerLink]="['/bills/' + bill.id]"
+                                                    class="btn btn-info ml-auto">
+                                                    <span class="material-icons">create</span></button>
+                                                <button (click)="onDelete(bill)" class="btn btn-danger"><span
+                                                        class="material-icons">delete</span></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

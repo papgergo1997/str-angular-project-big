@@ -31,8 +31,10 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/css/material-dashboard.min.css",
+              "node_modules/font-awesome/css/font-awesome.min.css",
               "src/styles.scss",
-              "src/assets/css/material-dashboard.min.css"
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": [
               "src/assets/js/material-dashboard.min.js"
@@ -130,5 +132,8 @@
       }
     }
   },
-  "defaultProject": "big-project"
+  "defaultProject": "big-project",
+  "cli": {
+    "analytics": false
+  }
 }
