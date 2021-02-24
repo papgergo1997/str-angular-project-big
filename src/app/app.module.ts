@@ -12,6 +12,7 @@ import { FilterPipe } from './pipe/filter.pipe';
 import { ListBillComponent } from './list/list-bill/list-bill.component';
 import { EditBillComponent } from './edit/edit-bill/edit-bill.component';
 import { ListCustomerComponent } from './list/list-customer/list-customer.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ListCustomerComponent } from './list/list-customer/list-customer.compon
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
+    FormsModule
 
   ],
   providers: [],
