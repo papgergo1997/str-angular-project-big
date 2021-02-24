@@ -47,9 +47,9 @@
                                         </td>
                                         <td>
                                             <button [routerLink]="['/customers/' + customer.id]" class="btn btn-info">
-                                                Update</button>
-                                            <button (click)="onDeleteClick(customer)"
-                                                class="btn btn-danger">Delete</button>
+                                                <span class="material-icons">create</span></button>
+                                            <button (click)="onDeleteClick(customer)" class="btn btn-danger"><span
+                                                    class="material-icons">delete</span></button>
                                         </td>
                                     </tr>
                                 </tbody>

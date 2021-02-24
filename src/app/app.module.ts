@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,6 +16,7 @@ import { EditBillComponent } from './edit/edit-bill/edit-bill.component';
 import { ListCustomerComponent } from './list/list-customer/list-customer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EditCustomerComponent } from './edit/edit-customer/edit-customer.component';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -36,7 +38,9 @@ import { EditCustomerComponent } from './edit/edit-customer/edit-customer.compon
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
