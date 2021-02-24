@@ -13,10 +13,12 @@ import { EditOrderComponent } from './edit/edit-order/edit-order.component';
 import { FilterPipe } from './pipe/filter.pipe';
 import { ListBillComponent } from './list/list-bill/list-bill.component';
 import { EditBillComponent } from './edit/edit-bill/edit-bill.component';
+import { ListProductComponent } from './list/list-product/list-product.component';
 import { ListCustomerComponent } from './list/list-customer/list-customer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EditCustomerComponent } from './edit/edit-customer/edit-customer.component';
 import { ToastrModule } from 'ngx-toastr';
+import { EditProductComponent } from './edit/edit-product/edit-product.component';
 
 
 @NgModule({
@@ -30,9 +32,11 @@ import { ToastrModule } from 'ngx-toastr';
     FilterPipe,
     ListBillComponent,
     EditBillComponent,
+    ListProductComponent,
     ListCustomerComponent,
     DashboardComponent,
     EditCustomerComponent,
+    EditProductComponent,
   ],
   imports: [
     HttpClientModule,
