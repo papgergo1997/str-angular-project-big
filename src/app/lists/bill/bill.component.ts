@@ -8,12 +8,12 @@ import {Bill} from '../../models/Bill';
   styleUrls: ['./bill.component.scss']
 })
 export class BillComponent implements OnInit {
-  data: any;
+  data: Bill | undefined;
   constructor(public billService: BillService) {
-    this.data  = billService.list$[];
   }
 
   ngOnInit(): void {
+    this.billService.get(1).subscribe(data => this.data = data);
   }
 
 }
