@@ -17,7 +17,8 @@ export class ListOrderComponent implements OnInit {
   phrase: string = '';
   // szükséges változók a filterhez
 
-  // phrase: string = "";
+  ascend: boolean = true;
+  sortKey = '';
 
 
   constructor(
@@ -33,8 +34,9 @@ export class ListOrderComponent implements OnInit {
     this.orderService.remove(order);
   }
 
-  /*   onChangePhrase(event: Event) {
-      this.phrase = (event.target as HTMLInputElement).value;
-    } */
+  onChangeSort(data: string): void {
+    this.sortKey = data;
+    this.ascend = !this.ascend;
+  }
 
 }

@@ -652,8 +652,8 @@
     {
       "id": 1,
       "customerID": 3,
-      "productID": 1,
-      "amount": 2,
+      "productID": 14,
+      "amount": 222,
       "status": "new"
     },
     {
@@ -661,19 +661,19 @@
       "customerID": 8,
       "productID": 4,
       "amount": 4,
-      "status": "new"
+      "status": "shipped"
     },
     {
       "id": 3,
       "customerID": 11,
       "productID": 4,
       "amount": 12,
-      "status": "shipped"
+      "status": "new"
     },
     {
       "id": 4,
       "customerID": 14,
-      "productID": 6,
+      "productID": 1,
       "amount": 7,
       "status": "shipped"
     },
