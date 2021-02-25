@@ -10,7 +10,7 @@
             <div class="form-group">
                 <label for="">FirstName</label>
                 <input name="firstName" [(ngModel)]="customer.firstName" type="text" class="form-control"
-                    pattern="^[A-ZÁÉŐÚŰÖÜÓÍ]{1}[a-záéűúőöüóí ]{1,}$" required>
+                    pattern="^[A-ZÁÉŐÚŰÖÜÓÍ]{1}[a-záéűúőöüóí ]{1,}$" placeholder="Samplename" required>
                 <div [hidden]="customerForm.controls.firstName?.valid || customerForm.controls.firstName?.pristine"
                     class="error-feedback">
                     FirstName must start with an UPPERCASE character, and must be 2 characters long at least
@@ -19,7 +19,7 @@
             <div class="form-group">
                 <label for="">LastName</label>
                 <input name="lastName" [(ngModel)]="customer.lastName" type="text" class="form-control"
-                    pattern="^[A-ZÁÉŐÚŰÖÜÓÍ]{1}[a-záéűúőöüóí ]{1,}$" required>
+                    pattern="^[A-ZÁÉŐÚŰÖÜÓÍ]{1}[a-záéűúőöüóí ]{1,}$" placeholder="Samplename" required>
                 <div [hidden]="customerForm.controls.lastName?.valid || customerForm.controls.lastName?.pristine"
                     class="error-feedback">
                     LastName must start with an UPPERCASE character, and must be 2 characters long at least
