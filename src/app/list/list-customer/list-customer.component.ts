@@ -14,7 +14,7 @@ import { Address } from 'src/app/models/Address';
 export class ListCustomerComponent implements OnInit {
 
   // szükséges változók a filterhez
-  filterKey: string = '';
+  filterKey: string = 'id';
   phrase: string = '';
   // szükséges változók a filterhez
   sortKey: string = '';
