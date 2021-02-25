@@ -28,6 +28,7 @@ export class EditProductComponent implements OnInit {
     if (product.id === 0) {
       this.productService.create(product);
       this.router.navigate(['products']);
+
     } else {
       this.productService.update(product);
     }
