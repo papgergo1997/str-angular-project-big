@@ -13,6 +13,8 @@ import { Address } from 'src/app/models/Address';
 })
 export class ListCustomerComponent implements OnInit {
 
+  filterKey: string = '';
+  phrase: string = '';
   sortKey: string = '';
   zip: string = 'country';
   address: string[] = Object.keys(new Address());
