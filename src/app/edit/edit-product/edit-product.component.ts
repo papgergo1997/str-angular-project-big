@@ -25,8 +25,7 @@ export class EditProductComponent implements OnInit {
     private router: Router,
   ) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit( ): void { }
 
   onUpdate(form: NgForm, product: Product): void {
     if (product.id !== 0) {
@@ -36,5 +35,5 @@ export class EditProductComponent implements OnInit {
     this.productService.create(product);
     this.router.navigate(['products']);
   }
-
+  
 }
