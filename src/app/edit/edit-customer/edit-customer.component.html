@@ -50,15 +50,17 @@
                     pattern="^[A-Z]{1}[A-Za-zÁÉŐÚŰÖÜÓÍáéőúűöüóí ]{4,24}$" placeholder="Sample City" required>
                 <div [hidden]="customerForm.controls.city?.valid || customerForm.controls.city?.pristine"
                     class="error-feedback">
-                    The city must be 5-25 characters long.
+                    Wrong city format / The city must be 5-25 characters long.
                 </div>
             </div>
             <div class="form-group">
                 <label for="">Street</label>
-                <input name="street" [(ngModel)]="customer.address.street" type="text" class="form-control" required>
+                <input name="street" [(ngModel)]="customer.address.street" type="text" class="form-control"
+                    pattern="^[A-ZÁÉŰŐÚÖÜÓÍ0-9]{1}[A-Za-zÁÉŐÚŰÖÜÓÍáéőúűöüóí0-9. ]{4,24}$" placeholder="Sample Street"
+                    required>
                 <div [hidden]="customerForm.controls.street?.valid || customerForm.controls.street?.pristine"
                     class="error-feedback">
-                    ....
+                    Wrong Street format / The street must be 5-25 characters long.
                 </div>
             </div>
             <div class="form-group">
