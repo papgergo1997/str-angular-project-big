@@ -16,6 +16,8 @@ export class ListBillComponent implements OnInit {
   billList$: BehaviorSubject<Bill[]> = this.billService.list$;
   indexPage: number = 1;
   pagiLength: number = 5;
+  ascend: boolean = true;
+  sortKey = '';
 
   constructor(
     private billService: BillService,
@@ -26,6 +28,11 @@ export class ListBillComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onChangeSort(data: string): void {
+    this.sortKey = data;
+    this.ascend = !this.ascend;
+  }
+
   onDelete(bill: Bill): void {
     this.billService.remove(bill);
     this.showWarning();
@@ -33,7 +40,7 @@ export class ListBillComponent implements OnInit {
   }
 
   showWarning() {
-    this.toastr.warning('Sikeresen törölted az eseményt!', 'Üzenet', { timeOut: 4000 })
+    this.toastr.warning('You have successfully deleted a bill!', 'Deleted', { timeOut: 4000 })
   }
 
   onPagiNumber(page: number) {

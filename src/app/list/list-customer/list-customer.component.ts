@@ -16,6 +16,7 @@ export class ListCustomerComponent implements OnInit {
   customerProps: string[] = Object.keys(new Customer());
   customerList$: BehaviorSubject<Customer[]> = this.customerService.list$;
   ascend: boolean = true;
+  zip: string = ''
 
   constructor(private customerService: CustomerService,
     private router: Router,
@@ -25,7 +26,12 @@ export class ListCustomerComponent implements OnInit {
   }
 
   onChangeSort(data: string): void {
-    this.sortKey = data;
+    if (data === 'address') {
+      this.sortKey = 'address';
+      this.zip = 'zip';
+    } else {
+      this.sortKey = data;
+    }
     this.ascend = !this.ascend;
   }
 
