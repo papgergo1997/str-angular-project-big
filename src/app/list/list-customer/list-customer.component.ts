@@ -13,8 +13,10 @@ import { Address } from 'src/app/models/Address';
 })
 export class ListCustomerComponent implements OnInit {
 
+  // szükséges változók a filterhez
   filterKey: string = '';
   phrase: string = '';
+  // szükséges változók a filterhez
   sortKey: string = '';
   zip: string = 'country';
   address: string[] = Object.keys(new Address());

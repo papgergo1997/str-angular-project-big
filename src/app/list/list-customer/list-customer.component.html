@@ -10,6 +10,7 @@
                         <p class="card-category"> This is a list of our customers. You can add, modify or remove any
                             customer if needed.</p>
                     </div>
+                    <!-- Filter component -->
                     <div class="col-12 mx-auto row py-2 product-search">
                         <select [(ngModel)]="filterKey" class="form-control col-1 ml-auto">
                             <option *ngFor="let prop of customerProps" [value]="prop">{{prop}}</option>
@@ -17,6 +18,7 @@
                         <input [(ngModel)]="phrase" class="form-control mx-1 col-4" type="text" placeholder="Search">
                         <button class="btn btn-outline-primary col-1 mr-auto" type="submit">Keresés</button>
                     </div>
+                    <!-- Filter component -->
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-striped">
