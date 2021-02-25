@@ -598,10 +598,10 @@
       "id": 29,
       "firstName": "Gabriella",
       "lastName": "Németh",
-      "email": "németh.gabriella@gmail.com",
+      "email": "nemeth.gabriella@gmail.com",
       "address": {
         "zip": "GR23",
-        "country": "Germany",
+        "country": "GERMANY",
         "city": "Berlin",
         "street": "Hausen St.",
         "notes": "56"
@@ -630,7 +630,7 @@
       "address": {
         "zip": "0000",
         "country": "HUNGARY",
-        "city": "Bármelyik City",
+        "city": "Bármelyik Cit",
         "street": "Híd alatt",
         "notes": "12"
       },
