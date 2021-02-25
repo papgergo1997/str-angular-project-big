@@ -193,6 +193,12 @@
       "orderID": 1,
       "amount": 1,
       "status": "new"
+    },
+    {
+      "id": 11,
+      "orderID": 0,
+      "amount": 45,
+      "status": "new"
     }
   ],
   "customers": [
@@ -615,6 +621,20 @@
         "notes": "1"
       },
       "active": false
+    },
+    {
+      "id": 31,
+      "firstName": "Béla",
+      "lastName": "Koldus",
+      "email": "koldus.bela@citromail.hu",
+      "address": {
+        "zip": "0000",
+        "country": "HUNGARY",
+        "city": "Bármelyik City",
+        "street": "Híd alatt",
+        "notes": "12"
+      },
+      "active": false
     }
   ],
   "orders": [
@@ -622,13 +642,13 @@
       "id": 1,
       "customerID": 3,
       "productID": 1,
-      "amount": 2,
+      "amount": 23,
       "status": "new"
     },
     {
       "id": 2,
-      "customerID": 7,
-      "productID": 3,
+      "customerID": 8,
+      "productID": 4,
       "amount": 4,
       "status": "new"
     },

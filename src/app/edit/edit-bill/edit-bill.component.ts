@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { Bill } from 'src/app/models/Bill';
 import { BillService } from 'src/app/service/bill.service';
+import { Bill } from 'src/app/models/Bill';
+import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -13,9 +14,11 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class EditBillComponent implements OnInit {
 
+  updating: boolean = false;
   bill$: Observable<Bill> = this.activatedRoute.params.pipe(
-    switchMap(params => this.billService.get(params.id))
+    switchMap( params => this.billService.get(params.id) )
   );
+
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -24,13 +27,12 @@ export class EditBillComponent implements OnInit {
     private toastr: ToastrService,
   ) { }
 
-  ngOnInit(
+  ngOnInit(): void { }
 
-  ): void {
-  }
 
-  onUpdate(bill: Bill): void {
-    if (bill.id === 0) {
+  onUpdate(form: NgForm, bill: Bill): void {
+    this.updating = true;
+    if(bill.id === 0) {
       this.billService.create(bill);
       this.router.navigate(['bills']);
       this.showSuccess();
