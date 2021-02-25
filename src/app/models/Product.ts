@@ -1,6 +1,6 @@
 export class Product {
   id: number = 0;
-  KatID: number = 0;
+  catID: number = 0;
   name: string = "";
   type: string = "";
   description: string = "";
@@ -25,7 +25,7 @@ export class Product {
       this.id = properties.id || 0;
       this.name = properties.name || "";
       this.type = properties.type || "";
-      this.KatID = properties.KatID || 0;
+      this.catID = properties.catID || 0;
       this.description = properties.description || "";
       this.price = properties.price || 0;
       this.active = properties.active || false;
