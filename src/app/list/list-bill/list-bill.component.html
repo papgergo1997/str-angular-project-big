@@ -15,6 +15,17 @@
                         <h4 class="card-title text-white">Bill List</h4>
                         <p class="card-category"> This is a list of bills. You can add, modify and delete a bill.</p>
                     </div>
+                    <!-- Filter component -->
+                    <div class="col-12 mx-auto row py-2 product-search">
+                        <select [(ngModel)]="filterKey" class="options-control form-control col-1 ml-auto py-4">
+                            <option *ngFor="let prop of billProperties" [value]="prop">{{prop}}</option>
+                        </select>
+                        <input [(ngModel)]="phrase" class="form-control mx-1 col-4 py-4" type="text"
+                            placeholder="Search">
+                        <button class="btn btn-success col-1 mr-auto" type="submit"><span
+                                class="material-icons">search</span></button>
+                    </div>
+                    <!-- Filter component -->
                     <div class="card-body">
 
                         <div class="table-responsive">
@@ -26,7 +37,7 @@
                                 </thead>
                                 <tbody>
                                     <tr
-                                        *ngFor="let bill of billList$ | async| slice: (indexPage -1)*pagiLength: indexPage*pagiLength | sort: sortKey: ascend">
+                                        *ngFor="let bill of billList$ | async| slice: (indexPage -1)*pagiLength: indexPage*pagiLength | filter:filterKey:phrase | sort: sortKey: ascend">
                                         <td>
                                             {{ bill.id }}
                                         </td>
