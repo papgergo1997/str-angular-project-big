@@ -4,15 +4,14 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-success">
-                        <h4 class="card-title ">Product List</h4>
-                        <p class="card-category"> This is a list of products. You can add, modify and delete a product.</p>
+
+                        <h4 class="card-title ">Products List</h4>
+                        <p class="card-category"> This is a list of products. You can add, modify and delete an product.</p>
                     </div>
                     <div class="card-body">
                         <div class="row m-3">
-                            <button class="btn btn-block mb-5" [routerLink]="['/products/'+0]">
-                              <span class="material-icons">
-                                library_add
-                              </span> Add a new product</button>
+                            <button class="btn btn-success" [routerLink]="['0']">Add new product</button>
+
                         </div>
                         <div class="table-responsive">
                             <table class="table table-hover">
@@ -34,7 +33,7 @@
                                             {{ product.id }}
                                         </td>
                                         <td>
-                                            {{ product.KatID }}
+                                            {{ product.catID }}
                                         </td>
                                         <td>
                                             {{ product.name }}
@@ -56,7 +55,7 @@
                                         </td>
                                         <td>
                                             <div class="btn-group">
-                                                <button [routerLink]="['/products/' + product.id]" class="btn btn-info">
+                                                <button [routerLink]="['product' + product.id]" class="btn btn-info">
                                                 <span class="material-icons">create</span></button>
                                                 <button (click)="onDelete(product)" class="btn btn-danger">
                                                     <span class="material-icons">delete</span>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
@@ -13,8 +14,10 @@ import { ProductService } from 'src/app/service/product.service';
 export class EditProductComponent implements OnInit {
 
   product$: Observable<Product> = this.activatedRoute.params.pipe(
-    switchMap(params => this.productService.get(params.id))
+    switchMap( params => this.productService.get(params.id))
   );
+
+  product: Product = new Product();
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -24,13 +27,13 @@ export class EditProductComponent implements OnInit {
 
   ngOnInit( ): void { }
 
-  onUpdate(product: Product): void {
-    if (product.id === 0) {
-      this.productService.create(product);
-      this.router.navigate(['products']);
-
-    } else {
+  onUpdate(form: NgForm, product: Product): void {
+    if (product.id !== 0) {
       this.productService.update(product);
+      this.router.navigate(['products']);
     }
+    this.productService.create(product);
+    this.router.navigate(['products']);
   }
+  
 }
