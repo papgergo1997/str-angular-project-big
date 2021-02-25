@@ -40,7 +40,7 @@ import { EditProductComponent } from './edit/edit-product/edit-product.component
   ],
   imports: [
     HttpClientModule,
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
