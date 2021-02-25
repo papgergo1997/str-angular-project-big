@@ -12,6 +12,11 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ListBillComponent implements OnInit {
 
+  // szükséges változók a filterhez
+  filterKey: string = 'id';
+  phrase: string = '';
+  // szükséges változók a filterhez
+
   billProperties: string[] = Object.keys(new Bill());
   billList$: BehaviorSubject<Bill[]> = this.billService.list$;
   indexPage: number = 1;
