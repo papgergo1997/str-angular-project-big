@@ -10,7 +10,7 @@
             <div class="form-group">
                 <label for="">FirstName</label>
                 <input name="firstName" [(ngModel)]="customer.firstName" type="text" class="form-control"
-                    pattern="^[A-ZÁÉŐÚŰÖÜÓÍ]{1}[a-záéűúőöüóí ]{1,}" required>
+                    pattern="^[A-ZÁÉŐÚŰÖÜÓÍ]{1}[a-záéűúőöüóí ]{1,}$" required>
                 <div [hidden]="customerForm.controls.firstName?.valid || customerForm.controls.firstName?.pristine"
                     class="error-feedback">
                     FirstName must start with an UPPERCASE character, and must be 2 characters long at least
@@ -19,7 +19,7 @@
             <div class="form-group">
                 <label for="">LastName</label>
                 <input name="lastName" [(ngModel)]="customer.lastName" type="text" class="form-control"
-                    pattern="^[A-ZÁÉŐÚŰÖÜÓÍ]{1}[a-záéűúőöüóí ]{1,}" required>
+                    pattern="^[A-ZÁÉŐÚŰÖÜÓÍ]{1}[a-záéűúőöüóí ]{1,}$" required>
                 <div [hidden]="customerForm.controls.lastName?.valid || customerForm.controls.lastName?.pristine"
                     class="error-feedback">
                     LastName must start with an UPPERCASE character, and must be 2 characters long at least
@@ -27,10 +27,12 @@
             </div>
             <div class="form-group">
                 <label for="">Email</label>
-                <input name="email" [(ngModel)]="customer.email" type="text" class="form-control" required>
+                <input name="email" [(ngModel)]="customer.email" type="text" class="form-control"
+                    pattern="^[a-z0-9.-_]{2,}@{1}[a-z0-9.-]{2,}\.{1}[a-z]{2,4}$" placeholder="sample1234@sample.com"
+                    required>
                 <div [hidden]="customerForm.controls.email?.valid || customerForm.controls.email?.pristine"
                     class="error-feedback">
-                    ....
+                    Wrong email format / recommended format: sample1234@sample.com
                 </div>
             </div>
             <div class="form-group">
