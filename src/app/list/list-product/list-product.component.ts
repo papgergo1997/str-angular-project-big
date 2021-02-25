@@ -29,7 +29,7 @@ export class ListProductComponent implements OnInit {
   onDelete(product: Product): void {
     this.productService.remove(product);
     this.showWarning();
-    this.router.navigate(['bills']);
+    this.router.navigate(['products']);
   }
 
   showWarning() {

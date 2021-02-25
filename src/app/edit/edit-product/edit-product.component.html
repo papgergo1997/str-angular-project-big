@@ -1,55 +1,66 @@
-<p>edit-product works!</p>
 <div class="row">
-    <div *ngIf="(product$ | async) as product" class="col-6 offset-3">
-      <form #productForm="ngForm" (ngSubmit)="onUpdate(productForm, product)">
-        <div class="form-group">
-          <label for="">Név</label>
-          <input name="name" [(ngModel)]="product.name" type="text"
-            class="form-control" pattern=".{8,25}" required>
-          <div [hidden]="productForm.controls.name?.valid" class="error-message">
-            A névnek minimum 8 maximum 25 karakteresnek kell lennie.
-          </div>
+  <div *ngIf="(product$ | async) as product" class="col-6 offset-3">
+    <form #productForm="ngForm" (ngSubmit)="onUpdate(productForm, product)">
+      <div class="form-group">
+        <label for="">catID</label>
+        <input name="catID" [(ngModel)]="product.catID" type="number" class="form-control" pattern="^[0-9]{1,5}$" required>
+        <div [hidden]="productForm.controls.catID?.valid" class="error-message">
+          catID can only contain number and must be 1-5 characters long!
         </div>
-        <!-- <div class="form-group">
-          <label for="">Dátum</label>
-          <input name="date" [(ngModel)]="event.date" type="text"
-            class="form-control" pattern="^\d{1,2}/\d{1,2}/\d{4}$">
+      </div>
+     
+      <div class="form-group">
+        <label for="">name</label>
+        <input name="name" [(ngModel)]="product.name" type="text" class="form-control" pattern=".{3,15}" required>
+        <div [hidden]="productForm.controls.name?.valid" class="error-message">
+          Name must start with an UPPERCASE character, and must be 3 characters long at least
         </div>
-        <div [hidden]="eventForm.controls.date?.valid" class="error-message">
-          Rossz dátum forma
+      </div>
+
+      <div class="form-group">
+        <label for="">type</label>
+        <input name="type" [(ngModel)]="product.type" type="text" class="form-control" pattern=".{3,15}" required>
+        <div [hidden]="productForm.controls.type?.valid" class="error-message">
+          Type must be 3 characters long at least!
         </div>
-        <div class="form-group">
-          <label for="">Idő</label>
-          <input name="time" [(ngModel)]="event.time" type="text" class="form-control" pattern="^(0?[1-9]|1[0-2])\s*[aApP][mM]\s*$">
+      </div>
+
+      <div class="form-group">
+        <label for="">description</label>
+        <input name="description" [(ngModel)]="product.description" type="text" class="form-control" pattern=".{3,200}" required>
+        <div [hidden]="productForm.controls.description?.valid" class="error-message">
+          Description must be 3-200 characters long!
         </div>
-        <div [hidden]="eventForm.controls.time?.valid" class="error-message">
-          Rossz idő forma
+      </div>
+
+      <div class="form-group">
+        <label for="">price</label>
+        <input name="price" [(ngModel)]="product.price" type="number" class="form-control" pattern="^[0-9]{1,20}$" required>
+        <div [hidden]="productForm.controls.price?.valid" class="error-message">
+          Price can only contain number and must be 1-20 characters long!
         </div>
-        <div class="form-group">
-          <label for="">Ország</label>
-          <input name="country" [(ngModel)]="event.location.country" type="text" class="form-control" pattern="[A-Z\s]{5,25}">
-        </div>
-        <div [hidden]="eventForm.controls.country?.valid" class="error-message">
-          Az ország névnek minimum 5 maximum 25 karakteresnek kell lennie és csupa nagybetű.
-        </div>
-        <div class="form-group">
-          <label for="">Város</label>
-          <input name="city" [(ngModel)]="event.location.city" type="text" class="form-control" pattern="^[A-Z]{1}.{5,25}">
-        </div>
-        <div [hidden]="eventForm.controls.city?.valid" class="error-message">
-          A Város névnek minimum 5 maximum 25 karakteresnek kell lennie és nagybetűvel kezdődik.
-        </div>
-        <div class="form-group">
-          <label for="">Cím</label>
-          <input name="address" [(ngModel)]="event.location.address" type="text" class="form-control" pattern=".{10,50}">
-        </div>
-        <div [hidden]="eventForm.controls.address?.valid" class="error-message">
-          A címnek minimum 10 maximum 50 karakteresnek kell lennie.
-        </div>
-  
-        <button [disabled]="eventForm.invalid" type="submit" class="btn btn-primary btn-block btn-lg">
-          <i class="fa fa-save"></i>
-        </button>
-      </form> -->
-    </div>
+      </div>
+
+      <div class="form-group">
+        <label for="">featured</label>
+        <select name="featured" [(ngModel)]="product.featured" class="form-control" >
+          <option>false</option>
+          <option>true</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="">active</label>
+        <select name="active" [(ngModel)]="product.active" class="form-control" >
+          <option>false</option>
+          <option>true</option>
+        </select>
+      </div>
+
+      
+      <button [disabled]="productForm.invalid" type="submit" class="btn btn-primary btn-block btn-lg">
+        <i class="fa fa-save"></i>
+      </button>
+    </form>
+  </div>
 </div>
