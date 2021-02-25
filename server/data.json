@@ -193,6 +193,12 @@
       "orderID": 1,
       "amount": 1,
       "status": "new"
+    },
+    {
+      "id": 11,
+      "orderID": 0,
+      "amount": 45,
+      "status": "new"
     }
   ],
   "customers": [
