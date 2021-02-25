@@ -615,6 +615,20 @@
         "notes": "1"
       },
       "active": false
+    },
+    {
+      "id": 31,
+      "firstName": "Béla",
+      "lastName": "Koldus",
+      "email": "koldus.bela@citromail.hu",
+      "address": {
+        "zip": "0000",
+        "country": "HUNGARY",
+        "city": "Bármelyik",
+        "street": "Híd alatt",
+        "notes": "12"
+      },
+      "active": false
     }
   ],
   "orders": [
