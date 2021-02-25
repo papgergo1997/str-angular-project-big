@@ -136,8 +136,8 @@
   "bills": [
     {
       "id": 1,
-      "orderID": 11123456,
-      "amount": 31000,
+      "orderID": 234,
+      "amount": 2344,
       "status": "new"
     },
     {
@@ -199,20 +199,44 @@
       "orderID": 0,
       "amount": 45,
       "status": "new"
+    },
+    {
+      "id": 12,
+      "orderID": 158,
+      "amount": 58,
+      "status": "paid"
+    },
+    {
+      "id": 13,
+      "orderID": 33,
+      "amount": 124555,
+      "status": "new"
+    },
+    {
+      "id": 14,
+      "orderID": 44,
+      "amount": 4577,
+      "status": "paid"
+    },
+    {
+      "id": 15,
+      "orderID": 42,
+      "amount": 77770,
+      "status": "new"
     }
   ],
   "customers": [
     {
       "id": 1,
-      "firstName": "Claudianus",
-      "lastName": "Mullin",
+      "firstName": "Claudianusaa",
+      "lastName": "Mullin elvtársnő",
       "email": "cmullin0@java.com",
       "address": {
         "zip": "RG11",
         "country": "ENGLAND",
         "city": "London",
         "street": "Commercial Center",
-        "notes": "80"
+        "notes": "800"
       },
       "active": false
     },
