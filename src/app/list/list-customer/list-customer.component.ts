@@ -12,7 +12,11 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ListCustomerComponent implements OnInit {
 
-  sortKey: string = '';
+  // szükséges változók a filterhez
+  filterKey: string = 'id';
+  phrase: string = '';
+  // szükséges változók a filterhez
+  sortKey: string = '';  
   customerProps: string[] = Object.keys(new Customer());
   customerList$: BehaviorSubject<Customer[]> = this.customerService.list$;
   ascend: boolean = true;
