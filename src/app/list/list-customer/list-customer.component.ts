@@ -28,14 +28,14 @@ export class ListCustomerComponent implements OnInit {
   }
 
   onChangeSort(data: string): void {
-    if (!data.includes(this.customerProps[4])) {
+    if (data != this.customerProps[4]) {
       this.sortKey = data;
       this.ascend = !this.ascend;
       console.log(data)
     } else {
-      this.sortKey = this.address[1];
+      this.sortKey = `${this.customerProps[4]}.${this.address[0]}`;
       this.ascend = !this.ascend;
-      console.log(`address.${this.address[1]}`)
+      console.log(`${this.customerProps[4]}.${this.address[0]}`)
     }
 
   }
