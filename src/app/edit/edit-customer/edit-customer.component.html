@@ -38,10 +38,10 @@
             <div class="form-group">
                 <label for="">Country</label>
                 <input name="country" [(ngModel)]="customer.address.country" type="text" class="form-control"
-                    pattern="[A-Z ]{5,25}" placeholder="SAMPLE COUNTRY" required>
+                    pattern="[A-Za-z ]{3,25}" placeholder="SAMPLE COUNTRY" required>
                 <div [hidden]="customerForm.controls.country?.valid || customerForm.controls.country?.pristine"
                     class="error-feedback">
-                    The country must be 5-25 characters long / Use only UPPERCASE characters
+                    Wrong county format / The country must be 5-25 characters long
                 </div>
             </div>
             <div class="form-group">
