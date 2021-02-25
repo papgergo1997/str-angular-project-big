@@ -148,7 +148,7 @@
     },
     {
       "id": 3,
-      "orderID": "111",
+      "orderID": 11,
       "amount": 31000,
       "status": "new"
     },
@@ -172,7 +172,7 @@
     },
     {
       "id": 7,
-      "orderID": "100",
+      "orderID": 10,
       "amount": 6000,
       "status": "new"
     },
@@ -192,12 +192,6 @@
       "id": 10,
       "orderID": 1,
       "amount": 1,
-      "status": "new"
-    },
-    {
-      "id": 11,
-      "orderID": 0,
-      "amount": 45,
       "status": "new"
     },
     {
@@ -229,7 +223,7 @@
     {
       "id": 1,
       "firstName": "Claudianusaa",
-      "lastName": "Mullin elvtársnő",
+      "lastName": "Mullin elvtárs",
       "email": "cmullin0@java.com",
       "address": {
         "zip": "RG11",
@@ -242,7 +236,7 @@
     },
     {
       "id": 2,
-      "firstName": "Jarred",
+      "firstName": "Jarredka",
       "lastName": "Reoch",
       "email": "jreoch1@cisco.com",
       "address": {
@@ -257,14 +251,14 @@
     {
       "id": 3,
       "firstName": "Thedrick",
-      "lastName": "Royall",
+      "lastName": "Royallosh",
       "email": "troyall2@globo.com",
       "address": {
         "zip": "221354",
         "country": "USA",
         "city": "New York",
         "street": "Briar Crest Street",
-        "notes": "7"
+        "notes": "76"
       },
       "active": true
     },
