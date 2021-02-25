@@ -9,10 +9,11 @@
         <form #customerForm="ngForm" (ngSubmit)="onUpdate(customerForm, customer)">
             <div class="form-group">
                 <label for="">FirstName</label>
-                <input name="firstName" [(ngModel)]="customer.firstName" type="text" class="form-control" required>
+                <input name="firstName" [(ngModel)]="customer.firstName" type="text" class="form-control"
+                    pattern="^[A-ZÁÉŐÚŰÖÜÓÍ]{1}[a-záéűúőöüóí ]{1,}" required>
                 <div [hidden]="customerForm.controls.firstName?.valid || customerForm.controls.firstName?.pristine"
                     class="error-feedback">
-                    ....
+                    FirstName must start with an UPPERCASE character, and must be 2 characters long at least
                 </div>
             </div>
             <div class="form-group">
