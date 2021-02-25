@@ -4,7 +4,6 @@ import { BehaviorSubject } from 'rxjs';
 import { Customer } from 'src/app/models/Customer';
 import { CustomerService } from 'src/app/service/customer.service';
 import { ToastrService } from 'ngx-toastr';
-import { Address } from 'src/app/models/Address';
 
 @Component({
   selector: 'app-list-customer',
@@ -17,12 +16,11 @@ export class ListCustomerComponent implements OnInit {
   filterKey: string = 'id';
   phrase: string = '';
   // szükséges változók a filterhez
-  sortKey: string = '';
-  zip: string = 'country';
-  address: string[] = Object.keys(new Address());
+  sortKey: string = '';  
   customerProps: string[] = Object.keys(new Customer());
   customerList$: BehaviorSubject<Customer[]> = this.customerService.list$;
   ascend: boolean = true;
+  zip: string = ''
 
   constructor(private customerService: CustomerService,
     private router: Router,
@@ -32,16 +30,13 @@ export class ListCustomerComponent implements OnInit {
   }
 
   onChangeSort(data: string): void {
-    if (data != this.customerProps[4]) {
-      this.sortKey = data;
-      this.ascend = !this.ascend;
-      console.log(data)
+    if (data === 'address') {
+      this.sortKey = 'address';
+      this.zip = 'zip';
     } else {
-      this.sortKey = `${this.customerProps[4]}.${this.address[0]}`;
-      this.ascend = !this.ascend;
-      console.log(`${this.customerProps[4]}.${this.address[0]}`)
+      this.sortKey = data;
     }
-
+    this.ascend = !this.ascend;
   }
 
   onDeleteClick(customer: Customer): void {

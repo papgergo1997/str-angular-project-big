@@ -30,8 +30,7 @@
                                     <th></th>
                                 </thead>
                                 <tbody>
-                                    <tr
-                                        *ngFor="let customer of customerList$ | async | filter:filterKey:phrase | sort:sortKey: ascend">
+                                    <tr *ngFor="let customer of customerList$ | async | filter:filterKey:phrase | sort:sortKey: ascend: zip">
                                         <td>
                                             {{ customer.id }}
                                         </td>
