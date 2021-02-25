@@ -37,10 +37,8 @@ export class OrderService {
     );
   }
 
-  update(order: Order): void {
-    this.http.patch<Order>(`${this.apiUrl}/${order.id}`, order).subscribe(
-      () => this.getAll()
-    );
+  update(order: Order): Observable<Order> {
+    return this.http.patch<Order>(`${this.apiUrl}/${order.id}`, order);
   }
 
   remove(order: Order): void {

@@ -131,13 +131,8 @@
   "bills": [
     {
       "id": 1,
-<<<<<<< HEAD
-      "orderID": 123,
-      "amount": 778,
-=======
       "orderID": 234,
       "amount": 2344,
->>>>>>> origin/dev
       "status": "new"
     },
     {
@@ -658,7 +653,7 @@
       "id": 1,
       "customerID": 3,
       "productID": 1,
-      "amount": 23,
+      "amount": 2,
       "status": "new"
     },
     {

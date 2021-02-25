@@ -17,9 +17,8 @@
             <div class="form-group">
                 <label>Amount</label>
                 <input
-                  name="amount"
+                  name="amount" type="number" class="form-control pl-3"
                   [(ngModel)]="bill.amount"
-                  type="number" class="form-control pl-3"
                   placeholder="e.g. 7"
                   pattern="[0-9]{1,}" required>
                 <div [hidden]="billForm.controls.amount?.valid || billForm.controls.amount?.pristine " class="error-message">
