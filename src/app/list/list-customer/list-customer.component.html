@@ -17,7 +17,8 @@
                         <div class="table-responsive">
                             <table class="table table-striped">
                                 <thead class=" text-primary">
-                                    <th *ngFor="let prop of customerProps" (click)="onChangeSort(prop)">{{prop}}</th>
+                                    <th class="sortedHeads" *ngFor="let prop of customerProps"
+                                        (click)="onChangeSort(prop)">{{prop}}</th>
                                     <th></th>
                                 </thead>
                                 <tbody>
