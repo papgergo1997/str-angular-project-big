@@ -47,7 +47,7 @@
             <div class="form-group">
                 <label for="">City</label>
                 <input name="city" [(ngModel)]="customer.address.city" type="text" class="form-control"
-                    pattern="^[A-Z]{1}[A-Za-zÁÉŐÚŰÖÜÓÍáéőúűöüóí ]{4,24}$" required>
+                    pattern="^[A-Z]{1}[A-Za-zÁÉŐÚŰÖÜÓÍáéőúűöüóí ]{4,24}$" placeholder="Sample City" required>
                 <div [hidden]="customerForm.controls.city?.valid || customerForm.controls.city?.pristine"
                     class="error-feedback">
                     The city must be 5-25 characters long.
