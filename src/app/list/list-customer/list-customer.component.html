@@ -17,11 +17,11 @@
                         <div class="table-responsive">
                             <table class="table table-striped">
                                 <thead class=" text-primary">
-                                    <th *ngFor="let prop of customerProps">{{prop}}</th>
+                                    <th *ngFor="let prop of customerProps" (click)="onChangeSort(prop)">{{prop}}</th>
                                     <th></th>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let customer of customerList$ | async">
+                                    <tr *ngFor="let customer of customerList$ | async | sort:sortKey">
                                         <td>
                                             {{ customer.id }}
                                         </td>
