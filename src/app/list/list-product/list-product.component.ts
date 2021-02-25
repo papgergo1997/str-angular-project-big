@@ -11,6 +11,8 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class ListProductComponent implements OnInit {
 
+  productProperties: string[] = Object.keys(new Product());
+
   productList: BehaviorSubject<Product[]> = this.productService.list$;
 
   constructor(
@@ -19,6 +21,11 @@ export class ListProductComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.productService.getAll();
+  }
+
+  onDelete(product: Product): void {
+    this.productService.remove(product);
   }
 
 }

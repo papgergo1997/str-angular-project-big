@@ -12,6 +12,8 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ListCustomerComponent implements OnInit {
 
+  sortKey: string = '';
+  customerProps: string[] = Object.keys(new Customer());
   customerList$: BehaviorSubject<Customer[]> = this.customerService.list$
 
   constructor(private customerService: CustomerService,
@@ -19,6 +21,10 @@ export class ListCustomerComponent implements OnInit {
     private toastr: ToastrService) { this.customerService.getAll(); }
 
   ngOnInit(): void {
+  }
+
+  onChangeSort(data: string): void {
+    this.sortKey = data;
   }
 
   onDeleteClick(customer: Customer): void {

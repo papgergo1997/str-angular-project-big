@@ -20,6 +20,7 @@ import { EditCustomerComponent } from './edit/edit-customer/edit-customer.compon
 import { ToastrModule } from 'ngx-toastr';
 import { EditProductComponent } from './edit/edit-product/edit-product.component';
 import { PagiPipe } from './pipe/pagi.pipe';
+import { SortPipe } from './pipe/sort.pipe';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { PagiPipe } from './pipe/pagi.pipe';
     EditCustomerComponent,
     EditProductComponent,
     PagiPipe,
+    SortPipe,
   ],
   imports: [
     HttpClientModule,

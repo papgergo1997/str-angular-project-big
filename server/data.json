@@ -1,20 +1,10 @@
 {
   "products": [
     {
-      "id": 0,
-      "name": "",
-      "type": "",
-      "catID": 0,
-      "description": "",
-      "price": 0,
-      "featured": true,
-      "active": true
-    },
-    {
       "id": 1,
       "name": "Kencefice",
       "type": "Kence",
-      "catID": 1,
+      "KatID": 1,
       "description": "Nagy hatékonyságú, gyorsan felszívódó krém. Leginkább különféle ficek, külsődleges kezelésére, de ficamokra is jó",
       "price": 1500,
       "featured": true,
@@ -24,7 +14,7 @@
       "id": 2,
       "name": "Szemölcsölő",
       "type": "Kence",
-      "catID": 1,
+      "KatID": 1,
       "description": "Ez a nagyszerű kenőcs öl, cs, és ölő, rákenhető a szemre és/vagy ölcsre",
       "price": 500,
       "featured": false,
@@ -34,7 +24,7 @@
       "id": 3,
       "name": "Gombásító",
       "type": "Kence",
-      "catID": 1,
+      "KatID": 1,
       "description": "Évek óta szenved, mert nem gombás a lába vagy a körme? Kiközösítik a trendi gombázók? Itt a megoldás!! Bárhová felkenhető gombásító.",
       "price": 2534,
       "featured": true,
@@ -44,7 +34,7 @@
       "id": 4,
       "name": "Bifunction",
       "type": "Kütyü",
-      "catID": 2,
+      "KatID": 2,
       "description": "Több évtizednyi kutatómunka után magyar szakemberek elkészítették a This-t is bind-oló arrow function-t. Most bevezető akciós áron!",
       "price": 253000,
       "featured": true,
@@ -54,7 +44,7 @@
       "id": 5,
       "name": "Fanégyzet",
       "type": "Kütyü",
-      "catID": 2,
+      "KatID": 2,
       "description": "A fából vaskarika már unalmas. Itt az új találmány! A vasból fanégyzet! Rengeteg okos funkcióval! Például, ha matek órán ki kell számítani egy négyzet területét, itt van a fanégyzet! ",
       "price": 3000,
       "featured": true,
@@ -64,7 +54,7 @@
       "id": 6,
       "name": "Antikocka",
       "type": "Kütyü",
-      "catID": 2,
+      "KatID": 2,
       "description": "Csúfolnak, mert kocka vagy? Vedd elő az antikockát és mutasd meg nekik, hogy nem. Bármit vagy bárkit kockátlanít.",
       "price": 2400,
       "featured": true,
@@ -74,7 +64,7 @@
       "id": 7,
       "name": "Nemoda",
       "type": "Kütyü",
-      "catID": 2,
+      "KatID": 2,
       "description": "Egyedülálló GPS rendszer, ha nem tudod merre tovább. Csak írj be egy helyet, címet, a keresőbe. Ez az egyedi GPS garantáltan nem oda fog vezetni. Random felfedezőknek",
       "price": 3000,
       "featured": true,
@@ -84,7 +74,7 @@
       "id": 8,
       "name": "Kegyet Lenke",
       "type": "Emberes",
-      "catID": 3,
+      "KatID": 3,
       "description": "Egy jó választás, ha Kell a házisárkány a háznál",
       "price": 100000,
       "featured": false,
@@ -94,7 +84,7 @@
       "id": 9,
       "name": "Hidegen",
       "type": "Emberes",
-      "catID": 3,
+      "KatID": 3,
       "description": "Forró napokra a legjobb. Ettől a váratlan idegentől a házadban garantáltan kiráz a hideg.",
       "price": 1000000,
       "featured": false,
@@ -104,17 +94,17 @@
       "id": 10,
       "name": "Szemes",
       "type": "Emberes",
-      "catID": 3,
+      "KatID": 3,
       "description": "Szemesnek áll a világ. Ez nagyon igaz rá, szinte bárhol képes állni. Stand up-okra, munkások mellé, ünnepségekre, stb. Most extra jótállással.",
       "price": 50000,
       "featured": false,
       "active": false
     },
     {
-      "id": 10,
+      "id": 11,
       "name": "Megseverő",
       "type": "Emberes",
-      "catID": 3,
+      "KatID": 3,
       "description": "Gyenge vagy, mindenki, bárki és akárki megver? Erre a hősre van szükséged! Megseverő szuperereje, hogy erősengyenge. Ő egy ember, aki biztosan nem fog megverni.",
       "price": 1100000,
       "featured": false,
@@ -200,8 +190,8 @@
     },
     {
       "id": 10,
-      "orderID": 56,
-      "amount": 45,
+      "orderID": 1,
+      "amount": 1,
       "status": "new"
     },
     {
@@ -617,6 +607,34 @@
         "notes": "56"
       },
       "active": true
+    },
+    {
+      "id": 30,
+      "firstName": "P",
+      "lastName": "Jhon",
+      "email": "e",
+      "address": {
+        "zip": "1",
+        "country": "COUNTRY",
+        "city": "Cityke",
+        "street": "str",
+        "notes": "1"
+      },
+      "active": false
+    },
+    {
+      "id": 31,
+      "firstName": "Béla",
+      "lastName": "Koldus",
+      "email": "koldus.bela@citromail.hu",
+      "address": {
+        "zip": "0000",
+        "country": "HUNGARY",
+        "city": "Bármelyik City",
+        "street": "Híd alatt",
+        "notes": "12"
+      },
+      "active": false
     }
   ],
   "orders": [
@@ -624,13 +642,13 @@
       "id": 1,
       "customerID": 3,
       "productID": 1,
-      "amount": 2,
+      "amount": 23,
       "status": "new"
     },
     {
       "id": 2,
-      "customerID": 7,
-      "productID": 3,
+      "customerID": 8,
+      "productID": 4,
       "amount": 4,
       "status": "new"
     },

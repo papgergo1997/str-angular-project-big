@@ -13,7 +13,7 @@ export class ListOrderComponent implements OnInit {
   orderProperties: string[] = Object.keys(new Order());
   orderList$: BehaviorSubject<Order[]> = this.orderService.orderList$;
 
-  //phrase: string = "";
+  // phrase: string = "";
 
 
   constructor(
@@ -25,7 +25,7 @@ export class ListOrderComponent implements OnInit {
   }
 
 
-  removeOrder(order: Order) {
+  removeOrder(order: Order): void {
     this.orderService.remove(order);
   }
 

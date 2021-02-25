@@ -8,6 +8,7 @@ import { ListProductComponent } from './list/list-product/list-product.component
 import { ListCustomerComponent } from './list/list-customer/list-customer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EditCustomerComponent } from './edit/edit-customer/edit-customer.component';
+import { EditProductComponent } from './edit/edit-product/edit-product.component';
 
 
 const routes: Routes = [
@@ -34,6 +35,10 @@ const routes: Routes = [
   {
     path: 'products',
     component: ListProductComponent
+  },
+  {
+    path: 'products/:id',
+    component: EditProductComponent
   },
   {
     path: 'customers',
