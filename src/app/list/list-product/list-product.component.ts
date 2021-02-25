@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { BehaviorSubject } from 'rxjs';
 import { Product } from 'src/app/models/Product';
 import { ProductService } from 'src/app/service/product.service';
@@ -18,6 +19,7 @@ export class ListProductComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private router: Router,
+    private toastr: ToastrService,
   ) { }
 
   ngOnInit(): void {
@@ -26,6 +28,12 @@ export class ListProductComponent implements OnInit {
 
   onDelete(product: Product): void {
     this.productService.remove(product);
+    this.showWarning();
+    this.router.navigate(['bills']);
+  }
+
+  showWarning() {
+    this.toastr.warning('You have successfully deleted the product!', 'Deleted', { timeOut: 4000 })
   }
 
 }
