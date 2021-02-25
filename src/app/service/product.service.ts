@@ -36,10 +36,8 @@ export class ProductService {
   //   return this.http.get<Product>(`${this.apiUrl}/${id}`);
   // }
 
-  update(product: Product): void {
-    this.http.patch<Product>(`${this.apiUrl}/${product.id}`, product).subscribe(
-      () => this.getAll()
-    );
+  update(product: Product): Observable<Product> {
+   return this.http.patch<Product>(`${this.apiUrl}/${product.id}`, product)
   }
   
   remove(product: Product): void {
