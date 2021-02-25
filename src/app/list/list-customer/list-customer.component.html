@@ -22,7 +22,7 @@
                                     <th></th>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let customer of customerList$ | async | sort:sortKey">
+                                    <tr *ngFor="let customer of customerList$ | async | sort:sortKey: ascend">
                                         <td>
                                             {{ customer.id }}
                                         </td>
