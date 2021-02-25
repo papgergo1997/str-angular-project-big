@@ -4,6 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import { Customer } from 'src/app/models/Customer';
 import { CustomerService } from 'src/app/service/customer.service';
 import { ToastrService } from 'ngx-toastr';
+import { Address } from 'src/app/models/Address';
 
 @Component({
   selector: 'app-list-customer',
@@ -13,6 +14,8 @@ import { ToastrService } from 'ngx-toastr';
 export class ListCustomerComponent implements OnInit {
 
   sortKey: string = '';
+  zip: string = 'country';
+  address: string[] = Object.keys(new Address());
   customerProps: string[] = Object.keys(new Customer());
   customerList$: BehaviorSubject<Customer[]> = this.customerService.list$;
   ascend: boolean = true;
@@ -25,8 +28,16 @@ export class ListCustomerComponent implements OnInit {
   }
 
   onChangeSort(data: string): void {
-    this.sortKey = data;
-    this.ascend = !this.ascend;
+    if (!data.includes(this.customerProps[4])) {
+      this.sortKey = data;
+      this.ascend = !this.ascend;
+      console.log(data)
+    } else {
+      this.sortKey = this.address[1];
+      this.ascend = !this.ascend;
+      console.log(`address.${this.address[1]}`)
+    }
+
   }
 
   onDeleteClick(customer: Customer): void {
