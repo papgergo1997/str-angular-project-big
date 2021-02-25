@@ -33,7 +33,7 @@ export class ListProductComponent implements OnInit {
   }
 
   showWarning() {
-    this.toastr.warning('You have successfully deleted the product!', 'Message', { timeOut: 4000 })
+    this.toastr.warning('You have successfully deleted the product!', 'Deleted', { timeOut: 4000 })
   }
 
 }
