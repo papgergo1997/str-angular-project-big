@@ -38,10 +38,9 @@ export class EditProductComponent implements OnInit {
       this.router.navigate(['products']);
       this.showSuccess();
     } else {
-      this.productService.update(product).subscribe(
-      () => this.router.navigate(['products'])
-    );
-    this.showInfo();
+      this.productService.update(product);
+      this.router.navigate(['products'])
+      this.showInfo();
     }
   }
 
