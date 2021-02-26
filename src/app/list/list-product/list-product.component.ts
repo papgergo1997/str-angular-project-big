@@ -12,6 +12,11 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class ListProductComponent implements OnInit {
 
+  // szükséges változók a filterhez
+  filterKey: string = 'id';
+  phrase: string = '';
+  // szükséges változók a filterhez
+
   productProperties: string[] = Object.keys(new Product());
 
   productList: BehaviorSubject<Product[]> = this.productService.list$;
