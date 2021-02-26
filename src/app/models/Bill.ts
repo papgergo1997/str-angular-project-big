@@ -1,7 +1,7 @@
 export class Bill {
-  id: number = 0;
-  orderID: number = 0;
-  amount: number = 0;
+  id = 0;
+  orderID = 0;
+  amount = 0;
   status: string = 'new' || 'paid';
 
   constructor(properties?: Bill) {

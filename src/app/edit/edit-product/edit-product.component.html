@@ -3,12 +3,13 @@
     <form #productForm="ngForm" (ngSubmit)="onUpdate(productForm, product)">
       <div class="form-group">
         <label for="">catID</label>
-        <input name="catID" [(ngModel)]="product.catID" type="number" class="form-control" pattern="^[0-9]{1,5}$" required>
+        <input name="catID" [(ngModel)]="product.catID" type="number" class="form-control" pattern="^[0-9]{1,5}$"
+          required>
         <div [hidden]="productForm.controls.catID?.valid" class="error-message">
           catID can only contain number and must be 1-5 characters long!
         </div>
       </div>
-     
+
       <div class="form-group">
         <label for="">name</label>
         <input name="name" [(ngModel)]="product.name" type="text" class="form-control" pattern=".{3,15}" required>
@@ -56,12 +57,13 @@
           <option>true</option>
         </select>
       </div>
-
       
+
       <button [disabled]="productForm.invalid || updating" type="submit" class="btn btn-primary btn-block btn-lg">
         <i *ngIf="!updating" class="fa fa-save">save</i>
         <i *ngIf="updating" class="fa fa-refresh">refresh</i>
       </button>
+
     </form>
   </div>
 </div>

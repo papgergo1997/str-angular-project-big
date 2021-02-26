@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Order } from '../models/Order';
 import { BehaviorSubject, Observable, of } from 'rxjs';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http'
 
 export class OrderService {
 
-  apiUrl: string = 'http://localhost:3000/orders';
+  apiUrl = 'http://localhost:3000/orders';
   orderList$: BehaviorSubject<Order[]> = new BehaviorSubject<Order[]>([]);
 
   constructor(private http: HttpClient) { }
