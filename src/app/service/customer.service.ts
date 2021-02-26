@@ -9,7 +9,7 @@ import { Customer } from '../models/Customer';
 export class CustomerService {
 
   list$: BehaviorSubject<Customer[]> = new BehaviorSubject<Customer[]>([]);
-  apiUrl: string = 'http://localhost:3000/customers';
+  apiUrl = 'http://localhost:3000/customers';
 
   constructor(private http: HttpClient) {
     this.getAll();
@@ -26,8 +26,9 @@ export class CustomerService {
     const ev: Observable<Customer> | undefined = this.http.get<Customer>(`${this.apiUrl}/${id}`);
     if (id == 0) {
       return of(new Customer());
-    } else
+    } else {
       return ev;
+    }
   }
 
   create(customer: Customer): Observable<Customer> {

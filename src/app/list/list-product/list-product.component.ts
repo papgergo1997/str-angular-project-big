@@ -13,8 +13,8 @@ import { ProductService } from 'src/app/service/product.service';
 export class ListProductComponent implements OnInit {
 
   // szükséges változók a filterhez
-  filterKey: string = 'id';
-  phrase: string = '';
+  filterKey = 'id';
+  phrase = '';
   // szükséges változók a filterhez
 
   productProperties: string[] = Object.keys(new Product());
@@ -37,8 +37,8 @@ export class ListProductComponent implements OnInit {
     this.router.navigate(['products']);
   }
 
-  showWarning() {
-    this.toastr.warning('You have successfully deleted the product!', 'Deleted', { timeOut: 4000 })
+  showWarning(): void {
+    this.toastr.warning('You have successfully deleted the product!', 'Deleted', { timeOut: 4000 });
   }
 
 }

@@ -13,11 +13,11 @@ export class ListOrderComponent implements OnInit {
   orderProperties: string[] = Object.keys(new Order());
   orderList$: BehaviorSubject<Order[]> = this.orderService.orderList$;
   // szükséges változók a filterhez
-  filterKey: string = 'id';
-  phrase: string = '';
+  filterKey = 'id';
+  phrase = '';
   // szükséges változók a filterhez
 
-  ascend: boolean = true;
+  ascend = true;
   sortKey = '';
 
 
