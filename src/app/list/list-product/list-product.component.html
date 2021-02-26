@@ -3,29 +3,51 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header card-header-primary">
-                        <h4 class="card-title ">Termék Lista</h4>
-                        <p class="card-category"> Itt lehet új terméket létrehozni, módosítani vagy törölni</p>
+                    <div class="card-header card-header-success">
+                        <h4 class="card-title ">Products List</h4>
+                        <p class="card-category"> This is a list of products. You can add, modify and delete an product.
+                        </p>
+                    </div>
+                    <!-- Filter component -->
+                    <div class="col-12 mx-auto row py-2 product-search">
+                        <select [(ngModel)]="filterKey" class="options-control form-control col-1 ml-auto py-4">
+                            <option *ngFor="let prop of productProperties" [value]="prop">{{prop}}</option>
+                        </select>
+                        <input [(ngModel)]="phrase" class="form-control mx-1 col-4 py-4" type="text"
+                            placeholder="Search">
+                        <button class="btn btn-success col-1 mr-auto" type="submit"><span
+                                class="material-icons">search</span></button>
+                    </div>
+                    <!-- Filter component -->
+                    <div class="card-body">
+                        <div class="row m-3">
+                            <button class="btn btn-success" [routerLink]="['0']">Add new product</button>
+                        <!-- <h4 class="card-title ">Product List</h4>
+                        <p class="card-category"> This is a list of products. You can add, modify and delete a product.</p>
                     </div>
                     <div class="card-body">
                         <div class="row m-3">
-                            <button class="btn btn-success" [routerLink]="['/products/'+0]">Új termék felvitele</button>
+                            <button class="btn btn-block mb-5" [routerLink]="['/products/'+0]">
+                              <span class="material-icons">
+                                library_add
+                              </span> Add a new product</button> -->
                         </div>
                         <div class="table-responsive">
                             <table class="table table-hover">
                                 <thead class=" text-primary">
-                                    <th> ID </th>
+                                    <!-- <th> ID </th>
                                     <th> KatID </th>
                                     <th> Név </th>
                                     <th> Típus </th>
                                     <th> Leírás </th>
                                     <th> Ár </th>
                                     <th> Aktív </th>
-                                    <th> Kiemelt </th>
+                                    <th> Kiemelt </th> -->
+                                    <th *ngFor="let prop of productProperties">{{ prop }}</th>
                                     <th></th>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let product of productList | async">
+                                    <tr *ngFor="let product of productList | async | filter:filterKey:phrase">
                                         <td>
                                             {{ product.id }}
                                         </td>
@@ -51,9 +73,14 @@
                                             {{ product.featured }}
                                         </td>
                                         <td>
-                                            <button [routerLink]="['/products/' + product.id]" class="btn btn-info">
-                                                Update</button>
-                                            <!-- <button (click)="onDelete(product)" class="btn btn-danger">Delete</button> -->
+                                            <div class="btn-group">
+                                                <button [routerLink]="['product' + product.id]" class="btn btn-info">
+                                                    <span class="material-icons">create</span></button>
+                                                <button (click)="onDelete(product)" class="btn btn-danger">
+                                                    <span class="material-icons">delete</span>
+                                                </button>
+
+                                            </div>
                                         </td>
                                     </tr>
                                 </tbody>

@@ -12,8 +12,17 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ListBillComponent implements OnInit {
 
+  // szükséges változók a filterhez
+  filterKey: string = 'id';
+  phrase: string = '';
+  // szükséges változók a filterhez
+
   billProperties: string[] = Object.keys(new Bill());
-  billList: BehaviorSubject<Bill[]> = this.billService.list$;
+  billList$: BehaviorSubject<Bill[]> = this.billService.list$;
+  indexPage: number = 1;
+  pagiLength: number = 5;
+  ascend: boolean = true;
+  sortKey = '';
 
   constructor(
     private billService: BillService,
@@ -24,6 +33,11 @@ export class ListBillComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onChangeSort(data: string): void {
+    this.sortKey = data;
+    this.ascend = !this.ascend;
+  }
+
   onDelete(bill: Bill): void {
     this.billService.remove(bill);
     this.showWarning();
@@ -31,7 +45,32 @@ export class ListBillComponent implements OnInit {
   }
 
   showWarning() {
-    this.toastr.warning('Sikeresen törölted az eseményt!', 'Üzenet', { timeOut: 4000 })
+    this.toastr.warning('You have successfully deleted a bill!', 'Deleted', { timeOut: 4000 })
+  }
+
+  onPagiNumber(page: number) {
+    this.indexPage = page;
+  }
+
+  onPagiBack() {
+    this.indexPage--;
+    if (this.indexPage < 1) {
+
+      this.billList$.subscribe(data => this.indexPage = Math.ceil(data.length / this.pagiLength))
+    }
+  }
+  onPagiNext() {
+    this.indexPage++;
+    let billPageLength = 0;
+    this.billList$.subscribe(data => billPageLength = Math.ceil(data.length / this.pagiLength))
+    if (this.indexPage > billPageLength) { this.indexPage = 1 }
+  }
+  onPagiLastNumber() {
+    let lastPageNumber = 0;
+    this.billList$.subscribe(data => {
+      lastPageNumber = Math.ceil(data.length / this.pagiLength);
+      this.indexPage = lastPageNumber
+    })
   }
 
 }

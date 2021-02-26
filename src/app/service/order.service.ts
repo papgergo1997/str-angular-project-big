@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Order } from '../models/Order';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http'
 
 @Injectable({
@@ -15,13 +15,20 @@ export class OrderService {
   constructor(private http: HttpClient) { }
 
   getAll(): void {
-    this.http.get<Order[]>(this.apiUrl).subscribe(order => this.orderList$.next(order)
+    this.http.get<Order[]>(this.apiUrl).subscribe(
+      order => this.orderList$.next(order)
     );
   }
 
   get(id: number): Observable<Order> {
-    id = parseInt(('' + id), 10);
-    return this.http.get<Order>(`${this.apiUrl}/${id}`);
+    id = typeof id === 'string' ? parseInt(id, 10) : id;
+    const order: Order | undefined = this.orderList$.value.find(
+      item => item.id === id);
+    if (order) {
+      return of(order);
+    }
+
+    return of(new Order());
   }
 
   create(order: Order): void {
@@ -30,10 +37,8 @@ export class OrderService {
     );
   }
 
-  update(order: Order): void {
-    this.http.patch<Order>(`${this.apiUrl}/${order.id}`, order).subscribe(
-      () => this.getAll()
-    );
+  update(order: Order): Observable<Order> {
+    return this.http.patch<Order>(`${this.apiUrl}/${order.id}`, order);
   }
 
   remove(order: Order): void {

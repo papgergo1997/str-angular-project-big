@@ -12,14 +12,31 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ListCustomerComponent implements OnInit {
 
+  // szükséges változók a filterhez
+  filterKey: string = 'id';
+  phrase: string = '';
+  // szükséges változók a filterhez
+  sortKey: string = '';  
   customerProps: string[] = Object.keys(new Customer());
-  customerList$: BehaviorSubject<Customer[]> = this.customerService.list$
+  customerList$: BehaviorSubject<Customer[]> = this.customerService.list$;
+  ascend: boolean = true;
+  zip: string = ''
 
   constructor(private customerService: CustomerService,
     private router: Router,
     private toastr: ToastrService) { this.customerService.getAll(); }
 
   ngOnInit(): void {
+  }
+
+  onChangeSort(data: string): void {
+    if (data === 'address') {
+      this.sortKey = 'address';
+      this.zip = 'zip';
+    } else {
+      this.sortKey = data;
+    }
+    this.ascend = !this.ascend;
   }
 
   onDeleteClick(customer: Customer): void {
