@@ -43,13 +43,13 @@ export class ProductService {
   remove(product: Product): void {
     this.http.delete<Product>(`${this.apiUrl}/${product.id}`).subscribe(
       () => this.getAll()
-    );
+    )
   }
 
   create(product: Product): void {
     this.http.post<Product>(this.apiUrl, product).subscribe(
       () => this.getAll()
-    );
+    )
   }
 
   // getFeatured(randomized?: boolean): Product[] {
