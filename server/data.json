@@ -212,6 +212,18 @@
       "orderID": 42,
       "amount": 77770,
       "status": "new"
+    },
+    {
+      "id": 12,
+      "orderID": 452223341,
+      "amount": 5,
+      "status": "new"
+    },
+    {
+      "id": 13,
+      "orderID": 111111111,
+      "amount": 7,
+      "status": "paid"
     }
   ],
   "customers": [
@@ -640,8 +652,8 @@
     {
       "id": 1,
       "customerID": 3,
-      "productID": 1,
-      "amount": 23,
+      "productID": 14,
+      "amount": 222,
       "status": "new"
     },
     {
@@ -649,19 +661,19 @@
       "customerID": 8,
       "productID": 4,
       "amount": 4,
-      "status": "new"
+      "status": "shipped"
     },
     {
       "id": 3,
       "customerID": 11,
       "productID": 4,
       "amount": 12,
-      "status": "shipped"
+      "status": "new"
     },
     {
       "id": 4,
       "customerID": 14,
-      "productID": 6,
+      "productID": 1,
       "amount": 7,
       "status": "shipped"
     },
