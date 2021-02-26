@@ -45,9 +45,9 @@ export class EditBillComponent implements OnInit {
   }
 
   showSuccess() {
-    this.toastr.success('Sikeresen hozzáadtad az eseményt!', 'Üzenet', { timeOut: 3000 })
+    this.toastr.success('You have successfully created a bill!', 'Created', { timeOut: 3000 })
   }
   showInfo() {
-    this.toastr.info('Sikeresen módosítottad az eseményt!', 'Üzenet', { timeOut: 3000 })
+    this.toastr.info('You have successfully updated a bill!', 'Updated', { timeOut: 3000 })
   }
 }
