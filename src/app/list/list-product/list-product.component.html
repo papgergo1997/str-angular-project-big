@@ -2,6 +2,19 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
+                <button class="btn btn-success btn-block mb-5" [routerLink]="['0']"><span class="material-icons">library_add</span>Add a new product</button>
+                
+                <!-- <h4 class="card-title ">Product List</h4>
+                <p class="card-category"> This is a list of products. You can add, modify and delete a product.</p>
+                </div>
+                <div class="card-body">
+                <div class="row m-3">
+                    <button class="btn btn-block mb-5" [routerLink]="['/products/'+0]">
+                      <span class="material-icons">
+                        library_add
+                      </span> Add a new product</button> -->
+                
+
                 <div class="card">
                     <div class="card-header card-header-success">
                         <h4 class="card-title ">Products List</h4>
@@ -20,18 +33,6 @@
                     </div>
                     <!-- Filter component -->
                     <div class="card-body">
-                        <div class="row m-3">
-                            <button class="btn btn-success" [routerLink]="['0']">Add new product</button>
-                        <!-- <h4 class="card-title ">Product List</h4>
-                        <p class="card-category"> This is a list of products. You can add, modify and delete a product.</p>
-                    </div>
-                    <div class="card-body">
-                        <div class="row m-3">
-                            <button class="btn btn-block mb-5" [routerLink]="['/products/'+0]">
-                              <span class="material-icons">
-                                library_add
-                              </span> Add a new product</button> -->
-                        </div>
                         <div class="table-responsive">
                             <table class="table table-hover">
                                 <thead class=" text-primary">
@@ -74,8 +75,8 @@
                                         </td>
                                         <td>
                                             <div class="btn-group">
-                                                <button [routerLink]="['product' + product.id]" class="btn btn-info">
-                                                    <span class="material-icons">create</span></button>
+                                                <button [routerLink]="[product.id]" class="btn btn-info">
+                                                <span class="material-icons">create</span></button>
                                                 <button (click)="onDelete(product)" class="btn btn-danger">
                                                     <span class="material-icons">delete</span>
                                                 </button>
