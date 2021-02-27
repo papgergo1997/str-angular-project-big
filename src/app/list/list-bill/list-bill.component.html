@@ -37,7 +37,7 @@
                                 </thead>
                                 <tbody>
                                     <tr
-                                        *ngFor="let bill of billList$ | async| slice: (indexPage -1)*pagiLength: indexPage*pagiLength | filter:filterKey:phrase | sort: sortKey: ascend">
+                                        *ngFor="let bill of billList$ | async | filter:filterKey:phrase | sort: sortKey: ascend |slice: (indexPage -1)*pagiLength: indexPage*pagiLength">
                                         <td>
                                             {{ bill.id }}
                                         </td>
