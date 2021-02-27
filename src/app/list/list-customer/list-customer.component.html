@@ -5,7 +5,7 @@
                 <button class="btn btn-success btn-block mb-5" [routerLink]="['/customers/'+0]"><span
                         class="material-icons">library_add</span> Add a new customer</button>
                 <div class="card">
-                    <div class="card-header card-header-warning">
+                    <div class="card-header card-header-info">
                         <h4 class="card-title ">Customer's list</h4>
                         <p class="card-category"> This is a list of our customers. You can add, modify or remove any
                             customer if needed.</p>
@@ -14,6 +14,10 @@
                     <div class="col-12 mx-auto row py-2 product-search">
                         <select [(ngModel)]="filterKey" class="options-control form-control col-1 ml-auto py-4">
                             <option *ngFor="let prop of customerProps" [value]="prop">{{prop}}</option>
+                        </select>
+                        <select *ngIf="filterKey == 'address'" [(ngModel)]="aFilterKey"
+                            class="address-options-control options-control form-control col-1 ml-auto py-4">
+                            <option *ngFor="let aprop of addressProps" [value]="aprop">{{aprop}}</option>
                         </select>
                         <input [(ngModel)]="phrase" class="form-control mx-1 col-4 py-4" type="text"
                             placeholder="Search">
@@ -30,7 +34,8 @@
                                     <th></th>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let customer of customerList$ | async | filter:filterKey:phrase | sort:sortKey: ascend: zip">
+                                    <tr
+                                        *ngFor="let customer of customerList$ | async | filter:filterKey:phrase:aFilterKey | sort:sortKey: ascend: zip">
                                         <td>
                                             {{ customer.id }}
                                         </td>

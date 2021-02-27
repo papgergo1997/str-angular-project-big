@@ -4,6 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import { Customer } from 'src/app/models/Customer';
 import { CustomerService } from 'src/app/service/customer.service';
 import { ToastrService } from 'ngx-toastr';
+import { Address } from 'src/app/models/Address';
 
 @Component({
   selector: 'app-list-customer',
@@ -13,18 +14,21 @@ import { ToastrService } from 'ngx-toastr';
 export class ListCustomerComponent implements OnInit {
 
   // szükséges változók a filterhez
-  filterKey = 'id';
-  phrase = '';
+  filterKey: string = 'id';
+  phrase: string = '';
   // szükséges változók a filterhez
+
+  aFilterKey: string = 'zip';
   sortKey: string = '';
+  addressProps: string[] = Object.keys(new Address());
   customerProps: string[] = Object.keys(new Customer());
   customerList$: BehaviorSubject<Customer[]> = this.customerService.list$;
-  ascend = true;
-  zip = '';
+  ascend: boolean = true;
+  zip: string = '';
 
   constructor(private customerService: CustomerService,
-              private router: Router,
-              private toastr: ToastrService) { this.customerService.getAll(); }
+    private router: Router,
+    private toastr: ToastrService) { this.customerService.getAll(); }
 
   ngOnInit(): void {
   }
