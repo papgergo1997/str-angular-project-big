@@ -7,8 +7,9 @@
                 <input
                   name="orderid" type="number" class="form-control pl-3"
                   [(ngModel)]="bill.orderID"
+                  placeholder="e.g. 001"
                   pattern="[0-9]{1,}" required>
-                <div [hidden]="billForm.controls.orderid?.valid" class="error-message">
+                <div [hidden]="billForm.controls.orderid?.valid || billForm.controls.orderid?.pristine" class="error-message">
                   OrderID contains only numbers!
                 </div>
             </div>
@@ -16,11 +17,11 @@
             <div class="form-group">
                 <label>Amount</label>
                 <input
-                  name="amount"
+                  name="amount" type="number" class="form-control pl-3"
                   [(ngModel)]="bill.amount"
-                  type="number" class="form-control pl-3"
+                  placeholder="e.g. 7"
                   pattern="[0-9]{1,}" required>
-                <div [hidden]="billForm.controls.amount?.valid" class="error-message">
+                <div [hidden]="billForm.controls.amount?.valid || billForm.controls.amount?.pristine " class="error-message">
                   Amount contains only numbers!
                 </div>
             </div>
@@ -45,7 +46,7 @@
                   cached
                 </span>
             </button>
-            <div [hidden]="billForm.valid" class="error-message">
+            <div [hidden]="billForm.valid || billForm.pristine" class="error-message">
               All form fields are required!
             </div>
         </form>

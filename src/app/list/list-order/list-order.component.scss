@@ -1,6 +1,11 @@
 // a filter designhoz kell
 .options-control {
     padding:0 !important;
-    height: 48px !important;    
+    height: 48px !important;
 }
 // a filter designhoz kell
+
+.sortedHeads:hover {
+  cursor: pointer;
+  background-color: #f5f5f5;
+}

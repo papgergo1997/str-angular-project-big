@@ -109,6 +109,66 @@
       "price": 1100000,
       "featured": false,
       "active": false
+    },
+    {
+      "id": 15,
+      "catID": 4,
+      "name": "Próbább",
+      "type": "pro",
+      "description": "csak próbabbabababbabababab",
+      "price": 2012,
+      "featured": "false",
+      "active": "true"
+    },
+    {
+      "id": 16,
+      "catID": 4,
+      "name": "nem",
+      "type": "tagu",
+      "description": "cacD",
+      "price": 0,
+      "featured": false,
+      "active": false
+    },
+    {
+      "id": 17,
+      "catID": 1,
+      "name": "cwqc",
+      "type": "casd",
+      "description": "cSC",
+      "price": 0,
+      "featured": false,
+      "active": false
+    },
+    {
+      "id": 18,
+      "catID": 4,
+      "name": "CDC",
+      "type": "dvc",
+      "description": "dvdv",
+      "price": 0,
+      "featured": false,
+      "active": false
+    },
+    {
+      "id": 20,
+      "catID": 1111,
+      "name": "nem vizsg a Nn7",
+      "type": "nemvizsgálja 45",
+      "description": "itt mindegy a szám vagy betű? 444555",
+      "price": 121333,
+      "featured": "true",
+      "active": "true"
+    },
+    {
+      "id": 21,
+      "catID": 6,
+      "name": "Ninja",
+      "type": "kence",
+      "description": "Bér gyilkos kenőcs, ha sok a béred ezt rákened és kinyírja mindet.",
+      "price": 22312354537547997000,
+      "featured": "true",
+      "active": "true"
     }
   ],
   "categories": [
@@ -131,8 +191,8 @@
   "bills": [
     {
       "id": 1,
-      "orderID": 234,
-      "amount": 2344,
+      "orderID": 111234,
+      "amount": 31000,
       "status": "new"
     },
     {
@@ -200,13 +260,25 @@
       "orderID": 42,
       "amount": 77770,
       "status": "new"
+    },
+    {
+      "id": 12,
+      "orderID": 452223341,
+      "amount": 5,
+      "status": "new"
+    },
+    {
+      "id": 13,
+      "orderID": 111111111,
+      "amount": 7,
+      "status": "paid"
     }
   ],
   "customers": [
     {
       "id": 1,
-      "firstName": "Claudianusaa",
-      "lastName": "Mullin elvtárs",
+      "firstName": "Claudi ",
+      "lastName": "Anus",
       "email": "cmullin0@java.com",
       "address": {
         "zip": "RG11",
@@ -597,15 +669,15 @@
     },
     {
       "id": 30,
-      "firstName": "P",
+      "firstName": "Pi",
       "lastName": "Jhon",
-      "email": "e",
+      "email": "sample@sample.com",
       "address": {
-        "zip": "1",
-        "country": "COUNTRY",
+        "zip": "1111",
+        "country": "MIFOLYIKITTGY",
         "city": "Cityke",
-        "street": "str",
-        "notes": "1"
+        "street": "Sample",
+        "notes": "11111"
       },
       "active": false
     },
@@ -628,8 +700,8 @@
     {
       "id": 1,
       "customerID": 3,
-      "productID": 1,
-      "amount": 23,
+      "productID": 14,
+      "amount": 222,
       "status": "new"
     },
     {
@@ -637,19 +709,19 @@
       "customerID": 8,
       "productID": 4,
       "amount": 4,
-      "status": "new"
+      "status": "shipped"
     },
     {
       "id": 3,
-      "customerID": 11,
-      "productID": 4,
-      "amount": 12,
+      "customerID": 1,
+      "productID": 1,
+      "amount": 1,
       "status": "shipped"
     },
     {
       "id": 4,
       "customerID": 14,
-      "productID": 6,
+      "productID": 1,
       "amount": 7,
       "status": "shipped"
     },

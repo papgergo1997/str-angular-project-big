@@ -13,15 +13,15 @@ import { ToastrService } from 'ngx-toastr';
 export class ListBillComponent implements OnInit {
 
   // szükséges változók a filterhez
-  filterKey: string = 'id';
-  phrase: string = '';
+  filterKey = 'id';
+  phrase = '';
   // szükséges változók a filterhez
 
   billProperties: string[] = Object.keys(new Bill());
   billList$: BehaviorSubject<Bill[]> = this.billService.list$;
-  indexPage: number = 1;
-  pagiLength: number = 5;
-  ascend: boolean = true;
+  indexPage = 1;
+  pagiLength = 5;
+  ascend = true;
   sortKey = '';
 
   constructor(
@@ -44,33 +44,33 @@ export class ListBillComponent implements OnInit {
     this.router.navigate(['bills']);
   }
 
-  showWarning() {
-    this.toastr.warning('You have successfully deleted a bill!', 'Deleted', { timeOut: 4000 })
+  showWarning(): void {
+    this.toastr.warning('You have successfully deleted a bill!', 'Deleted', { timeOut: 4000 });
   }
 
-  onPagiNumber(page: number) {
+  onPagiNumber(page: number): void {
     this.indexPage = page;
   }
 
-  onPagiBack() {
+  onPagiBack(): void {
     this.indexPage--;
     if (this.indexPage < 1) {
 
-      this.billList$.subscribe(data => this.indexPage = Math.ceil(data.length / this.pagiLength))
+      this.billList$.subscribe(data => this.indexPage = Math.ceil(data.length / this.pagiLength));
     }
   }
-  onPagiNext() {
+  onPagiNext(): void {
     this.indexPage++;
     let billPageLength = 0;
-    this.billList$.subscribe(data => billPageLength = Math.ceil(data.length / this.pagiLength))
-    if (this.indexPage > billPageLength) { this.indexPage = 1 }
+    this.billList$.subscribe(data => billPageLength = Math.ceil(data.length / this.pagiLength));
+    if (this.indexPage > billPageLength) { this.indexPage = 1; }
   }
-  onPagiLastNumber() {
+  onPagiLastNumber(): void {
     let lastPageNumber = 0;
     this.billList$.subscribe(data => {
       lastPageNumber = Math.ceil(data.length / this.pagiLength);
-      this.indexPage = lastPageNumber
-    })
+      this.indexPage = lastPageNumber;
+    });
   }
 
 }

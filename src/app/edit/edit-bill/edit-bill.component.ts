@@ -14,7 +14,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class EditBillComponent implements OnInit {
 
-  updating: boolean = false;
+  updating = false;
   bill$: Observable<Bill> = this.activatedRoute.params.pipe(
     switchMap( params => this.billService.get(params.id) )
   );
@@ -32,7 +32,7 @@ export class EditBillComponent implements OnInit {
 
   onUpdate(form: NgForm, bill: Bill): void {
     this.updating = true;
-    if(bill.id === 0) {
+    if (bill.id === 0) {
       this.billService.create(bill);
       this.router.navigate(['bills']);
       this.showSuccess();
@@ -44,10 +44,10 @@ export class EditBillComponent implements OnInit {
     }
   }
 
-  showSuccess() {
-    this.toastr.success('Sikeresen hozzáadtad az eseményt!', 'Üzenet', { timeOut: 3000 })
+  showSuccess(): void {
+    this.toastr.success('You have successfully created a bill!', 'Created', { timeOut: 3000 });
   }
-  showInfo() {
-    this.toastr.info('Sikeresen módosítottad az eseményt!', 'Üzenet', { timeOut: 3000 })
+  showInfo(): void {
+    this.toastr.info('You have successfully updated a bill!', 'Updated', { timeOut: 3000 });
   }
 }

@@ -1,12 +1,12 @@
 export class Product {
-  id: number = 0;
-  catID: number = 0;
-  name: string = "";
-  type: string = "";
-  description: string = "";
-  price: number = 0;
-  featured: boolean = false;
-  active: boolean = false;  
+  id = 0;
+  catID = 0;
+  name = '';
+  type = '';
+  description = '';
+  price = 0;
+  featured = false;
+  active = false;
 
   // constructor(id: number, name: string, type: string, catID: number, description: string, price: number,
   //             active: boolean, featured: boolean) {
@@ -23,10 +23,10 @@ export class Product {
   constructor(properties?: Product) {
     if (properties) {
       this.id = properties.id || 0;
-      this.name = properties.name || "";
-      this.type = properties.type || "";
+      this.name = properties.name || '';
+      this.type = properties.type || '';
       this.catID = properties.catID || 0;
-      this.description = properties.description || "";
+      this.description = properties.description || '';
       this.price = properties.price || 0;
       this.active = properties.active || false;
       this.featured = properties.featured || false;

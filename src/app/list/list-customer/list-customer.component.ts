@@ -13,18 +13,18 @@ import { ToastrService } from 'ngx-toastr';
 export class ListCustomerComponent implements OnInit {
 
   // szükséges változók a filterhez
-  filterKey: string = 'id';
-  phrase: string = '';
+  filterKey = 'id';
+  phrase = '';
   // szükséges változók a filterhez
   sortKey: string = '';
   customerProps: string[] = Object.keys(new Customer());
   customerList$: BehaviorSubject<Customer[]> = this.customerService.list$;
-  ascend: boolean = true;
-  zip: string = ''
+  ascend = true;
+  zip = '';
 
   constructor(private customerService: CustomerService,
-    private router: Router,
-    private toastr: ToastrService) { this.customerService.getAll(); }
+              private router: Router,
+              private toastr: ToastrService) { this.customerService.getAll(); }
 
   ngOnInit(): void {
   }
@@ -43,7 +43,7 @@ export class ListCustomerComponent implements OnInit {
   onDeleteClick(customer: Customer): void {
     this.customerService.remove(customer).subscribe();
     this.router.navigate(['customers']);
-    this.toastr.warning('You have successfully deleted a customer', 'Deleted', { timeOut: 3000 })
+    this.toastr.warning('You have successfully deleted a customer', 'Deleted', { timeOut: 3000 });
     this.customerService.getAll();
   }
 }

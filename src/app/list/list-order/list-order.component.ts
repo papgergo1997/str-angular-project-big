@@ -13,11 +13,12 @@ export class ListOrderComponent implements OnInit {
   orderProperties: string[] = Object.keys(new Order());
   orderList$: BehaviorSubject<Order[]> = this.orderService.orderList$;
   // szükséges változók a filterhez
-  filterKey: string = 'id';
-  phrase: string = '';
+  filterKey = 'id';
+  phrase = '';
   // szükséges változók a filterhez
 
-  // phrase: string = "";
+  ascend = true;
+  sortKey = '';
 
 
   constructor(
@@ -33,8 +34,9 @@ export class ListOrderComponent implements OnInit {
     this.orderService.remove(order);
   }
 
-  /*   onChangePhrase(event: Event) {
-      this.phrase = (event.target as HTMLInputElement).value;
-    } */
+  onChangeSort(data: string): void {
+    this.sortKey = data;
+    this.ascend = !this.ascend;
+  }
 
 }
