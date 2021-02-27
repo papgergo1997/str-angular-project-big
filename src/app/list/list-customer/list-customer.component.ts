@@ -16,7 +16,7 @@ export class ListCustomerComponent implements OnInit {
   filterKey = 'id';
   phrase = '';
   // szükséges változók a filterhez
-  sortKey = '';
+  sortKey: string = '';
   customerProps: string[] = Object.keys(new Customer());
   customerList$: BehaviorSubject<Customer[]> = this.customerService.list$;
   ascend = true;
@@ -34,6 +34,7 @@ export class ListCustomerComponent implements OnInit {
       this.sortKey = 'address';
       this.zip = 'zip';
     } else {
+      this.zip = '';
       this.sortKey = data;
     }
     this.ascend = !this.ascend;
