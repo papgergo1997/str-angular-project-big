@@ -14,18 +14,17 @@ import { Address } from 'src/app/models/Address';
 export class ListCustomerComponent implements OnInit {
 
   // szükséges változók a filterhez
-  filterKey = 'id';
-  phrase = '';
+  filterKey: string = 'id';
+  phrase: string = '';
   // szükséges változók a filterhez
 
-  aFilterKey = 'zip';
-  aPhrase = '';
+  aFilterKey: string = 'zip';
   sortKey: string = '';
   addressProps: string[] = Object.keys(new Address());
   customerProps: string[] = Object.keys(new Customer());
   customerList$: BehaviorSubject<Customer[]> = this.customerService.list$;
-  ascend = true;
-  zip = '';
+  ascend: boolean = true;
+  zip: string = '';
 
   constructor(private customerService: CustomerService,
     private router: Router,
