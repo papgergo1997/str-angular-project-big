@@ -18,7 +18,7 @@ export class ListCustomerComponent implements OnInit {
   phrase: string = '';
   // szükséges változók a filterhez
 
-  aFilterKey: string = 'zip';
+  aFilterKey: string = 'country';
   sortKey: string = '';
   addressProps: string[] = Object.keys(new Address());
   customerProps: string[] = Object.keys(new Customer());
