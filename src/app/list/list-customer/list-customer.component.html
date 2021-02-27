@@ -16,7 +16,7 @@
                             <option *ngFor="let prop of customerProps" [value]="prop">{{prop}}</option>
                         </select>
                         <select *ngIf="filterKey == 'address'" [(ngModel)]="aFilterKey"
-                            class="options-control form-control col-1 ml-auto py-4">
+                            class="address-options-control options-control form-control col-1 ml-auto py-4">
                             <option *ngFor="let aprop of addressProps" [value]="aprop">{{aprop}}</option>
                         </select>
                         <input [(ngModel)]="phrase" class="form-control mx-1 col-4 py-4" type="text"
