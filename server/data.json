@@ -142,12 +142,6 @@
       "status": "new"
     },
     {
-      "id": 3,
-      "orderID": 11,
-      "amount": 31000,
-      "status": "new"
-    },
-    {
       "id": 4,
       "orderID": 45,
       "amount": 55417,
@@ -181,12 +175,6 @@
       "id": 9,
       "orderID": 345,
       "amount": 3200,
-      "status": "new"
-    },
-    {
-      "id": 10,
-      "orderID": 1,
-      "amount": 1,
       "status": "new"
     },
     {
