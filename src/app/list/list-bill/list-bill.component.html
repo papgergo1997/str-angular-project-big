@@ -7,27 +7,37 @@
                 <button class="btn btn-success btn-block mb-5" [routerLink]="['/bills/'+0]">
                     <span class="material-icons">
                         library_add
-                    </span> Új termék felvitele</button>
+                    </span> Add a new bill</button>
 
 
                 <div class="card">
-                    <div class="card-header card-header-warning">
-                        <h4 class="card-title ">Bill's List</h4>
-                        <p class="card-category"> Itt lehet új számlát rögzíteni, módosítani vagy törölni</p>
+                    <div class="card-header card-header-grey">
+                        <h4 class="card-title text-white">Bill List</h4>
+                        <p class="card-category"> This is a list of bills. You can add, modify and delete a bill.</p>
                     </div>
+                    <!-- Filter component -->
+                    <div class="col-12 mx-auto row py-2 product-search">
+                        <select [(ngModel)]="filterKey" class="options-control form-control col-1 ml-auto py-4">
+                            <option *ngFor="let prop of billProperties" [value]="prop">{{prop}}</option>
+                        </select>
+                        <input [(ngModel)]="phrase" class="form-control mx-1 col-4 py-4" type="text"
+                            placeholder="Search">
+                        <button class="btn btn-success col-1 mr-auto" type="submit"><span
+                                class="material-icons">search</span></button>
+                    </div>
+                    <!-- Filter component -->
                     <div class="card-body">
 
                         <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead class=" text-primary">
-                                    <th> ID </th>
-                                    <th> OrderID </th>
-                                    <th> Amount </th>
-                                    <th> Status </th>
+                            <table class="table table-striped">
+                                <thead class="color-grey">
+                                    <th class="sortedHeads" *ngFor="let prop of billProperties"
+                                        (click)="onChangeSort(prop)">{{ prop }}</th>
                                     <th></th>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let bill of billList | async">
+                                    <tr
+                                        *ngFor="let bill of billList$ | async | filter:filterKey:phrase | sort: sortKey: ascend |slice: (indexPage -1)*pagiLength: indexPage*pagiLength">
                                         <td>
                                             {{ bill.id }}
                                         </td>
@@ -37,7 +47,7 @@
                                         <td>
                                             {{ bill.amount}}
                                         </td>
-                                        <td class="text-primary">
+                                        <td>
                                             {{ bill.status }}
                                         </td>
                                         <td>
@@ -53,6 +63,30 @@
                                 </tbody>
                             </table>
                         </div>
+                    </div>
+
+                    <div class="row justify-content-center align-items-center m-5">
+                        <span>View:</span>
+                        <select class="form-control col-1 mr-1 ml-3" [(ngModel)]="pagiLength">
+                            <option>5</option>
+                            <option>10</option>
+                            <option>15</option>
+                            <option>20</option>
+                            <option>25</option>
+                        </select>
+                        <span class="mr-5">/ {{ (billList$ | async)!.length }} </span>
+                        <button class="btn btn-outline-secondary" (click)="onPagiNumber(1)"><span
+                                class="material-icons">first_page</span></button>
+                        <button class="btn btn-outline-secondary" (click)="onPagiBack()"><span
+                                class="material-icons">chevron_left</span></button>
+                        <button class="btn btn-outline-secondary"
+                            *ngFor="let page of (billList$ | async)! | pagi:pagiLength" (click)="onPagiNumber(page)"
+                            [class.active]="indexPage === page">{{ page
+                            }}</button>
+                        <button class="btn btn-outline-secondary" (click)="onPagiNext()"><span
+                                class="material-icons">chevron_right</span></button>
+                        <button class="btn btn-outline-secondary" (click)="onPagiLastNumber()"><span
+                                class="material-icons">last_page</span></button>
                     </div>
                 </div>
             </div>

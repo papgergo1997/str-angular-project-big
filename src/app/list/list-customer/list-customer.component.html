@@ -3,29 +3,34 @@
         <div class="row">
             <div class="col-md-12">
                 <button class="btn btn-success btn-block mb-5" [routerLink]="['/customers/'+0]"><span
-                        class="material-icons">library_add</span> Új vásárló
-                    felvitele</button>
+                        class="material-icons">library_add</span> Add a new customer</button>
                 <div class="card">
                     <div class="card-header card-header-warning">
                         <h4 class="card-title ">Customer's list</h4>
-                        <p class="card-category"> Itt lehet új vásárlót rögzíteni, módosítani vagy törölni</p>
+                        <p class="card-category"> This is a list of our customers. You can add, modify or remove any
+                            customer if needed.</p>
                     </div>
+                    <!-- Filter component -->
+                    <div class="col-12 mx-auto row py-2 product-search">
+                        <select [(ngModel)]="filterKey" class="options-control form-control col-1 ml-auto py-4">
+                            <option *ngFor="let prop of customerProps" [value]="prop">{{prop}}</option>
+                        </select>
+                        <input [(ngModel)]="phrase" class="form-control mx-1 col-4 py-4" type="text"
+                            placeholder="Search">
+                        <button class="btn btn-success col-1 mr-auto" type="submit"><span
+                                class="material-icons">search</span></button>
+                    </div>
+                    <!-- Filter component -->
                     <div class="card-body">
-                        <div class="row m-3">
-
-                        </div>
                         <div class="table-responsive">
                             <table class="table table-striped">
                                 <thead class=" text-primary">
-                                    <th> ID </th>
-                                    <th> FirstName </th>
-                                    <th> LastName </th>
-                                    <th> Email </th>
-                                    <th> Address </th>
+                                    <th class="sortedHeads" *ngFor="let prop of customerProps"
+                                        (click)="onChangeSort(prop)">{{prop}}</th>
                                     <th></th>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let customer of customerList$ | async">
+                                    <tr *ngFor="let customer of customerList$ | async | filter:filterKey:phrase | sort:sortKey: ascend: zip">
                                         <td>
                                             {{ customer.id }}
                                         </td>
@@ -45,6 +50,7 @@
                                             {{customer.address.city}},
                                             {{customer.address.country}}
                                         </td>
+                                        <td>{{customer.active}}</td>
                                         <td>
                                             <div class="btn-group w-100">
                                                 <button [routerLink]="['/customers/' + customer.id]"
