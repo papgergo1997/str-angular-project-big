@@ -67,6 +67,14 @@
                                         </td>
                                     </tr>
                                 </tbody>
+                                <thead class="text-primary">
+                                    <th></th>
+                                    <th>Number of customers</th>
+                                </thead>
+                                <tbody>
+                                    <tr></tr>
+                                    <tr *ngIf="customerList$ | async;let list">{{list.length}}</tr>
+                                </tbody>
                             </table>
                         </div>
                     </div>
