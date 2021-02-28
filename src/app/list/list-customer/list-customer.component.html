@@ -73,7 +73,8 @@
                                 </thead>
                                 <tbody>
                                     <tr></tr>
-                                    <tr *ngIf="customerList$ | async;let list">{{list.length}}</tr>
+                                    <tr *ngIf="customerList$ | async | filter:filterKey:phrase:aFilterKey;let list">
+                                        {{list.length}}</tr>
                                 </tbody>
                             </table>
                         </div>
