@@ -8,11 +8,12 @@ export class SortPipe implements PipeTransform {
 
   transform(value: any[] | null, key: string, direction: boolean, zip?: string): any[] | null {
 
-    if (!Array.isArray(value) || !key)
+    if (!Array.isArray(value) || !key) {
       return value;
+    }
 
     if (!direction) {
-      return value.sort(function (a, b) {
+      return value.sort(function(a, b): number {
         if (typeof a[key] === 'number' && typeof b[key] === 'number') {
 
           return a[key] - b[key];
@@ -21,9 +22,9 @@ export class SortPipe implements PipeTransform {
         } else {
           return a[key].toString().toLowerCase().localeCompare(b[key].toString().toLowerCase());
         }
-      })
+      });
     } else {
-      return value.sort(function (a, b) {
+      return value.sort(function(a, b): number {
         if (typeof a[key] === 'number' && typeof b[key] === 'number') {
 
           return b[key] - a[key];
@@ -32,7 +33,7 @@ export class SortPipe implements PipeTransform {
         } else {
           return b[key].toString().toLowerCase().localeCompare(a[key].toString().toLowerCase());
         }
-      })
+      });
     }
 
   }

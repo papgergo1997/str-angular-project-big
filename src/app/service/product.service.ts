@@ -8,7 +8,7 @@ import { Product } from '../models/Product';
 })
 export class ProductService {
 
-  apiUrl: string = 'http://localhost:3000/products';
+  apiUrl = 'http://localhost:3000/products';
 
   list$: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>([]);
 
@@ -34,22 +34,23 @@ export class ProductService {
   //   return this.http.get<Product>(`${this.apiUrl}/${id}`);
   // }
 
+
   update(product: Product): void {
    this.http.patch<Product>(`${this.apiUrl}/${product.id}`, product).subscribe(
      () => this.getAll()
    );
   }
-  
+
   remove(product: Product): void {
     this.http.delete<Product>(`${this.apiUrl}/${product.id}`).subscribe(
       () => this.getAll()
-    )
+    );
   }
 
   create(product: Product): void {
     this.http.post<Product>(this.apiUrl, product).subscribe(
       () => this.getAll()
-    )
+    );
   }
 
   // getFeatured(randomized?: boolean): Product[] {
