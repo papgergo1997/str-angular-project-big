@@ -131,23 +131,13 @@
       "active": false
     },
     {
-      "id": 17,
-      "catID": 1,
-      "name": "cwqc",
-      "type": "casd",
-      "description": "cSC",
-      "price": 0,
-      "featured": false,
-      "active": false
-    },
-    {
       "id": 18,
-      "catID": 4,
-      "name": "CDC",
-      "type": "dvc",
+      "catID": 7,
+      "name": "gerjed elem",
+      "type": "kütyü",
       "description": "dvdv",
       "price": 0,
-      "featured": false,
+      "featured": "true",
       "active": false
     },
     {
@@ -162,11 +152,21 @@
     },
     {
       "id": 21,
-      "catID": 6,
-      "name": "Ninja",
-      "type": "kence",
-      "description": "Bér gyilkos kenőcs, ha sok a béred ezt rákened és kinyírja mindet.",
+      "catID": 1,
+      "name": "Ninjacream",
+      "type": "Kencefice",
+      "description": "Programozó lettél és nem tudsz mit kezdeni a rengeteg béreddel?!! Itt a Bér Gyilkos kenőcs, ha  ezt rákened kinyírja mindet. Csak erős idegzetűeknek!!!",
       "price": 22312354537547997000,
+      "featured": "true",
+      "active": "true"
+    },
+    {
+      "id": 22,
+      "catID": 3,
+      "name": "WTF",
+      "type": "kütyü",
+      "description": "Where's The Food?",
+      "price": 12345,
       "featured": "true",
       "active": "true"
     }

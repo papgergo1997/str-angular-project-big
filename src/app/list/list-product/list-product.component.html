@@ -35,7 +35,7 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-hover">
-                                <thead class=" text-primary">
+                                <thead class="text-primary">
                                     <!-- <th> ID </th>
                                     <th> KatID </th>
                                     <th> Név </th>
@@ -44,11 +44,11 @@
                                     <th> Ár </th>
                                     <th> Aktív </th>
                                     <th> Kiemelt </th> -->
-                                    <th *ngFor="let prop of productProperties">{{ prop }}</th>
+                                    <th class="sortedHeads" *ngFor="let prop of productProperties" (click)="onChangeSort(prop)">{{ prop }}</th>
                                     <th></th>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let product of productList | async | filter:filterKey:phrase">
+                                    <tr *ngFor="let product of productList | async | filter:filterKey:phrase | sort: sortKey: ascend">
                                         <td>
                                             {{ product.id }}
                                         </td>
