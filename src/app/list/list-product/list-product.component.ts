@@ -16,6 +16,12 @@ export class ListProductComponent implements OnInit {
   filterKey = 'id';
   phrase = '';
   // szükséges változók a filterhez
+  indexPage = 1;
+  pagiLength = 5;
+  ArrayLength = 0;
+  ascend = true;
+  sortKey = '';
+
 
   productProperties: string[] = Object.keys(new Product());
 
@@ -29,6 +35,19 @@ export class ListProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.productService.getAll();
+    this.productList.subscribe(data => { this.ArrayLength = data.length })
+  }
+
+  onLength(length: number) {
+    this.pagiLength = length;
+  }
+  onIndex(length: number) {
+    this.indexPage = length;
+  }
+
+  onChangeSort(data: string): void {
+    this.sortKey = data;
+    this.ascend = !this.ascend;
   }
 
   onDelete(product: Product): void {

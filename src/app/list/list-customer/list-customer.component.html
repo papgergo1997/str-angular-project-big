@@ -35,7 +35,7 @@
                                 </thead>
                                 <tbody>
                                     <tr
-                                        *ngFor="let customer of customerList$ | async | filter:filterKey:phrase:aFilterKey | sort:sortKey: ascend: zip">
+                                        *ngFor="let customer of customerList$ | async | filter:filterKey:phrase:aFilterKey | sort:sortKey: ascend: zip|slice: (indexPage -1)*pagiLength: indexPage*pagiLength">
                                         <td>
                                             {{ customer.id }}
                                         </td>
@@ -79,6 +79,10 @@
                             </table>
                         </div>
                     </div>
+
+                    <app-pagination [length]="ArrayLength" (onLength)="onLength($event)" (onIndex)="onIndex($event)">
+                    </app-pagination>
+
                 </div>
             </div>
         </div>
