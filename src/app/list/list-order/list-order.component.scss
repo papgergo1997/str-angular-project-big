@@ -9,3 +9,15 @@
   cursor: pointer;
   background-color: #f5f5f5;
 }
+
+.sumCell {
+  &Text{
+    border-top: 2px solid #dddddd;
+    font-weight: 900;
+    text-align: center;
+  }
+  &Num{
+    border-top: 2px solid #dddddd;
+    font-weight: 900;
+  }
+}
