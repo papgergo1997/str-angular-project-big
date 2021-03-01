@@ -25,12 +25,23 @@ export class ListCustomerComponent implements OnInit {
   customerList$: BehaviorSubject<Customer[]> = this.customerService.list$;
   ascend: boolean = true;
   zip: string = '';
+  indexPage = 1;
+  pagiLength = 5;
+  ArrayLength = 0;
 
   constructor(private customerService: CustomerService,
     private router: Router,
     private toastr: ToastrService) { this.customerService.getAll(); }
 
   ngOnInit(): void {
+    this.customerList$.subscribe(data => { this.ArrayLength = data.length })
+  }
+
+  onLength(length: number) {
+    this.pagiLength = length;
+  }
+  onIndex(length: number) {
+    this.indexPage = length;
   }
 
   onChangeSort(data: string): void {
