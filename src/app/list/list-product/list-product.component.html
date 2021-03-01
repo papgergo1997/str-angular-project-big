@@ -36,7 +36,18 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-hover">
-                                <thead class=" text-primary">
+                                <thead class="text-primary">
+                                    <tr>
+                                        <th class="sortedHeads" 
+                                        *ngFor="let col of cols" 
+                                        id="{{ col.key }}" 
+                                        draggable="true" 
+                                        (dragover)="$event.preventDefault()" 
+                                        (dragstart)="onHeaderDragStart($event)" 
+                                        (drop)="onHeaderDrop($event)" 
+                                        (click)="onChangeSort(col.key)">{{ col.title }}</th>
+                                        <th></th>
+                                    </tr>
                                     <!-- <th> ID </th>
                                     <th> KatID </th>
                                     <th> Név </th>
@@ -45,18 +56,15 @@
                                     <th> Ár </th>
                                     <th> Aktív </th>
                                     <th> Kiemelt </th> -->
-                                    <th class="sortedHeads" *ngFor="let prop of productProperties"
-                                        (click)="onChangeSort(prop)">{{ prop }}
-                                    </th>
-                                    <th></th>
+
                                 </thead>
                                 <tbody>
-                                    <tr
-                                        *ngFor="let product of productList | async | filter:filterKey:phrase| sort: sortKey: ascend |slice: (indexPage -1)*pagiLength: indexPage*pagiLength">
-                                        <td>
-                                            {{ product.id }}
+                                    <tr *ngFor="let product of productList | async | filter:filterKey:phrase | sort: sortKey: ascend |slice: (indexPage -1)*pagiLength: indexPage*pagiLength">
+                                        <td *ngFor="let col of cols">{{ product[col.key] }}
+
                                         </td>
-                                        <td>
+                                        <td></td>
+                                        <!-- <td>
                                             {{ product.catID }}
                                         </td>
                                         <td>
@@ -76,7 +84,7 @@
                                         </td>
                                         <td>
                                             {{ product.featured }}
-                                        </td>
+                                        </td> -->
                                         <td>
                                             <div class="btn-group">
                                                 <button [routerLink]="[product.id]" class="btn btn-info">
