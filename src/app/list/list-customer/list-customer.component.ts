@@ -22,12 +22,12 @@ export class ListCustomerComponent implements OnInit {
   sortKey: string = '';
   addressProps: string[] = Object.keys(new Address());
 
-  cols: { title: string, key: string }[] = [
+  cols: { title: string, key: string, key2?: string, key3?: string, key4?: string, key5?: string, key6?: string }[] = [
     { key: 'id', title: 'Id' },
     { key: 'firstName', title: 'FirstName' },
     { key: 'lastName', title: 'LastName' },
     { key: 'email', title: 'Email' },
-    { key: 'address', title: 'Address' },
+    { key: 'address', key2: 'zip', key3: 'notes', key4: 'street', key5: 'city', key6: 'country', title: 'Address' },
     { key: 'active', title: 'Active' },
   ];
 
