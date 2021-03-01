@@ -36,9 +36,6 @@ export class ListProductComponent implements OnInit {
 
   lastDragKey = "";
 
-  ascend: boolean = true;
-  sortKey = '';
-  
   productProperties: string[] = Object.keys(new Product());
 
   productList: BehaviorSubject<Product[]> = this.productService.list$;
@@ -90,9 +87,6 @@ export class ListProductComponent implements OnInit {
     this.toastr.warning('You have successfully deleted the product!', 'Deleted', { timeOut: 4000 });
   }
 
-  onChangeSort(data: string): void {
-    this.sortKey = data;
-    this.ascend = !this.ascend;
-  }
+
 
 }
