@@ -14,7 +14,7 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class EditProductComponent implements OnInit {
 
-  updating: boolean = false;
+  updating = false;
 
   product$: Observable<Product> = this.activatedRoute.params.pipe(
     switchMap( params => this.productService.get(params.id))
@@ -38,18 +38,17 @@ export class EditProductComponent implements OnInit {
       this.router.navigate(['products']);
       this.showSuccess();
     } else {
-      this.productService.update(product).subscribe(
-      () => this.router.navigate(['products'])
-    );
-    this.showInfo();
+      this.productService.update(product);
+      this.router.navigate(['products'])
+      this.showInfo();
     }
   }
 
   showSuccess() {
-    this.toastr.success('You have successfully added the product!', 'created', { timeOut: 3000 })
+    this.toastr.success('You have successfully added the product!', 'created', { timeOut: 3000 });
   }
   showInfo() {
-    this.toastr.info('You have successfully updated the product!', 'updated', { timeOut: 3000 })
+    this.toastr.info('You have successfully updated the product!', 'updated', { timeOut: 3000 });
   }
 
   // onUpdate(product: Product): void {
