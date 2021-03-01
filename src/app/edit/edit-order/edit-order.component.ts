@@ -14,7 +14,7 @@ import { NgForm } from '@angular/forms';
 })
 export class EditOrderComponent implements OnInit {
 
-  updating: boolean = false;
+  updating = false;
   order$: Observable<Order> = this.activatedRoute.params.pipe(
     switchMap(params => this.orderService.get(params.id))
   );
