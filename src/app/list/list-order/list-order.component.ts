@@ -20,7 +20,7 @@ export class ListOrderComponent implements OnInit {
   ascend = true;
   sortKey = '';
 
-  fgh: number[] = [];
+/*   fgh: number[] = []; */
 
   constructor(
     private orderService: OrderService,
@@ -30,22 +30,16 @@ export class ListOrderComponent implements OnInit {
       orders.forEach( order => {
         this.fgh.push(order.amount);
       } )
+    } );
+
+    this.orderList$.forEach( orders => {
+      console.log(orders);
     } ); */
 
   }
 
   ngOnInit(): void {
     this.orderService.getAll();
-    this.prac();
-  }
-
-
-  prac(): void {
-    this.orderList$.forEach( orders => {
-      orders.forEach( order => {
-        this.fgh.push(order.amount);
-      } )
-    } );
   }
 
 

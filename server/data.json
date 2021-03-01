@@ -715,7 +715,7 @@
       "id": 3,
       "customerID": 1,
       "productID": 1,
-      "amount": 1,
+      "amount": 182,
       "status": "shipped"
     },
     {
@@ -729,7 +729,7 @@
       "id": 5,
       "customerID": 15,
       "productID": 7,
-      "amount": 5,
+      "amount": 52,
       "status": "paid"
     },
     {

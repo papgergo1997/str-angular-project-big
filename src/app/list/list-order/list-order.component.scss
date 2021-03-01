@@ -11,13 +11,6 @@
 }
 
 .sumCell {
-  &Text{
-    border-top: 2px solid #dddddd;
-    font-weight: 900;
-    text-align: center;
-  }
-  &Num{
-    border-top: 2px solid #dddddd;
-    font-weight: 900;
-  }
+  border-top: 2px solid #dddddd;
+  font-weight: 900;
 }

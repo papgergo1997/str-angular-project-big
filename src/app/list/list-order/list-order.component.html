@@ -58,9 +58,8 @@
                   <tr>
                     <td></td>
                     <td></td>
-                    <td class="sumCellText">Sum:</td>
-                    <td class="sumCellNum"
-                      *ngFor="let order of orderList$ | async"> {{ order.amount }} </td>
+                    <td></td>
+                    <td class="sumCell"> {{ orderList$ | async | summary:'amount'}} </td>
                     <td></td>
                     <td></td>
                   </tr>
