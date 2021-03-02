@@ -29,33 +29,22 @@
                         <div class="table-responsive">
                             <table class="table table-striped">
                                 <thead class=" text-primary">
-                                    <th class="sortedHeads" *ngFor="let prop of customerProps"
-                                        (click)="onChangeSort(prop)">{{prop}}</th>
+                                    <th class="sortedHeads" *ngFor="let col of cols" id="{{ col.key }}" draggable="true"
+                                        (dragover)="$event.preventDefault()" (dragstart)="onHeaderDragStart($event)"
+                                        (drop)="onHeaderDrop($event)" (click)="onChangeSort(col.key)">{{ col.title }}
+                                    </th>
                                     <th></th>
                                 </thead>
                                 <tbody>
                                     <tr
-                                        *ngFor="let customer of customerList$ | async | filter:filterKey:phrase:aFilterKey | sort:sortKey: ascend: zip">
-                                        <td>
-                                            {{ customer.id }}
+                                        *ngFor="let customer of customerList$ | async | filter:filterKey:phrase:aFilterKey | sort:sortKey: ascend: zip|slice: (indexPage -1)*pagiLength: indexPage*pagiLength">
+                                        <td *ngFor="let col of cols">
+                                            <span *ngIf="col.key != 'address'">{{ customer[col.key]}}</span>
+                                            <span *ngIf="col.key == 'address'">{{ customer[col.key][col.key2] }}, {{
+                                                customer[col.key][col.key3] }}. {{ customer[col.key][col.key4] }}, {{
+                                                customer[col.key][col.key5] }}, {{ customer[col.key][col.key6] }}
+                                            </span>
                                         </td>
-                                        <td>
-                                            {{customer.firstName}}
-                                        </td>
-                                        <td>
-                                            {{customer.lastName}}
-                                        </td>
-                                        <td>
-                                            {{customer.email}}
-                                        </td>
-                                        <td>
-                                            {{customer.address.zip}},
-                                            {{customer.address.notes}}.
-                                            {{customer.address.street}},
-                                            {{customer.address.city}},
-                                            {{customer.address.country}}
-                                        </td>
-                                        <td>{{customer.active}}</td>
                                         <td>
                                             <div class="btn-group w-100">
                                                 <button [routerLink]="['/customers/' + customer.id]"
@@ -67,9 +56,23 @@
                                         </td>
                                     </tr>
                                 </tbody>
+                                <thead>
+                                    <th></th>
+                                    <th class="text-primary" *ngIf="phrase == ''">Number of customers</th>
+                                    <th class="text-success" *ngIf="phrase != ''">Number of searched customers</th>
+                                </thead>
+                                <tbody>
+                                    <tr></tr>
+                                    <tr *ngIf="customerList$ | async | filter:filterKey:phrase:aFilterKey;let list">
+                                        {{list.length}}</tr>
+                                </tbody>
                             </table>
                         </div>
                     </div>
+
+                    <app-pagination [length]="ArrayLength" (onLength)="onLength($event)" (onIndex)="onIndex($event)">
+                    </app-pagination>
+
                 </div>
             </div>
         </div>

@@ -19,6 +19,10 @@ export class ListOrderComponent implements OnInit {
 
   ascend = true;
   sortKey = '';
+  indexPage = 1;
+  pagiLength = 5;
+  ArrayLength = 0;
+
 
   constructor(
     private orderService: OrderService,
@@ -26,6 +30,14 @@ export class ListOrderComponent implements OnInit {
 
   ngOnInit(): void {
     this.orderService.getAll();
+    this.orderList$.subscribe(data => { this.ArrayLength = data.length })
+  }
+
+  onLength(length: number) {
+    this.pagiLength = length;
+  }
+  onIndex(length: number) {
+    this.indexPage = length;
   }
 
 
