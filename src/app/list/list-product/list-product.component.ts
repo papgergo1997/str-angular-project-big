@@ -31,7 +31,7 @@ export class ListProductComponent implements OnInit {
     { key: 'description', title: 'Description' },
     { key: 'price', title: 'Price' },
     { key: 'featured', title: 'Featured' },
-    { key: 'Active', title: 'Active' },
+    { key: 'active', title: 'Active' },
   ];
 
   lastDragKey = "";
