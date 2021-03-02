@@ -96,7 +96,10 @@
                     </div>
                     <div class="card-body">
                         <h4 class="card-title">Email Subscriptions</h4>
-                        <p class="card-category">Last Campaign Performance</p>
+                        <p class="card-category">
+                            <app-customer-chart [customers]="customerAmount" [countries]="countryArray">
+                            </app-customer-chart>
+                        </p>
                     </div>
                     <div class="card-footer">
                         <div class="stats">

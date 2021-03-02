@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CustomerChartComponent implements OnInit {
 
-  @Input() customers: number = 0;
+  @Input() customers: any[] = [];
   @Input() countries: any[] = [];
 
   barChartOptions = {

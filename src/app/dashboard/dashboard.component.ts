@@ -18,7 +18,7 @@ export class DashboardComponent implements OnInit {
   revenue: number = 0;
 
   customerList$: BehaviorSubject<Customer[]> = this.customerService.list$;
-  customerAmount: number = 0;
+  customerAmount: Customer[] = [];
   countryArray: string[] = [];
 
   constructor(
@@ -43,7 +43,7 @@ export class DashboardComponent implements OnInit {
     })
 
     this.customerList$.subscribe(data => {
-      data.length = this.customerAmount;
+      data = this.customerAmount;
     })
 
     this.customerList$.subscribe(data => {

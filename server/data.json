@@ -9,7 +9,7 @@
       "price": 1500,
       "featured": true,
       "active": false
-    },    
+    },
     {
       "id": 2,
       "name": "Szemölcsölő, Wartkilla",
@@ -254,7 +254,7 @@
       "email": "cmullin0@java.com",
       "address": {
         "zip": "RG11",
-        "country": "ENGLAND",
+        "country": "England",
         "city": "London",
         "street": "Commercial Center",
         "notes": "800"
@@ -632,26 +632,12 @@
       "email": "nemeth.gabriella@gmail.com",
       "address": {
         "zip": "GR23",
-        "country": "GERMANY",
+        "country": "Germany",
         "city": "Berlin",
         "street": "Hausen St.",
         "notes": "56"
       },
       "active": true
-    },
-    {
-      "id": 30,
-      "firstName": "Pi",
-      "lastName": "Jhon",
-      "email": "sample@sample.com",
-      "address": {
-        "zip": "1111",
-        "country": "MIFOLYIKITTGY",
-        "city": "Cityke",
-        "street": "Sample",
-        "notes": "11111"
-      },
-      "active": false
     },
     {
       "id": 31,
@@ -660,7 +646,7 @@
       "email": "koldus.bela@citromail.hu",
       "address": {
         "zip": "0000",
-        "country": "HUNGARY",
+        "country": "Hungary",
         "city": "Bármelyik Cit",
         "street": "Híd alatt",
         "notes": "12"
