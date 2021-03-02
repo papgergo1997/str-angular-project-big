@@ -37,7 +37,7 @@
                                 </thead>
                                 <tbody>
                                     <tr
-                                        *ngFor="let bill of billList$ | async| slice: (indexPage -1)*pagiLength: indexPage*pagiLength | filter:filterKey:phrase | sort: sortKey: ascend">
+                                        *ngFor="let bill of billList$ | async | filter:filterKey:phrase | sort: sortKey: ascend |slice: (indexPage -1)*pagiLength: indexPage*pagiLength">
                                         <td>
                                             {{ bill.id }}
                                         </td>
@@ -65,7 +65,10 @@
                         </div>
                     </div>
 
-                    <div class="row justify-content-center align-items-center m-5">
+                    <app-pagination [length]="ArrayLength" (onLength)="onLength($event)" (onIndex)="onIndex($event)">
+                    </app-pagination>
+
+                    <!-- <div class="row justify-content-center align-items-center m-5">
                         <span>View:</span>
                         <select class="form-control col-1 mr-1 ml-3" [(ngModel)]="pagiLength">
                             <option>5</option>
@@ -87,7 +90,7 @@
                                 class="material-icons">chevron_right</span></button>
                         <button class="btn btn-outline-secondary" (click)="onPagiLastNumber()"><span
                                 class="material-icons">last_page</span></button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

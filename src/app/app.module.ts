@@ -21,6 +21,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { EditProductComponent } from './edit/edit-product/edit-product.component';
 import { PagiPipe } from './pipe/pagi.pipe';
 import { SortPipe } from './pipe/sort.pipe';
+import { PaginationComponent } from './pagination/pagination.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { SortPipe } from './pipe/sort.pipe';
     EditProductComponent,
     PagiPipe,
     SortPipe,
+    PaginationComponent,
   ],
   imports: [
     HttpClientModule,
