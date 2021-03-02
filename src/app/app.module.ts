@@ -25,6 +25,7 @@ import { SummaryPipe } from './pipe/summary.pipe';
 import { PaginationComponent } from './pagination/pagination.component';
 import { BillBarChartComponent } from './charts/bill-bar-chart/bill-bar-chart.component';
 import { ChartsModule } from 'ng2-charts';
+import { OrderBarChartComponent } from './charts/order-bar-chart/order-bar-chart.component';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { ChartsModule } from 'ng2-charts';
     SummaryPipe,
     PaginationComponent,
     BillBarChartComponent,
+    OrderBarChartComponent,
   ],
   imports: [
     HttpClientModule,
