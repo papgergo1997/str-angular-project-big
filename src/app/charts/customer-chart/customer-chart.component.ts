@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-customer-chart',
@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerChartComponent implements OnInit {
 
+  @Input() customers: number = 0;
+  @Input() countries: any[] = [];
+
+  barChartOptions = {
+    scaleShowVerticalLines: false,
+    responsive: true
+  }
+  barChartType: any = 'bar';
+  barChartLegend = true;
+  barChartData: any[] = [];
+
   constructor() { }
 
   ngOnInit(): void {
+    this.barChartData = [
+      { data: this.customers, label: 'Customers Countries', backgroundColor: 'green' }
+    ];
   }
 
 }
