@@ -22,6 +22,8 @@ import { EditProductComponent } from './edit/edit-product/edit-product.component
 import { PagiPipe } from './pipe/pagi.pipe';
 import { SortPipe } from './pipe/sort.pipe';
 import { PaginationComponent } from './pagination/pagination.component';
+import { BillBarChartComponent } from './charts/bill-bar-chart/bill-bar-chart.component';
+import { ChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -43,6 +45,7 @@ import { PaginationComponent } from './pagination/pagination.component';
     PagiPipe,
     SortPipe,
     PaginationComponent,
+    BillBarChartComponent,
   ],
   imports: [
     HttpClientModule,
@@ -51,6 +54,7 @@ import { PaginationComponent } from './pagination/pagination.component';
     FormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
