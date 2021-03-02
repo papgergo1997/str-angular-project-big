@@ -9,7 +9,7 @@
       "price": 1500,
       "featured": true,
       "active": false
-    },    
+    },
     {
       "id": 2,
       "name": "Szemölcsölő, Wartkilla",
@@ -125,7 +125,7 @@
       "catID": 7,
       "name": "Gerjedelem",
       "type": "kütyü",
-      "description": "Ha kell egy kis izgalom az életedbe!! Helyezd el ezt az elemet az intestinum rectumba és gerjedsz majd, mit a Sokol rádió.",
+      "description": "Ha kell egy kis izgalom az életedbe!! Helyezd el ezt az elemet az intestinum rectumba és gerjedsz majd, mint a Sokol rádió.",
       "price": 12313,
       "featured": "true",
       "active": false
