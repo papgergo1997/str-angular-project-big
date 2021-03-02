@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Bill } from '../models/Bill';
+import { Customer } from '../models/Customer';
 import { BillService } from '../service/bill.service';
+import { CustomerService } from '../service/customer.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,8 +17,13 @@ export class DashboardComponent implements OnInit {
   billIdArray: any[] = [];
   revenue: number = 0;
 
+  customerList$: BehaviorSubject<Customer[]> = this.customerService.list$;
+  customerAmount: number = 0;
+  countryArray: string[] = [];
+
   constructor(
-    private billService: BillService
+    private billService: BillService,
+    private customerService: CustomerService
   ) { }
 
   ngOnInit(): void {
@@ -32,6 +39,16 @@ export class DashboardComponent implements OnInit {
     this.billList$.subscribe(data => {
       data.forEach(item => {
         this.billIdArray.push(item.id);
+      })
+    })
+
+    this.customerList$.subscribe(data => {
+      data.length = this.customerAmount;
+    })
+
+    this.customerList$.subscribe(data => {
+      data.forEach(item => {
+        this.countryArray.push(item.address.country);
       })
     })
   }
