@@ -24,10 +24,10 @@
                 <div class="card card-stats">
                     <div class="card-header card-header-success card-header-icon">
                         <div class="card-icon">
-                            <i class="material-icons">store</i>
+                            <i class="material-icons">paid</i>
                         </div>
                         <p class="card-category">Revenue</p>
-                        <h3 class="card-title">$34,245</h3>
+                        <h3 class="card-title"> {{ revenue }} Ft</h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
@@ -76,10 +76,10 @@
                         <div class="ct-chart" id="dailySalesChart"></div>
                     </div>
                     <div class="card-body">
-                        <h4 class="card-title">Daily Sales</h4>
+                        <h4 class="card-title">Bills</h4>
                         <p class="card-category">
-                            <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today
-                            sales.
+                            <app-bill-bar-chart [amounts]="billAmountArray" [ids]="billIdArray">
+                            </app-bill-bar-chart>
                         </p>
                     </div>
                     <div class="card-footer">
