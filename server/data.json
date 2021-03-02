@@ -191,7 +191,7 @@
   "bills": [
     {
       "id": 1,
-      "orderID": 111234,
+      "orderID": 11,
       "amount": 31000,
       "status": "new"
     },
@@ -221,14 +221,14 @@
     },
     {
       "id": 7,
-      "orderID": 10,
+      "orderID": 100,
       "amount": 6000,
       "status": "new"
     },
     {
       "id": 8,
       "orderID": 256,
-      "amount": 4552211,
+      "amount": 45522,
       "status": "new"
     },
     {
@@ -240,38 +240,20 @@
     {
       "id": 12,
       "orderID": 158,
-      "amount": 58,
+      "amount": 58000,
       "status": "paid"
     },
     {
-      "id": 13,
-      "orderID": 33,
-      "amount": 124555,
-      "status": "new"
-    },
-    {
       "id": 14,
-      "orderID": 44,
+      "orderID": 442,
       "amount": 4577,
       "status": "paid"
     },
     {
       "id": 15,
-      "orderID": 42,
+      "orderID": 420,
       "amount": 77770,
       "status": "new"
-    },
-    {
-      "id": 12,
-      "orderID": 452223341,
-      "amount": 5,
-      "status": "new"
-    },
-    {
-      "id": 13,
-      "orderID": 111111111,
-      "amount": 7,
-      "status": "paid"
     }
   ],
   "customers": [
