@@ -30,23 +30,25 @@
                 <thead class="text-warning">
                   <th
                     class="sortedHeads"
-                    *ngFor="let prop of orderProperties"
-                    id="{{ prop }}"
+                    *ngFor="let col of orderCols"
+                    id="{{ col.key }}"
                     draggable="true"
                     (dragover)="$event.preventDefault()"
                     (dragstart)="onHeaderDragStart($event)"
                     (drop)="onHeaderDrop($event)"
-                    (click)="onChangeSort(prop)"
+                    (click)="onChangeSort(col.key)"
                   >
-                  {{ prop }}
+                  <!-- <i *ngIf="ascend" class="fa fa-sort-alpha-asc" aria-hidden="true"></i>
+                  <i *ngIf="!ascend" class="fa fa-sort-alpha-desc" aria-hidden="true"></i> &nbsp; -->
+                  {{ col.title }}
                   </th>
                   <th></th>
                 </thead>
                 <tbody>
                   <tr
                     *ngFor="let order of orderList$ | async | filter:filterKey:phrase | sort: sortKey: ascend | slice: (indexPage -1)*pagiLength: indexPage*pagiLength">
-                    <td *ngFor="let prop of orderProperties">
-                      {{ order[prop] }}
+                    <td *ngFor="let col of orderCols">
+                      {{ order[col.key] }}
                     </td>
                     <td>
                       <div class="btn-group w-100">

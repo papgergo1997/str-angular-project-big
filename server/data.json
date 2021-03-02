@@ -708,8 +708,71 @@
       "id": 6,
       "customerID": 16,
       "productID": 9,
-      "amount": 8,
+      "amount": 18,
+      "status": "shipped"
+    },
+    {
+      "id": 7,
+      "customerID": 16,
+      "productID": 9,
+      "amount": 2,
+      "status": "new"
+    },
+    {
+      "id": 8,
+      "customerID": 30,
+      "productID": 10,
+      "amount": 100,
       "status": "paid"
+    },
+    {
+      "id": 9,
+      "customerID": 3,
+      "productID": 19,
+      "amount": 75,
+      "status": "new"
+    },
+    {
+      "id": 10,
+      "customerID": 6,
+      "productID": 3,
+      "amount": 24,
+      "status": "shipped"
+    },
+    {
+      "id": 11,
+      "customerID": 19,
+      "productID": 21,
+      "amount": 13,
+      "status": "paid"
+    },
+    {
+      "id": 12,
+      "customerID": 17,
+      "productID": 1,
+      "amount": 47,
+      "status": "new"
+    },
+    {
+      "id": 13,
+      "customerID": 27,
+      "productID": 19,
+      "amount": 7,
+      "status": "paid"
+    },
+    {
+      "id": 14,
+      "customerID": 23,
+      "productID": 16,
+      "amount": 63,
+      "status": "shipped"
+    },
+    {
+      "id": 15,
+      "customerID": 25,
+      "productID": 11,
+      "amount": 12,
+      "status": "new"
     }
   ]
 }

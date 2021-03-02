@@ -14,6 +14,14 @@ export class ListOrderComponent implements OnInit {
   orderProperties: string[] = Object.keys(new Order());
   orderList$: BehaviorSubject<Order[]> = this.orderService.orderList$;
 
+  orderCols: {key: string, title: string}[] = [
+    { key: 'id', title: 'Id' },
+    { key: 'customerID', title: 'CustomerId' },
+    { key: 'productID', title: 'ProductId' },
+    { key: 'amount', title: 'Amount' },
+    { key: 'status', title: 'Status' },
+  ];
+
   // szükséges változók a filter-hez:
   filterKey = 'id';
   phrase = '';
@@ -41,15 +49,6 @@ export class ListOrderComponent implements OnInit {
     this.orderList$.subscribe(data => { this.ArrayLength = data.length });
   }
 
-
-  onLength(length: number) {
-    this.pagiLength = length;
-  }
-  onIndex(length: number) {
-    this.indexPage = length;
-  }
-
-
   removeOrder(order: Order): void {
     this.orderService.remove(order);
     this.showRemove();
@@ -58,24 +57,32 @@ export class ListOrderComponent implements OnInit {
     this.toastr.error('You have successfully deleted the order!', 'Deleted', { timeOut: 3000 });
   }
 
-
+  // sort
   onChangeSort(data: string): void {
     this.sortKey = data;
     this.ascend = !this.ascend;
   }
 
+  // paginator
+  onLength(length: number) {
+    this.pagiLength = length;
+  }
+  onIndex(length: number) {
+    this.indexPage = length;
+  }
 
+  // oszlopok változtatása
   onHeaderDragStart(event: DragEvent): void {
     this.lastDragKey = (event.target as HTMLTableHeaderCellElement).id;
   }
   onHeaderDrop(event: DragEvent): void {
     event.preventDefault();
     const targetID: string = (event.target as HTMLTableHeaderCellElement).id;
-    const from = this.orderProperties.findIndex(prop => prop === this.lastDragKey);
-    const to = this.orderProperties.findIndex(prop => prop === targetID);
-    const temp = Object.assign({}, this.orderProperties[from]);
-    this.orderProperties.splice(from, 1);
-    this.orderProperties.splice(to, 0, temp);
+    const from = this.orderCols.findIndex(prop => prop.key === this.lastDragKey);
+    const to = this.orderCols.findIndex(prop => prop.key === targetID);
+    const temp = Object.assign({}, this.orderCols[from]);
+    this.orderCols.splice(from, 1);
+    this.orderCols.splice(to, 0, temp);
   }
 
 }
