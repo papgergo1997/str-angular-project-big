@@ -17,7 +17,6 @@ import { Product } from '../models/Product';
 })
 export class DashboardComponent implements OnInit {
 
-  customerlist$: BehaviorSubject<Customer[]> = this.customerservice.list$;
   productlist$: BehaviorSubject<Product[]> = this.productsservice.list$;
   billList$: BehaviorSubject<Bill[]> = this.billService.list$;
   billAmountArray: number[] = [];
@@ -43,7 +42,7 @@ export class DashboardComponent implements OnInit {
   constructor(
     private billService: BillService,
     private orderService: OrderService,
-    private customerService: CustomerService
+    private customerService: CustomerService,
     private productsservice: ProductService
   ) {
   }
@@ -87,10 +86,9 @@ export class DashboardComponent implements OnInit {
     //   data.forEach(item => {
     //     this.countryArray.push(item.active);
     //   })
-    // })
-  }
+    // })  
 
-      
+
 
     // this counts new  bills
     this.billList$.subscribe(data => {
@@ -118,14 +116,13 @@ export class DashboardComponent implements OnInit {
     this.productlist$.subscribe(data => {
       data.forEach(item => {
         switch (item.active) {
-          case 'true':
+          case true:
             this.accum_active_products += 1;
         }
       });
     });
     // this counts active users
-    this.customerservice.getAll();
-    this.customerlist$.subscribe(data => {
+    this.customerList$.subscribe(data => {
       data.forEach(item => {
         switch (item.active) {
           case true:
