@@ -1,13 +1,31 @@
 <div class="content">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-1 col-md-6 col-sm-6">
-      </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header card-header-warning card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">person</i>
+                        </div>
+                        <p class="card-category">Customers</p>
+                        <h3 *ngIf="customerList$ | async; let list" class="card-title">
+                            {{list.length}}
+                        </h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">date_range</i> Last 24 Hours
+                        </div>
+                    </div>
+                </div> 
+            </div>
       <div class="col-lg-3 col-md-6 col-sm-6">
         <div class="card card-stats">
           <div class="card-header card-header-success card-header-icon">
             <div class="card-icon">
               <i class="material-icons">paid</i>
+
             </div>
             <p class="card-category">Revenue</p>
             <h3 class="card-title"> {{ revenue }} Ft</h3>
@@ -63,9 +81,27 @@
             <div class="stats">
               <i class="material-icons">access_time</i> updated 4 minutes ago
             </div>
-          </div>
-        </div>
-      </div>
+             </div>
+           </div>
+
+            <div class="col-md-4">
+                <div class="card card-chart">
+                    <div class="card-header card-header-warning">
+                        <div class="ct-chart" id="websiteViewsChart"></div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Customers</h4>
+                        <p class="card-category">
+                            <app-customer-chart [countries]="countryData" [customers]="customerData">
+                            </app-customer-chart>
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">access_time</i> campaign sent 2 days ago
+                        </div>
+                    </div>
+                </div>          
       <div class="col-md-4">
         <div class="card card-chart">
           <div class="card-header card-header-warning">
