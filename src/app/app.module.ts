@@ -28,6 +28,7 @@ import { ChartsModule } from 'ng2-charts';
 import { ProductBarChartComponent } from './charts/product-bar-chart/product-bar-chart.component';
 import { CustomerChartComponent } from './charts/customer-chart/customer-chart.component';
 import { OrderBarChartComponent } from './charts/order-bar-chart/order-bar-chart.component';
+import { ShowLatestFivePipe } from './pipe/show-latest-five.pipe';
 
 
 
@@ -55,6 +56,7 @@ import { OrderBarChartComponent } from './charts/order-bar-chart/order-bar-chart
     ProductBarChartComponent,
     CustomerChartComponent,
     OrderBarChartComponent,
+    ShowLatestFivePipe,
   ],
   imports: [
     HttpClientModule,

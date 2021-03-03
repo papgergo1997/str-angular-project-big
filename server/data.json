@@ -1324,6 +1324,34 @@
         "notes": "7"
       },
       "active": false
+    },
+    {
+      "id": 80,
+      "firstName": "Charlie",
+      "lastName": "Firpo",
+      "email": "charlie.firpo@citromail.com",
+      "address": {
+        "zip": "IT8855",
+        "country": "Italy",
+        "city": "Rome ",
+        "street": "Colosseo Street",
+        "notes": "43"
+      },
+      "active": false
+    },
+    {
+      "id": 81,
+      "firstName": "Johnny",
+      "lastName": "Firpo",
+      "email": "j.firpo@gmail.com",
+      "address": {
+        "zip": "IT552",
+        "country": "Italy",
+        "city": "Milan",
+        "street": "Cappadocia Street",
+        "notes": "54"
+      },
+      "active": false
     }
   ],
   "orders": [
