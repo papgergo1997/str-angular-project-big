@@ -37,28 +37,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="card card-stats">
-                    <div class="card-header card-header-danger card-header-icon">
-                        <div class="card-icon">
-                            <i class="material-icons">info_outline</i>
-                        </div>
-                        <p class="card-category">Payment Issues</p>
-                        <h3 class="card-title">{{warn_acum}}</h3>
-                    </div>
-                    <div class="card-footer">
-                        <div class="stats">
-                            <i class="material-icons">local_offer</i> new bills to be processed = {{accum_bill}}
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <div class="stats">
-                            <i class="material-icons">local_offer</i> unpaid orders = {{accum_active_unpaid_orders}}
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="card card-stats">
 
@@ -77,6 +55,27 @@
                     <div class="card-footer">
                         <div class="stats">
                             <i class="material-icons">date_range</i> Last 24 Hours
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header card-header-danger card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">info_outline</i>
+                        </div>
+                        <p class="card-category">Payment Issues</p>
+                        <h3 class="card-title">{{warn_acum}}</h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">local_offer</i> new bills to be processed = {{accum_bill}}
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">local_offer</i> unpaid orders = {{accum_active_unpaid_orders}}
                         </div>
                     </div>
                 </div>
@@ -116,7 +115,9 @@
                     </div>
                     <div class="card-footer">
                         <div class="stats">
-                            <i class="material-icons">access_time</i> campaign sent 2 days ago
+                            <i class="material-icons">access_time</i> updated {{timer}} <span *ngIf="timer != 1">
+                                -minutes-
+                            </span><span *ngIf="timer == 1">-minute-</span>ago
                         </div>
                     </div>
                 </div>

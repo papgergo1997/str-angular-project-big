@@ -17,6 +17,9 @@ import { Product } from '../models/Product';
 })
 export class DashboardComponent implements OnInit {
 
+  timer: number = 0;
+  seconds: number = 0;
+
   productlist$: BehaviorSubject<Product[]> = this.productsservice.list$;
   billList$: BehaviorSubject<Bill[]> = this.billService.list$;
   billAmountArray: number[] = [];
@@ -24,9 +27,9 @@ export class DashboardComponent implements OnInit {
 
   revenue: number = 0;
   productList$: BehaviorSubject<Product[]> = this.productService.list$;
-productPriceArray: number[] = [];
- productIdArray: any[] = [];
- productPrices: number = 0;
+  productPriceArray: number[] = [];
+  productIdArray: any[] = [];
+  productPrices: number = 0;
 
   orderList$: BehaviorSubject<Order[]> = this.orderService.orderList$;
   orderAmountArray: number[] = [];
@@ -57,6 +60,15 @@ productPriceArray: number[] = [];
 
   ngOnInit(): void {
 
+    setInterval(() => {
+      if (this.seconds == 60) {
+        this.timer++;
+        this.seconds = 0;
+      }
+      this.seconds += 1
+    }, 1000);
+
+
     this.billList$.subscribe(data => {
       data.forEach(item => {
         this.billAmountArray.push(item.amount);
@@ -83,7 +95,7 @@ productPriceArray: number[] = [];
       data.forEach(item => {
         this.productIdArray.push(item.id);
       })
-    }) 
+    })
 
 
     this.customerList$.subscribe(data => {
