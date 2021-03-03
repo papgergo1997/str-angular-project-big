@@ -6,7 +6,7 @@ export class Product {
   description = '';
   price = 0;
   featured = false;
-  active = false;
+  active = true;
 
   // constructor(id: number, name: string, type: string, catID: number, description: string, price: number,
   //             active: boolean, featured: boolean) {
