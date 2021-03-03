@@ -21,7 +21,12 @@ export class DashboardComponent implements OnInit {
   billList$: BehaviorSubject<Bill[]> = this.billService.list$;
   billAmountArray: number[] = [];
   billIdArray: any[] = [];
-  revenue = 0;
+
+  revenue: number = 0;
+  productList$: BehaviorSubject<Product[]> = this.productService.list$;
+productPriceArray: number[] = [];
+ productIdArray: any[] = [];
+ productPrices: number = 0;
 
   orderList$: BehaviorSubject<Order[]> = this.orderService.orderList$;
   orderAmountArray: number[] = [];
@@ -44,7 +49,8 @@ export class DashboardComponent implements OnInit {
     private billService: BillService,
     private orderService: OrderService,
     private customerService: CustomerService,
-    private productsservice: ProductService
+    private productsservice: ProductService,
+    private productService: ProductService
   ) {
   }
 
@@ -59,11 +65,26 @@ export class DashboardComponent implements OnInit {
 
     });
 
+    this.productList$.subscribe(data => {
+      data.forEach(item => {
+        this.productPriceArray.push(item.price);
+        this.productPrices += item.price;
+      });
+
+    })
+
     this.billList$.subscribe(data => {
       data.forEach(item => {
         this.billIdArray.push(item.id);
       })
     })
+
+    this.productList$.subscribe(data => {
+      data.forEach(item => {
+        this.productIdArray.push(item.id);
+      })
+    }) 
+
 
     this.customerList$.subscribe(data => {
       data.forEach(item => {

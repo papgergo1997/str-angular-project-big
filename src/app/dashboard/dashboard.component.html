@@ -7,19 +7,41 @@
                     <div class="card-header card-header-success card-header-icon">
                         <div class="card-icon">
                             <i class="material-icons">paid</i>
-
                         </div>
                         <p class="card-category">Revenue</p>
                         <h3 class="card-title"> {{ revenue }} Ft</h3>
                     </div>
                     <div class="card-footer">
-                        <div class="stats">
-                            <i class="material-icons">date_range</i> active products {{accum_active_products}}
+                        <div class="stats">                          
+                          <i class="material-icons">date_range</i> active products {{accum_active_products}}
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+
+                    <div class="card-header card-header-warning card-header-icon">
+                        <!-- <div class="card-icon">
+                            <i class="material-icons">add_business</i>
+                        </div> -->
+                        <div class="card-icon">
+                            <i class="material-icons">money</i>
+                        </div>
+                        <p class="card-category">Product Prices</p>
+                        <h3 class="card-title">{{ productPrices }}
+                            <small>Ft</small>
+                          </h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">date_range</i> Last 24 Hours
+                              </div>
+                    </div>
+                </div>
+            </div>
+                          
+<div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="card card-stats">
                     <div class="card-header card-header-info card-header-icon">
                         <div class="card-icon">
@@ -31,8 +53,8 @@
                         </h3>
                     </div>
                     <div class="card-footer">
-                        <div class="stats">
-                            <i class="material-icons">date_range</i> active customers {{accum_active_customers}}
+                        <div class="stats">                         
+                          <i class="material-icons">date_range</i> active customers {{accum_active_customers}}
                         </div>
                     </div>
                 </div>
@@ -124,12 +146,15 @@
 
             <div class="col-md-4">
                 <div class="card card-chart">
-                    <div class="card-header card-header-danger">
-                        <div class="ct-chart" id="completedTasksChart"></div>
+                    <div class="card-header card-header-warning">
+                        <div class="ct-chart" id="productsPriceChart"></div>
                     </div>
                     <div class="card-body">
-                        <h4 class="card-title">Completed Tasks</h4>
-                        <p class="card-category">Last Campaign Performance</p>
+                        <h4 class="card-title">Products</h4>
+                        <p class="card-category">
+                            <app-product-bar-chart [price]="productPriceArray" [ids]="productIdArray">
+                            </app-product-bar-chart>
+                      </p>
                     </div>
                     <div class="card-footer">
                         <div class="stats">

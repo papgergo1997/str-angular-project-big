@@ -1,18 +1,25 @@
 .btn.btn-primary {
-    color: #6b6865;
+
+    color: #454d5a;
+    background-color: #b06727;
+    border-color: #b07427;
+    box-shadow: 0 2px 2px 0 rgba(176, 116, 39, 0.14),0 3px 1px -2px rgba(176, 116, 39, 0.2),0 1px 5px 0 rgba(176, 122, 39, 0.12);
+}
+
+.btn.btn-primary:disabled:hover {
+    background-color: #a27342;
+    border-color: #b05427;
+}
+
+.btn.btn-primary:hover {
+    box-shadow: 0 14px 26px -12px rgba(176, 90, 39, 0.42),0 4px 23px 0 rgba(50, 49, 49, 0.12),0 8px 10px -5px rgba(176, 97, 39, 0.2);
+}
+
+.btn.btn-primary:hover {
+    color: #c2c3c6;    
     background-color: #d4a884;
     border-color: #ec6729;
     box-shadow: 0 2px 2px 0 rgba(212, 109, 0, 0.14),0 3px 1px -2px rgba(212, 70, 0, 0.2),0 1px 5px 0 rgba(212, 119, 0, 0.12);
-}
-
-.btn.btn-primary:hover {
-    box-shadow: 0 14px 26px -12px rgba(212, 109, 0, 0.42),0 4px 23px 0 rgba(0,0,0,.12),0 8px 10px -5px rgba(212, 109, 0, 0.2);
-}
-
-.btn.btn-primary:hover {
-    color: #c1bbb8;
-    background-color:#a17165;
-    border-color: #c57003;
 }
 
 .error-message {
@@ -51,5 +58,6 @@
     100%{
       transform: rotate(360deg);
     }
+
   }
 
