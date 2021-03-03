@@ -16,11 +16,14 @@ import { Product } from '../models/Product';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  indexPage = 1;
+  pagiLength = 5;
+  ArrayLength = 0;
 
   timer: number = 0;
   seconds: number = 0;
 
-  productlist$: BehaviorSubject<Product[]> = this.productsservice.list$;
+  
   billList$: BehaviorSubject<Bill[]> = this.billService.list$;
   billAmountArray: number[] = [];
   billIdArray: any[] = [];
@@ -149,7 +152,7 @@ export class DashboardComponent implements OnInit {
     });
     // this counts active products
     this.productsservice.getAll();
-    this.productlist$.subscribe(data => {
+    this.productList$.subscribe(data => {
       data.forEach(item => {
         switch (item.active) {
           case true:
