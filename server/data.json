@@ -1338,6 +1338,20 @@
         "notes": "43"
       },
       "active": false
+    },
+    {
+      "id": 81,
+      "firstName": "Johnny",
+      "lastName": "Firpo",
+      "email": "j.firpo@gmail.com",
+      "address": {
+        "zip": "IT552",
+        "country": "Italy",
+        "city": "Milan",
+        "street": "Cappadocia Street",
+        "notes": "54"
+      },
+      "active": false
     }
   ],
   "orders": [
