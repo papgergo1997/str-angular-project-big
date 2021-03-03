@@ -26,6 +26,7 @@ export class DashboardComponent implements OnInit {
   orderList$: BehaviorSubject<Order[]> = this.orderService.orderList$;
   orderAmountArray: number[] = [];
   orderIdArray: any[] = [];
+
   accum_bill = 0;
   accum_active_customers = 0;
   accum_active_products = 0;
