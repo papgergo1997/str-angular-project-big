@@ -14,7 +14,7 @@ export class ProductBarChartComponent implements OnInit {
     scaleShowVerticalLines: false,
     responsive: true
   }
-  barChartType: any = 'bar';
+  barChartType: any = 'line';
   barChartLegend = true;
   barChartData: any[] = [];
 

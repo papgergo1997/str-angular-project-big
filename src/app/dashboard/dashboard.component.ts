@@ -21,6 +21,7 @@ export class DashboardComponent implements OnInit {
   productIdArray: any[] = [];
 
   revenue: number = 0;
+  productPrices: number = 0;
 
   constructor(
     private billService: BillService,
@@ -40,7 +41,7 @@ export class DashboardComponent implements OnInit {
     this.productList$.subscribe(data => {
       data.forEach(item => {
         this.productPriceArray.push(item.price);
-        this.revenue += item.price;
+        this.productPrices += item.price;
       });
 
     })

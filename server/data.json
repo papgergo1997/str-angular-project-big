@@ -116,7 +116,7 @@
       "name": "Próbább",
       "type": "pro",
       "description": "csak próbabbabababbabababab",
-      "price": 2012,
+      "price": 20123,
       "featured": "false",
       "active": "true"
     },
@@ -136,7 +136,7 @@
       "name": "Ninjacream",
       "type": "Kencefice",
       "description": "Programozó lettél és nem tudsz mit kezdeni a rengeteg béreddel?!! Itt a Bér Gyilkos kenőcs, ha  ezt rákened kinyírja mindet. Csak erős idegzetűeknek!!!",
-      "price": 22312354537547997000,
+      "price": 223123,
       "featured": "true",
       "active": "true"
     },
