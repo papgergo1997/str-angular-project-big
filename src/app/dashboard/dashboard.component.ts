@@ -78,15 +78,7 @@ export class DashboardComponent implements OnInit {
       });
     });
     // this counts active products
-    this.productsservice.getAll();
-    this.productlist$.subscribe(data => {
-      data.forEach(item => {
-        switch (item.active) {
-          case 'true':
-            this.accum_active_products += 1;
-        }
-      });
-    });
+
     // this counts active users
     this.customerservice.getAll();
     this.customerlist$.subscribe(data => {
