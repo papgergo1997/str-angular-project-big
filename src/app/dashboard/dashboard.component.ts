@@ -30,6 +30,7 @@ export class DashboardComponent implements OnInit {
   accum_active_customers = 0;
   accum_active_products = 0;
   accum_active_unpaid_orders = 0;
+  warn_acum = 0;
 
   constructor(
     private billService: BillService,
@@ -61,7 +62,7 @@ export class DashboardComponent implements OnInit {
         switch (item.status) {
           case 'new':
             this.accum_bill += 1;
-            break;
+            warner();
         }
       });
     });
@@ -72,6 +73,7 @@ export class DashboardComponent implements OnInit {
         switch (item.status) {
           case 'new':
             this.accum_active_unpaid_orders += 1;
+            warner();
         }
       });
     });
@@ -96,6 +98,13 @@ export class DashboardComponent implements OnInit {
         }
       });
     });
+    // buggy , needs to be async somehow
+    const
+      warner = (): void =>
+    {
+      this.warn_acum = this.accum_bill + this.accum_active_unpaid_orders;
+    };
+
 
     this.orderList$.subscribe(data => {
       data.forEach(item => {
