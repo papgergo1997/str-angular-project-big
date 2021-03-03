@@ -6,20 +6,10 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./order-bar-chart.component.scss']
 })
 export class OrderBarChartComponent implements OnInit {
-
   @Input() amounts: number[] = [];
-  @Input() ids: any[] = [];
 
-  barChartOptions = {
-    scaleShowVerticalLines: false,
-    responsive: true,
-  }
-  barChartType: any = 'bar';
-  barChartLegend = true;
+  // [datasets]="barChartData"
   barChartData: any[] = [];
-
-  constructor() { }
-
   ngOnInit(): void {
     this.barChartData = [
       {
@@ -30,5 +20,24 @@ export class OrderBarChartComponent implements OnInit {
       }
     ];
   }
+
+  // [labels]="ids"
+  @Input() ids: any[] = [];
+
+  // [options]="barChartOptions"
+  barChartOptions = {
+    scaleShowVerticalLines: false,
+    responsive: true,
+  };
+
+  // [legend]="barChartLegend"
+  barChartLegend = true;
+
+  // [chartType]="barChartType"
+  barChartType: any = 'bar';
+
+
+  constructor() { }
+
 
 }

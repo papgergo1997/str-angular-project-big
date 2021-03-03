@@ -27,6 +27,8 @@ import { BillBarChartComponent } from './charts/bill-bar-chart/bill-bar-chart.co
 import { ChartsModule } from 'ng2-charts';
 import { OrderBarChartComponent } from './charts/order-bar-chart/order-bar-chart.component';
 
+import { BarChartComponent } from './charts/order-bar-chart copy/order-bar-chart.component'
+
 
 @NgModule({
   declarations: [
@@ -50,6 +52,8 @@ import { OrderBarChartComponent } from './charts/order-bar-chart/order-bar-chart
     PaginationComponent,
     BillBarChartComponent,
     OrderBarChartComponent,
+
+    BarChartComponent,
   ],
   imports: [
     HttpClientModule,
