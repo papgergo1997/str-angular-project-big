@@ -114,7 +114,5 @@ export class DashboardComponent implements OnInit {
         this.orderIdArray.push(item.id);
       });
     });
-
   }
-
 }
