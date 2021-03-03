@@ -81,9 +81,8 @@ export class DashboardComponent implements OnInit {
     this.productsservice.getAll();
     this.productlist$.subscribe(data => {
       data.forEach(item => {
-        // @ts-ignore
         switch (item.active) {
-          case true:
+          case 'true':
             this.accum_active_products += 1;
         }
       });
