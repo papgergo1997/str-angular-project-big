@@ -39,7 +39,7 @@
                 </thead>
                 <tbody>
                   <tr
-                    *ngFor="let order of orderList$ | async | filter:filterKey:phrase | sort: sortKey: ascend | slice: (indexPage -1)*pagiLength: indexPage*pagiLength">
+                    *ngFor="let order of orderList$ | async | filter:filterKey:phrase | sort: sortKey: ascend | slice:(indexPage-1)*pagiLength:indexPage*pagiLength">
                     <td *ngFor="let col of orderCols">
                       {{ order[col.key] }}
                     </td>
@@ -56,16 +56,15 @@
                     </td>
                   </tr>
                   <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
                     <td class="sumCell">
                       Current amount:&nbsp;
-                      {{ orderList$ | async | filter:filterKey:phrase | slice: (indexPage -1)*pagiLength:
-                      indexPage*pagiLength | summary:'amount' }} <br>
+                      {{ orderList$ | async | filter:filterKey:phrase | slice:(indexPage-1)*pagiLength:indexPage*pagiLength | summary:'amount' }} <br>
                       Total amount:&nbsp;
                       {{ orderList$ | async | summary:'amount' }}
                     </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                     <td></td>
                     <td></td>
                   </tr>

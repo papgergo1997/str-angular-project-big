@@ -20,21 +20,23 @@ export class DashboardComponent implements OnInit {
   timer: number = 0;
   seconds: number = 0;
 
-  productlist$: BehaviorSubject<Product[]> = this.productsservice.list$;
+  // Bill grafikonhoz.
   billList$: BehaviorSubject<Bill[]> = this.billService.list$;
   billAmountArray: number[] = [];
   billIdArray: any[] = [];
   billBackgroundColorArray: string[] = [];
-
   revenue: number = 0;
+
+  // Order grafikonhoz.
+  orderList$: BehaviorSubject<Order[]> = this.orderService.orderList$;
+  orderAmountArray: number[] = [];
+  orderIdArray: any[] = [];
+
+  // Product grafikonhoz.
   productList$: BehaviorSubject<Product[]> = this.productService.list$;
   productPriceArray: number[] = [];
   productIdArray: any[] = [];
   productPrices: number = 0;
-
-  orderList$: BehaviorSubject<Order[]> = this.orderService.orderList$;
-  orderAmountArray: number[] = [];
-  orderIdArray: any[] = [];
 
   accum_bill = 0;
   accum_active_customers = 0;
@@ -42,6 +44,7 @@ export class DashboardComponent implements OnInit {
   accum_active_unpaid_orders = 0;
   warn_acum = 0;
 
+  // Customer grafikonhoz.
   customerList$: BehaviorSubject<Customer[]> = this.customerService.list$;
   countryArray: any[] = [];
   customerArray: any[] = [];
@@ -52,9 +55,8 @@ export class DashboardComponent implements OnInit {
   constructor(
     private billService: BillService,
     private orderService: OrderService,
+    private productService: ProductService,
     private customerService: CustomerService,
-    private productsservice: ProductService,
-    private productService: ProductService
   ) {
   }
 
@@ -69,28 +71,47 @@ export class DashboardComponent implements OnInit {
       this.seconds += 1
     }, 1000);
 
-
+    // Bill grafikonhoz.
     this.billList$.subscribe(data => {
       data.forEach(item => {
         this.billAmountArray.push(item.amount);
         this.revenue += item.amount;
         this.billBackgroundColorArray.push(`rgb(${this.rgb()}, ${this.rgb()}, ${this.rgb()})`)
       });
-
     });
-
-    this.productList$.subscribe(data => {
-      data.forEach(item => {
-        this.productPriceArray.push(item.price);
-        this.productPrices += item.price;
-      });
-
-    })
 
     this.billList$.subscribe(data => {
       data.forEach(item => {
         this.billIdArray.push(item.id);
       })
+    })
+
+    // Order grafikonhoz.
+    this.orderService.getAll();
+    if(this.orderAmountArray.length === 0) {
+      this.orderAmountArray = [];
+      this.orderList$.subscribe(orders => {
+        orders.forEach(order => {
+            this.orderAmountArray.push(order.amount);
+        });
+      });
+    };
+
+    if (this.orderIdArray.length === 0) {
+      this.orderIdArray = [];
+      this.orderList$.subscribe(orders => {
+        orders.forEach(order => {
+          this.orderIdArray.push(order.id);
+        });
+      });
+    };
+
+    // Product grafikonhoz.
+    this.productList$.subscribe(data => {
+      data.forEach(item => {
+        this.productPriceArray.push(item.price);
+        this.productPrices += item.price;
+      });
     })
 
     this.productList$.subscribe(data => {
@@ -99,7 +120,7 @@ export class DashboardComponent implements OnInit {
       })
     })
 
-
+    // Customer grafikonhoz.
     this.customerList$.subscribe(data => {
       data.forEach(item => {
         this.countryArray.push(item.address.country)
@@ -122,7 +143,7 @@ export class DashboardComponent implements OnInit {
     //   data.forEach(item => {
     //     this.countryArray.push(item.active);
     //   })
-    // })  
+    // })
 
 
 
@@ -136,8 +157,8 @@ export class DashboardComponent implements OnInit {
         }
       });
     });
-    // this counts new  orders
 
+    // this counts new  orders
     this.orderList$.subscribe(data => {
       data.forEach(item => {
         switch (item.status) {
@@ -147,9 +168,10 @@ export class DashboardComponent implements OnInit {
         }
       });
     });
+
     // this counts active products
-    this.productsservice.getAll();
-    this.productlist$.subscribe(data => {
+    this.productService.getAll();
+    this.productList$.subscribe(data => {
       data.forEach(item => {
         switch (item.active) {
           case true:
@@ -157,6 +179,7 @@ export class DashboardComponent implements OnInit {
         }
       });
     });
+
     // this counts active users
     this.customerList$.subscribe(data => {
       data.forEach(item => {
@@ -166,23 +189,13 @@ export class DashboardComponent implements OnInit {
         }
       });
     });
+
     // buggy , needs to be async somehow
     const
       warner = (): void => {
         this.warn_acum = this.accum_bill + this.accum_active_unpaid_orders;
       };
 
-    this.orderService.getAll();
-    this.orderList$.subscribe(data => {
-      data.forEach(item => {
-        this.orderAmountArray.push(item.amount);
-      });
-    });
-    this.orderList$.subscribe(data => {
-      data.forEach(item => {
-        this.orderIdArray.push(item.id);
-      });
-    });
   }
 
   rgb(): number {

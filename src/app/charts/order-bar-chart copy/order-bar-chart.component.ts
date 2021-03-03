@@ -3,7 +3,7 @@ import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import { Label } from 'ng2-charts';
 
 @Component({
-  selector: 'app-bar-chart',
+  selector: 'app-proba-chart',
   templateUrl: './order-bar-chart.component.html',
   styleUrls: ['./order-bar-chart.component.scss'],
 })

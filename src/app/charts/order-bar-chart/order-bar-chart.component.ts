@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
+import { Label } from 'ng2-charts';
 
 @Component({
   selector: 'app-order-bar-chart',
@@ -6,38 +8,41 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./order-bar-chart.component.scss']
 })
 export class OrderBarChartComponent implements OnInit {
+  // [datasets]="barChartData"
   @Input() amounts: number[] = [];
 
+  // [labels]="ids"
+  @Input() ids: Label[] = [];
+
+  // [options]="barChartOptions"
+  barChartOptions: ChartOptions = {
+    responsive: true,
+  };
+
+  // [chartType]="barChartType"
+  barChartType: ChartType = 'bar';
+
+  // [legend]="barChartLegend"
+  barChartLegend = true;
+
   // [datasets]="barChartData"
-  barChartData: any[] = [];
+  barChartData: ChartDataSets[] = [];
+
+
+  constructor() { }
+
   ngOnInit(): void {
+
+    // [datasets]="barChartData"
     this.barChartData = [
       {
-        label: 'Order value',
+        label: 'Order amount',
         data: this.amounts,
         backgroundColor: '#ffa726',
         hoverBackgroundColor: '#fb8c00',
       }
     ];
+
   }
-
-  // [labels]="ids"
-  @Input() ids: any[] = [];
-
-  // [options]="barChartOptions"
-  barChartOptions = {
-    scaleShowVerticalLines: false,
-    responsive: true,
-  };
-
-  // [legend]="barChartLegend"
-  barChartLegend = true;
-
-  // [chartType]="barChartType"
-  barChartType: any = 'bar';
-
-
-  constructor() { }
-
 
 }
