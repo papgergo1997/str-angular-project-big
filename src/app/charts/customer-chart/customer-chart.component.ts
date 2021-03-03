@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CustomerService } from 'src/app/service/customer.service';
 
 @Component({
   selector: 'app-customer-chart',
@@ -7,8 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CustomerChartComponent implements OnInit {
 
-  @Input() customers: any[] = [];
-  @Input() countries: any[] = [];
+  @Input() customers: number[] = [5, 8, 2, 4];
+  @Input() countries: any[] = ['England', 'USA', 'Australia', 'Scotland'];
 
   barChartOptions = {
     scaleShowVerticalLines: false,
@@ -18,12 +19,14 @@ export class CustomerChartComponent implements OnInit {
   barChartLegend = true;
   barChartData: any[] = [];
 
+
   constructor() { }
 
   ngOnInit(): void {
     this.barChartData = [
-      { data: this.customers, label: 'Customers Countries', backgroundColor: 'green' }
+      { data: this.customers, label: 'Customers / Countries', backgroundColor: 'orange' }
     ];
+    console.log(this.customers, this.countries)
   }
 
 }
