@@ -8,8 +8,8 @@
                         <div class="card-icon">
                             <i class="material-icons">paid</i>
                         </div>
-                        <p class="card-category">Revenue</p>
-                        <h3 class="card-title"> {{ revenue }} Ft</h3>
+                        <p class="card-category">Bills revenue</p>
+                        <h3 class="card-title"> {{ revenue | numberhu }} Ft</h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
@@ -48,7 +48,7 @@
                             <i class="material-icons">money</i>
                         </div>
                         <p class="card-category">Product Prices</p>
-                        <h3 class="card-title">{{ productPrices }}
+                        <h3 class="card-title">{{ productPrices | numberhu }}
                             <small>Ft</small>
                         </h3>
                     </div>
@@ -82,26 +82,29 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="card card-chart">
                     <div class="card-header card-header-success">
-                        <div class="ct-chart" id="dailySalesChart"></div>
+                        <div class="ct-chart" id="dailySalesChart">Bills</div>
                     </div>
                     <div class="card-body">
-                        <h4 class="card-title">Bills</h4>
+                        <h4 class="card-title"></h4>
                         <p class="card-category">
-                            <app-bill-bar-chart [amounts]="billAmountArray" [ids]="billIdArray">
+                            <app-bill-bar-chart [bgc]="billBackgroundColorArray" [amounts]="billAmountArray"
+                                [ids]="billIdArray">
                             </app-bill-bar-chart>
                         </p>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
-                            <i class="material-icons">access_time</i> updated 4 minutes ago
+                            <i class="material-icons">access_time</i> updated {{timer}} <span *ngIf="timer != 1">
+                                -minutes-
+                            </span><span *ngIf="timer == 1">-minute-</span>ago
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="card card-chart">
                     <div class="card-header card-header-info">
                         <div class="ct-chart" id="websiteViewsChart">Customers /Countries</div>
@@ -123,7 +126,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="card card-chart">
                     <div class="card-header card-header-warning">
                         <div class="ct-chart" id="websiteViewsChart">
@@ -145,7 +148,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="card card-chart">
                     <div class="card-header card-header-warning">
                         <div class="ct-chart" id="productsPriceChart"></div>
@@ -470,6 +473,10 @@
                         </table>
                     </div>
                 </div>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">Bill values from the European countries</h4>
+                <app-bill-geo-chart></app-bill-geo-chart>
             </div>
         </div>
     </div>

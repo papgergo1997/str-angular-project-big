@@ -9,6 +9,7 @@ export class BillBarChartComponent implements OnInit {
 
   @Input() amounts: number[] = [];
   @Input() ids: any[] = [];
+  @Input() bgc: string[] = [];
 
   barChartOptions = {
     scaleShowVerticalLines: false,
@@ -22,7 +23,7 @@ export class BillBarChartComponent implements OnInit {
 
   ngOnInit(): void {
     this.barChartData = [
-      { data: this.amounts, label: 'Bill value', backgroundColor: 'green' }
+      { data: this.amounts, label: 'Bill value', backgroundColor: this.bgc, hoverBackgroundColor: 'darkgreen' }
     ];
   }
 

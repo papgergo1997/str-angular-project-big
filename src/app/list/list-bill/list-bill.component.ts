@@ -24,6 +24,15 @@ export class ListBillComponent implements OnInit {
   ArrayLength = 0;
   ascend = true;
   sortKey = '';
+  lastDragKey = "";
+
+  cols: { key: string, title: string }[] = [
+    { key: 'id', title: 'Id' },
+    { key: 'orderID', title: 'OrderId' },
+    { key: 'amount', title: 'Amount' },
+    { key: 'country', title: 'Country' },
+    { key: 'status', title: 'Status' },
+  ];
 
   constructor(
     private billService: BillService,
@@ -32,7 +41,23 @@ export class ListBillComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.billList$.subscribe(data => { this.ArrayLength = data.length })
+    this.billService.getAll();
+    this.billList$.subscribe(data => { this.ArrayLength = data.length });
+  }
+
+  onHeaderDragStart(event: DragEvent): void {
+    this.lastDragKey = (event.target as HTMLTableHeaderCellElement).id;
+    console.log(this.lastDragKey);
+  }
+
+  onHeaderDrop(event: DragEvent): void {
+    event.preventDefault();
+    const targetID: string = (event.target as HTMLTableHeaderCellElement).id;
+    const from = this.cols.findIndex(col => col.key === this.lastDragKey);
+    const to = this.cols.findIndex(col => col.key === targetID);
+    const temp = Object.assign({}, this.cols[from]);
+    this.cols.splice(from, 1);
+    this.cols.splice(to, 0, temp);
   }
 
   onLength(length: number) {
@@ -56,30 +81,5 @@ export class ListBillComponent implements OnInit {
   showWarning(): void {
     this.toastr.warning('You have successfully deleted a bill!', 'Deleted', { timeOut: 4000 });
   }
-
-  // onPagiNumber(page: number): void {
-  //   this.indexPage = page;
-  // }
-
-  // onPagiBack(): void {
-  //   this.indexPage--;
-  //   if (this.indexPage < 1) {
-
-  //     this.billList$.subscribe(data => this.indexPage = Math.ceil(data.length / this.pagiLength));
-  //   }
-  // }
-  // onPagiNext(): void {
-  //   this.indexPage++;
-  //   let billPageLength = 0;
-  //   this.billList$.subscribe(data => billPageLength = Math.ceil(data.length / this.pagiLength));
-  //   if (this.indexPage > billPageLength) { this.indexPage = 1; }
-  // }
-  // onPagiLastNumber(): void {
-  //   let lastPageNumber = 0;
-  //   this.billList$.subscribe(data => {
-  //     lastPageNumber = Math.ceil(data.length / this.pagiLength);
-  //     this.indexPage = lastPageNumber;
-  //   });
-  // }
 
 }

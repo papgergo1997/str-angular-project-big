@@ -24,6 +24,7 @@ export class DashboardComponent implements OnInit {
   billList$: BehaviorSubject<Bill[]> = this.billService.list$;
   billAmountArray: number[] = [];
   billIdArray: any[] = [];
+  billBackgroundColorArray: string[] = [];
 
   revenue: number = 0;
   productList$: BehaviorSubject<Product[]> = this.productService.list$;
@@ -73,6 +74,7 @@ export class DashboardComponent implements OnInit {
       data.forEach(item => {
         this.billAmountArray.push(item.amount);
         this.revenue += item.amount;
+        this.billBackgroundColorArray.push(`rgb(${this.rgb()}, ${this.rgb()}, ${this.rgb()})`)
       });
 
     });
@@ -181,5 +183,9 @@ export class DashboardComponent implements OnInit {
         this.orderIdArray.push(item.id);
       });
     });
+  }
+
+  rgb(): number {
+    return Math.floor((Math.random() * 255) + 1);
   }
 }
