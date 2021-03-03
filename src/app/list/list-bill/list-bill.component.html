@@ -33,7 +33,10 @@
                                 <thead class="color-grey">
                                     <th class="sortedHeads" *ngFor="let col of cols" id="{{ col.key }}" draggable="true"
                                         (dragover)="$event.preventDefault()" (dragstart)="onHeaderDragStart($event)"
-                                        (drop)="onHeaderDrop($event)" (click)="onChangeSort(col.key)">{{ col.title }}
+                                        (drop)="onHeaderDrop($event)" (click)="onChangeSort(col.key)">
+                                        <i *ngIf="ascend" class="fa fa-sort-alpha-desc" aria-hidden="true"></i>
+                                        <i *ngIf="!ascend" class="fa fa-sort-alpha-asc" aria-hidden="true"></i> &nbsp;{{
+                                        col.title }}
                                     </th>
                                     <th></th>
                                 </thead>
@@ -53,6 +56,23 @@
                                                         class="material-icons">delete</span></button>
                                             </div>
                                         </td>
+                                    </tr>
+                                    <hr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+
+                                        <td class="font-weight-bold">
+                                            Current amount:&nbsp;
+                                            {{ billList$ | async | filter:filterKey:phrase | slice: (indexPage
+                                            -1)*pagiLength:
+                                            indexPage*pagiLength | summary:'amount' | numberhu }} Ft<br>
+                                            Total amount:&nbsp;
+                                            {{ billList$ | async | summary:'amount' | numberhu }} Ft
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
                                     </tr>
                                 </tbody>
                             </table>

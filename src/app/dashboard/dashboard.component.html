@@ -13,7 +13,8 @@
                     </div>
                     <div class="card-footer">
                         <div class="stats">
-                            <i class="material-icons">date_range</i> active products {{accum_active_products}}
+                            <i class="material-icons">label_important</i> unpaid bills (pieces) =
+                            {{accum_bill}}
                         </div>
                     </div>
                 </div>
@@ -85,7 +86,7 @@
             <div class="col-md-6">
                 <div class="card card-chart">
                     <div class="card-header card-header-success">
-                        <div class="ct-chart" id="dailySalesChart">Bills</div>
+                        <div class="ct-chart" id="dailySalesChart">Bills (value/id)</div>
                     </div>
                     <div class="card-body">
                         <h4 class="card-title"></h4>
@@ -151,10 +152,10 @@
             <div class="col-md-6">
                 <div class="card card-chart">
                     <div class="card-header card-header-warning">
-                        <div class="ct-chart" id="productsPriceChart"></div>
+                        <div class="ct-chart" id="productsPriceChart">Products</div>
                     </div>
                     <div class="card-body">
-                        <h4 class="card-title">Products</h4>
+                        <h4 class="card-title"></h4>
                         <p class="card-category">
                             <app-product-bar-chart [price]="productPriceArray" [ids]="productIdArray">
                             </app-product-bar-chart>
@@ -474,9 +475,24 @@
                     </div>
                 </div>
             </div>
-            <div class="card-body">
-                <h4 class="card-title">Bill values from the European countries</h4>
-                <app-bill-geo-chart></app-bill-geo-chart>
+
+            <div class="col-md-12">
+                <div class="card card-chart">
+                    <div class="card-header card-header-success">
+                        <div class="ct-chart">Bill values from the European countries</div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title"></h4>
+                        <app-bill-geo-chart></app-bill-geo-chart>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">access_time</i> updated {{timer}} <span *ngIf="timer != 1">
+                                -minutes-
+                            </span><span *ngIf="timer == 1">-minute-</span>ago
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
