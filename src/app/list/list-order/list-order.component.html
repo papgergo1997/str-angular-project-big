@@ -28,19 +28,12 @@
             <div class="table-responsive">
               <table class="table table-striped">
                 <thead class="text-warning">
-                  <th
-                    class="sortedHeads"
-                    *ngFor="let col of orderCols"
-                    id="{{ col.key }}"
-                    draggable="true"
-                    (dragover)="$event.preventDefault()"
-                    (dragstart)="onHeaderDragStart($event)"
-                    (drop)="onHeaderDrop($event)"
-                    (click)="onChangeSort(col.key)"
-                  >
-                  <!-- <i *ngIf="ascend" class="fa fa-sort-alpha-asc" aria-hidden="true"></i>
-                  <i *ngIf="!ascend" class="fa fa-sort-alpha-desc" aria-hidden="true"></i> &nbsp; -->
-                  {{ col.title }}
+                  <th class="sortedHeads" *ngFor="let col of orderCols" id="{{ col.key }}" draggable="true"
+                    (dragover)="$event.preventDefault()" (dragstart)="onHeaderDragStart($event)"
+                    (drop)="onHeaderDrop($event)" (click)="onChangeSort(col.key)">
+                    <i *ngIf="ascend" class="fa fa-sort-alpha-desc" aria-hidden="true"></i>
+                    <i *ngIf="!ascend" class="fa fa-sort-alpha-asc" aria-hidden="true"></i> &nbsp;
+                    {{ col.title }}
                   </th>
                   <th></th>
                 </thead>
@@ -66,7 +59,13 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td class="sumCell"> {{ orderList$ | async | summary:'amount'}} </td>
+                    <td class="sumCell">
+                      Current amount:&nbsp;
+                      {{ orderList$ | async | filter:filterKey:phrase | slice: (indexPage -1)*pagiLength:
+                      indexPage*pagiLength | summary:'amount' }} <br>
+                      Total amount:&nbsp;
+                      {{ orderList$ | async | summary:'amount' }}
+                    </td>
                     <td></td>
                     <td></td>
                   </tr>
