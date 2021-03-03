@@ -1,13 +1,13 @@
-import {Component, OnInit} from '@angular/core';
-import {BehaviorSubject} from 'rxjs';
-import {Bill} from '../models/Bill';
-import {Order} from '../models/Order';
-import {BillService} from '../service/bill.service';
-import {OrderService} from '../service/order.service';
-import {ProductService} from '../service/product.service';
-import {CustomerService} from '../service/customer.service';
-import {Customer} from '../models/Customer';
-import {Product} from '../models/Product';
+import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { Bill } from '../models/Bill';
+import { Order } from '../models/Order';
+import { BillService } from '../service/bill.service';
+import { OrderService } from '../service/order.service';
+import { ProductService } from '../service/product.service';
+import { CustomerService } from '../service/customer.service';
+import { Customer } from '../models/Customer';
+import { Product } from '../models/Product';
 
 @Component({
   selector: 'app-dashboard',
@@ -83,7 +83,7 @@ export class DashboardComponent implements OnInit {
       data.forEach(item => {
         // @ts-ignore
         switch (item.active) {
-          case 'true':
+          case true:
             this.accum_active_products += 1;
         }
       });
@@ -100,10 +100,9 @@ export class DashboardComponent implements OnInit {
     });
     // buggy , needs to be async somehow
     const
-      warner = (): void =>
-    {
-      this.warn_acum = this.accum_bill + this.accum_active_unpaid_orders;
-    };
+      warner = (): void => {
+        this.warn_acum = this.accum_bill + this.accum_active_unpaid_orders;
+      };
 
 
     this.orderList$.subscribe(data => {
