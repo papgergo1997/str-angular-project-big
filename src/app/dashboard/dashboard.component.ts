@@ -101,7 +101,7 @@ export class DashboardComponent implements OnInit {
       });
     });
     // this counts new  orders
-    this.orderService.getAll();
+
     this.orderList$.subscribe(data => {
       data.forEach(item => {
         switch (item.status) {
@@ -136,6 +136,7 @@ export class DashboardComponent implements OnInit {
         this.warn_acum = this.accum_bill + this.accum_active_unpaid_orders;
       };
 
+    this.orderService.getAll();
     this.orderList$.subscribe(data => {
       data.forEach(item => {
         this.orderAmountArray.push(item.amount);
