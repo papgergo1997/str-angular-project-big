@@ -14,7 +14,7 @@ import { NgForm } from '@angular/forms';
 })
 export class EditOrderComponent implements OnInit {
 
-  updating: boolean = false;
+  updating = false;
   order$: Observable<Order> = this.activatedRoute.params.pipe(
     switchMap(params => this.orderService.get(params.id))
   );
@@ -45,11 +45,11 @@ export class EditOrderComponent implements OnInit {
     }
   }
 
-  showSuccess() {
+  showSuccess(): void {
     this.toastr.success('You have successfully created an order!', 'Created', {timeOut: 3000});
   }
 
-  showInfo() {
+  showInfo(): void {
     this.toastr.info('You have successfully updated an order!', 'Updated', {timeOut: 3000});
   }
 }

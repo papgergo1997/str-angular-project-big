@@ -2,10 +2,24 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
+                <button class="btn btn-success btn-block mb-5" [routerLink]="['0']"><span
+                        class="material-icons">library_add</span>Add a new product</button>
+
+                <!-- <h4 class="card-title ">Product List</h4>
+                <p class="card-category"> This is a list of products. You can add, modify and delete a product.</p>
+                </div>
+                <div class="card-body">
+                <div class="row m-3">
+                    <button class="btn btn-block mb-5" [routerLink]="['/products/'+0]">
+                      <span class="material-icons">
+                        library_add
+                      </span> Add a new product</button> -->
+
+
                 <div class="card">
                     <div class="card-header card-header-success">
-                        <h4 class="card-title ">Products List</h4>
-                        <p class="card-category"> This is a list of products. You can add, modify and delete an product.
+                        <h4 class="card-title ">Product list</h4>
+                        <p class="card-category"> This is a list of products. You can add, modify and remove any products.
                         </p>
                     </div>
                     <!-- Filter component -->
@@ -20,21 +34,20 @@
                     </div>
                     <!-- Filter component -->
                     <div class="card-body">
-                        <div class="row m-3">
-                            <button class="btn btn-success" [routerLink]="['0']">Add new product</button>
-                        <!-- <h4 class="card-title ">Product List</h4>
-                        <p class="card-category"> This is a list of products. You can add, modify and delete a product.</p>
-                    </div>
-                    <div class="card-body">
-                        <div class="row m-3">
-                            <button class="btn btn-block mb-5" [routerLink]="['/products/'+0]">
-                              <span class="material-icons">
-                                library_add
-                              </span> Add a new product</button> -->
-                        </div>
                         <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead class=" text-primary">
+                            <table class="table table-striped">
+                                <thead class="text-primary">
+                                    <tr>
+                                        <th class="sortedHeads"
+                                        *ngFor="let col of cols"
+                                        id="{{ col.key }}"
+                                        draggable="true"
+                                        (dragover)="$event.preventDefault()"
+                                        (dragstart)="onHeaderDragStart($event)"
+                                        (drop)="onHeaderDrop($event)"
+                                        (click)="onChangeSort(col.key)">{{ col.title }}</th>
+                                        <th></th>
+                                    </tr>
                                     <!-- <th> ID </th>
                                     <th> KatID </th>
                                     <th> Név </th>
@@ -43,15 +56,15 @@
                                     <th> Ár </th>
                                     <th> Aktív </th>
                                     <th> Kiemelt </th> -->
-                                    <th *ngFor="let prop of productProperties">{{ prop }}</th>
-                                    <th></th>
+
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let product of productList | async | filter:filterKey:phrase">
-                                        <td>
-                                            {{ product.id }}
+                                    <tr *ngFor="let product of productList | async | filter:filterKey:phrase | sort: sortKey: ascend |slice: (indexPage -1)*pagiLength: indexPage*pagiLength">
+                                        <td *ngFor="let col of cols">{{ product[col.key] }}
+
                                         </td>
-                                        <td>
+                                        <td></td>
+                                        <!-- <td>
                                             {{ product.catID }}
                                         </td>
                                         <td>
@@ -71,10 +84,10 @@
                                         </td>
                                         <td>
                                             {{ product.featured }}
-                                        </td>
+                                        </td> -->
                                         <td>
                                             <div class="btn-group">
-                                                <button [routerLink]="['product' + product.id]" class="btn btn-info">
+                                                <button [routerLink]="[product.id]" class="btn btn-info">
                                                     <span class="material-icons">create</span></button>
                                                 <button (click)="onDelete(product)" class="btn btn-danger">
                                                     <span class="material-icons">delete</span>
@@ -87,6 +100,10 @@
                             </table>
                         </div>
                     </div>
+
+                    <app-pagination [length]="ArrayLength" (onLength)="onLength($event)" (onIndex)="onIndex($event)">
+                    </app-pagination>
+
                 </div>
             </div>
         </div>

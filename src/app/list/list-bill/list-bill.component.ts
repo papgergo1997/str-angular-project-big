@@ -13,15 +13,16 @@ import { ToastrService } from 'ngx-toastr';
 export class ListBillComponent implements OnInit {
 
   // szükséges változók a filterhez
-  filterKey: string = 'id';
-  phrase: string = '';
+  filterKey = 'id';
+  phrase = '';
   // szükséges változók a filterhez
 
   billProperties: string[] = Object.keys(new Bill());
   billList$: BehaviorSubject<Bill[]> = this.billService.list$;
-  indexPage: number = 1;
-  pagiLength: number = 5;
-  ascend: boolean = true;
+  indexPage = 1;
+  pagiLength = 5;
+  ArrayLength = 0;
+  ascend = true;
   sortKey = '';
 
   constructor(
@@ -31,6 +32,14 @@ export class ListBillComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.billList$.subscribe(data => { this.ArrayLength = data.length })
+  }
+
+  onLength(length: number) {
+    this.pagiLength = length;
+  }
+  onIndex(length: number) {
+    this.indexPage = length;
   }
 
   onChangeSort(data: string): void {
@@ -44,33 +53,33 @@ export class ListBillComponent implements OnInit {
     this.router.navigate(['bills']);
   }
 
-  showWarning() {
-    this.toastr.warning('You have successfully deleted a bill!', 'Deleted', { timeOut: 4000 })
+  showWarning(): void {
+    this.toastr.warning('You have successfully deleted a bill!', 'Deleted', { timeOut: 4000 });
   }
 
-  onPagiNumber(page: number) {
-    this.indexPage = page;
-  }
+  // onPagiNumber(page: number): void {
+  //   this.indexPage = page;
+  // }
 
-  onPagiBack() {
-    this.indexPage--;
-    if (this.indexPage < 1) {
+  // onPagiBack(): void {
+  //   this.indexPage--;
+  //   if (this.indexPage < 1) {
 
-      this.billList$.subscribe(data => this.indexPage = Math.ceil(data.length / this.pagiLength))
-    }
-  }
-  onPagiNext() {
-    this.indexPage++;
-    let billPageLength = 0;
-    this.billList$.subscribe(data => billPageLength = Math.ceil(data.length / this.pagiLength))
-    if (this.indexPage > billPageLength) { this.indexPage = 1 }
-  }
-  onPagiLastNumber() {
-    let lastPageNumber = 0;
-    this.billList$.subscribe(data => {
-      lastPageNumber = Math.ceil(data.length / this.pagiLength);
-      this.indexPage = lastPageNumber
-    })
-  }
+  //     this.billList$.subscribe(data => this.indexPage = Math.ceil(data.length / this.pagiLength));
+  //   }
+  // }
+  // onPagiNext(): void {
+  //   this.indexPage++;
+  //   let billPageLength = 0;
+  //   this.billList$.subscribe(data => billPageLength = Math.ceil(data.length / this.pagiLength));
+  //   if (this.indexPage > billPageLength) { this.indexPage = 1; }
+  // }
+  // onPagiLastNumber(): void {
+  //   let lastPageNumber = 0;
+  //   this.billList$.subscribe(data => {
+  //     lastPageNumber = Math.ceil(data.length / this.pagiLength);
+  //     this.indexPage = lastPageNumber;
+  //   });
+  // }
 
 }

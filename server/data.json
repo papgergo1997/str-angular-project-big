@@ -117,48 +117,48 @@
       "type": "pro",
       "description": "csak próbabbabababbabababab",
       "price": 2012,
+      "featured": "false",
+      "active": "true"
+    },
+    {
+      "id": 18,
+      "catID": 7,
+      "name": "Gerjedelem",
+      "type": "kütyü",
+      "description": "Ha kell egy kis izgalom az életedbe!! Helyezd el ezt az elemet az intestinum rectumba és gerjedsz majd, mit a Sokol rádió.",
+      "price": 12313,
+      "featured": "true",
+      "active": false
+    },
+    {
+      "id": 21,
+      "catID": 1,
+      "name": "Ninjacream",
+      "type": "Kencefice",
+      "description": "Programozó lettél és nem tudsz mit kezdeni a rengeteg béreddel?!! Itt a Bér Gyilkos kenőcs, ha  ezt rákened kinyírja mindet. Csak erős idegzetűeknek!!!",
+      "price": 22312354537547997000,
       "featured": "true",
       "active": "true"
     },
     {
-      "id": 16,
-      "catID": 4,
-      "name": "üres",
-      "type": "tagu",
-      "description": "cacD",
-      "price": 0,
-      "featured": false,
-      "active": false
-    },
-    {
-      "id": 17,
-      "catID": 1,
-      "name": "cwqc",
-      "type": "casd",
-      "description": "cSC",
-      "price": 0,
-      "featured": false,
-      "active": false
-    },
-    {
-      "id": 18,
+      "id": 22,
       "catID": 3,
-      "name": "CDC",
-      "type": "dvc",
-      "description": "dvdv",
-      "price": 0,
-      "featured": false,
-      "active": false
+      "name": "WTF",
+      "type": "kütyü",
+      "description": "Where's The Food?",
+      "price": 12345,
+      "featured": "true",
+      "active": "true"
     },
     {
-      "id": 19,
-      "catID": 44,
-      "name": "vsdv",
-      "type": "vsv",
-      "description": "vsvds",
-      "price": 7987,
-      "featured": false,
-      "active": false
+      "id": 23,
+      "catID": 3,
+      "name": "Nagyító",
+      "type": "emberes",
+      "description": "Unokád született, tanácstalan vagy, hogy mit hogyan kell csinálni? Hívd ezt a nagyszerű trénert, aki betanít, hogyan legyél a legynagyobb nagyi.",
+      "price": 220000,
+      "featured": "true",
+      "active": "true"
     }
   ],
   "categories": [
@@ -181,20 +181,14 @@
   "bills": [
     {
       "id": 1,
-      "orderID": 234,
-      "amount": 2344,
+      "orderID": 11,
+      "amount": 31000,
       "status": "new"
     },
     {
       "id": 2,
       "orderID": 12,
       "amount": 13340,
-      "status": "new"
-    },
-    {
-      "id": 3,
-      "orderID": 11,
-      "amount": 31000,
       "status": "new"
     },
     {
@@ -217,14 +211,14 @@
     },
     {
       "id": 7,
-      "orderID": 10,
+      "orderID": 100,
       "amount": 6000,
       "status": "new"
     },
     {
       "id": 8,
       "orderID": 256,
-      "amount": 4552211,
+      "amount": 45522,
       "status": "new"
     },
     {
@@ -234,53 +228,29 @@
       "status": "new"
     },
     {
-      "id": 10,
-      "orderID": 1,
-      "amount": 1,
-      "status": "new"
-    },
-    {
       "id": 12,
       "orderID": 158,
-      "amount": 58,
+      "amount": 58000,
       "status": "paid"
     },
     {
-      "id": 13,
-      "orderID": 33,
-      "amount": 124555,
-      "status": "new"
-    },
-    {
       "id": 14,
-      "orderID": 44,
+      "orderID": 442,
       "amount": 4577,
       "status": "paid"
     },
     {
       "id": 15,
-      "orderID": 42,
+      "orderID": 420,
       "amount": 77770,
       "status": "new"
-    },
-    {
-      "id": 12,
-      "orderID": 452223341,
-      "amount": 5,
-      "status": "new"
-    },
-    {
-      "id": 13,
-      "orderID": 111111111,
-      "amount": 7,
-      "status": "paid"
     }
   ],
   "customers": [
     {
       "id": 1,
-      "firstName": "Claudianusaa",
-      "lastName": "Mullin elvtárs",
+      "firstName": "Claudi ",
+      "lastName": "Anus",
       "email": "cmullin0@java.com",
       "address": {
         "zip": "RG11",
@@ -671,15 +641,15 @@
     },
     {
       "id": 30,
-      "firstName": "P",
+      "firstName": "Pi",
       "lastName": "Jhon",
-      "email": "e",
+      "email": "sample@sample.com",
       "address": {
-        "zip": "1",
-        "country": "COUNTRY",
+        "zip": "1111",
+        "country": "MIFOLYIKITTGY",
         "city": "Cityke",
-        "street": "str",
-        "notes": "1"
+        "street": "Sample",
+        "notes": "11111"
       },
       "active": false
     },
@@ -703,22 +673,22 @@
       "id": 1,
       "customerID": 3,
       "productID": 14,
-      "amount": 222,
+      "amount": 22,
       "status": "new"
     },
     {
       "id": 2,
       "customerID": 8,
       "productID": 4,
-      "amount": 4,
+      "amount": 41,
       "status": "shipped"
     },
     {
       "id": 3,
-      "customerID": 11,
-      "productID": 4,
-      "amount": 12,
-      "status": "new"
+      "customerID": 1,
+      "productID": 1,
+      "amount": 82,
+      "status": "shipped"
     },
     {
       "id": 4,
@@ -731,15 +701,78 @@
       "id": 5,
       "customerID": 15,
       "productID": 7,
-      "amount": 5,
+      "amount": 52,
       "status": "paid"
     },
     {
       "id": 6,
       "customerID": 16,
       "productID": 9,
-      "amount": 8,
+      "amount": 18,
+      "status": "shipped"
+    },
+    {
+      "id": 7,
+      "customerID": 16,
+      "productID": 9,
+      "amount": 21,
+      "status": "new"
+    },
+    {
+      "id": 8,
+      "customerID": 30,
+      "productID": 10,
+      "amount": 100,
       "status": "paid"
+    },
+    {
+      "id": 9,
+      "customerID": 3,
+      "productID": 19,
+      "amount": 75,
+      "status": "new"
+    },
+    {
+      "id": 10,
+      "customerID": 6,
+      "productID": 3,
+      "amount": 24,
+      "status": "shipped"
+    },
+    {
+      "id": 11,
+      "customerID": 19,
+      "productID": 21,
+      "amount": 13,
+      "status": "paid"
+    },
+    {
+      "id": 12,
+      "customerID": 17,
+      "productID": 1,
+      "amount": 47,
+      "status": "new"
+    },
+    {
+      "id": 13,
+      "customerID": 27,
+      "productID": 19,
+      "amount": 7,
+      "status": "paid"
+    },
+    {
+      "id": 14,
+      "customerID": 23,
+      "productID": 16,
+      "amount": 63,
+      "status": "shipped"
+    },
+    {
+      "id": 15,
+      "customerID": 25,
+      "productID": 11,
+      "amount": 12,
+      "status": "new"
     }
   ]
 }
