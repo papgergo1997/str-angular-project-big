@@ -1,4 +1,5 @@
 .btn.btn-primary {
+
     color: #454d5a;
     background-color: #b06727;
     border-color: #b07427;
@@ -15,7 +16,10 @@
 }
 
 .btn.btn-primary:hover {
-    color: #c2c3c6;
+    color: #c2c3c6;    
+    background-color: #d4a884;
+    border-color: #ec6729;
+    box-shadow: 0 2px 2px 0 rgba(212, 109, 0, 0.14),0 3px 1px -2px rgba(212, 70, 0, 0.2),0 1px 5px 0 rgba(212, 119, 0, 0.12);
 }
 
 .error-message {
@@ -54,4 +58,6 @@
     100%{
       transform: rotate(360deg);
     }
+
   }
+

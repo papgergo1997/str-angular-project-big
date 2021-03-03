@@ -21,10 +21,14 @@ import { ToastrModule } from 'ngx-toastr';
 import { EditProductComponent } from './edit/edit-product/edit-product.component';
 import { PagiPipe } from './pipe/pagi.pipe';
 import { SortPipe } from './pipe/sort.pipe';
+import { SummaryPipe } from './pipe/summary.pipe';
 import { PaginationComponent } from './pagination/pagination.component';
 import { BillBarChartComponent } from './charts/bill-bar-chart/bill-bar-chart.component';
 import { ChartsModule } from 'ng2-charts';
 import { ProductBarChartComponent } from './charts/product-bar-chart/product-bar-chart.component';
+import { CustomerChartComponent } from './charts/customer-chart/customer-chart.component';
+import { OrderBarChartComponent } from './charts/order-bar-chart/order-bar-chart.component';
+
 
 
 @NgModule({
@@ -45,9 +49,12 @@ import { ProductBarChartComponent } from './charts/product-bar-chart/product-bar
     EditProductComponent,
     PagiPipe,
     SortPipe,
+    SummaryPipe,
     PaginationComponent,
     BillBarChartComponent,
     ProductBarChartComponent,
+    CustomerChartComponent,
+    OrderBarChartComponent,
   ],
   imports: [
     HttpClientModule,

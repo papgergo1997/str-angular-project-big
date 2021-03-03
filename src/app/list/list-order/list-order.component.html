@@ -6,7 +6,7 @@
         <button [routerLink]="['/orders/0']" class="btn btn-success btn-block mb-5">
           <span class="material-icons">
             library_add
-          </span> Add an order
+          </span> Add a new order
         </button>
 
         <div class="card">
@@ -26,20 +26,30 @@
           <!-- Filter component -->
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-hover">
+              <table class="table table-striped">
                 <thead class="text-warning">
-                  <th class="sortedHeads" *ngFor="let prop of orderProperties" (click)="onChangeSort(prop)">{{ prop }}
+                  <th
+                    class="sortedHeads"
+                    *ngFor="let col of orderCols"
+                    id="{{ col.key }}"
+                    draggable="true"
+                    (dragover)="$event.preventDefault()"
+                    (dragstart)="onHeaderDragStart($event)"
+                    (drop)="onHeaderDrop($event)"
+                    (click)="onChangeSort(col.key)"
+                  >
+                  <!-- <i *ngIf="ascend" class="fa fa-sort-alpha-asc" aria-hidden="true"></i>
+                  <i *ngIf="!ascend" class="fa fa-sort-alpha-desc" aria-hidden="true"></i> &nbsp; -->
+                  {{ col.title }}
                   </th>
                   <th></th>
                 </thead>
                 <tbody>
                   <tr
-                    *ngFor="let order of orderList$ | async | filter:filterKey:phrase | sort: sortKey: ascend|slice: (indexPage -1)*pagiLength: indexPage*pagiLength">
-                    <td> {{ order.id }} </td>
-                    <td> {{ order.customerID }} </td>
-                    <td> {{ order.productID }} </td>
-                    <td> {{ order.amount }} </td>
-                    <td> {{ order.status }} </td>
+                    *ngFor="let order of orderList$ | async | filter:filterKey:phrase | sort: sortKey: ascend | slice: (indexPage -1)*pagiLength: indexPage*pagiLength">
+                    <td *ngFor="let col of orderCols">
+                      {{ order[col.key] }}
+                    </td>
                     <td>
                       <div class="btn-group w-100">
                         <button [routerLink]="[order.id]" type="submit" class="btn btn-info ml-auto">
@@ -51,6 +61,19 @@
                         </button>
                       </div>
                     </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="sumCell">
+                      Current amount:&nbsp;
+                      {{ orderList$ | async | filter:filterKey:phrase | slice: (indexPage -1)*pagiLength: indexPage*pagiLength | summary:'amount' }} <br>
+                      Total amount:&nbsp;
+                      {{ orderList$ | async | summary:'amount' }}
+                    </td>
+                    <td></td>
+                    <td></td>
                   </tr>
                 </tbody>
               </table>

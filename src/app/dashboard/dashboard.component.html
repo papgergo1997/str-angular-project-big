@@ -1,4 +1,5 @@
 <div class="content">
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6">
@@ -11,14 +12,15 @@
                         <h3 class="card-title"> {{ revenue }} Ft</h3>
                     </div>
                     <div class="card-footer">
-                        <div class="stats">
-                            <i class="material-icons">date_range</i> Last 24 Hours
+                        <div class="stats">                          
+                          <i class="material-icons">date_range</i> active products {{accum_active_products}}
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="card card-stats">
+
                     <div class="card-header card-header-warning card-header-icon">
                         <!-- <div class="card-icon">
                             <i class="material-icons">add_business</i>
@@ -29,44 +31,52 @@
                         <p class="card-category">Product Prices</p>
                         <h3 class="card-title">{{ productPrices }}
                             <small>Ft</small>
-                        </h3>
+                          </h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
                             <i class="material-icons">date_range</i> Last 24 Hours
-                            
+                              </div>
+                    </div>
+                </div>
+            </div>
+                          
+<div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header card-header-info card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">person</i>
+                        </div>
+                        <p class="card-category">Customers</p>
+                        <h3 *ngIf="customerList$ | async; let list" class="card-title">
+                            {{list.length}}
+                        </h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">                         
+                          <i class="material-icons">date_range</i> active customers {{accum_active_customers}}
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="card card-stats">
                     <div class="card-header card-header-danger card-header-icon">
                         <div class="card-icon">
                             <i class="material-icons">info_outline</i>
                         </div>
-                        <p class="card-category">Fixed Issues</p>
-                        <h3 class="card-title">75</h3>
+                        <p class="card-category">Payment Issues</p>
+                        <h3 class="card-title">{{warn_acum}}</h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
-                            <i class="material-icons">local_offer</i> Tracked from Github
+                            <i class="material-icons">local_offer</i> new bills to be processed = {{accum_bill}}
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="card card-stats">
-                    <div class="card-header card-header-info card-header-icon">
-                        <div class="card-icon">
-                            <i class="fa fa-twitter"></i>
-                        </div>
-                        <p class="card-category">Followers</p>
-                        <h3 class="card-title">+245</h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
-                            <i class="material-icons">update</i> Just Updated
+                            <i class="material-icons">local_offer</i> unpaid orders = {{accum_active_unpaid_orders}}
                         </div>
                     </div>
                 </div>
@@ -94,14 +104,14 @@
             </div>
             <div class="col-md-4">
                 <div class="card card-chart">
-                    <div class="card-header card-header-warning">
-                        <div class="ct-chart" id="productsPriceChart"></div>
+                    <div class="card-header card-header-info">
+                        <div class="ct-chart" id="websiteViewsChart"></div>
                     </div>
                     <div class="card-body">
-                        <h4 class="card-title">Products</h4>
+                        <h4 class="card-title">Customers /Countries</h4>
                         <p class="card-category">
-                            <app-product-bar-chart [price]="productPriceArray" [ids]="productIdArray">
-                            </app-product-bar-chart>
+                            <app-customer-chart [countries]="countryData" [customers]="customerData">
+                            </app-customer-chart>
                         </p>
                     </div>
                     <div class="card-footer">
@@ -111,14 +121,40 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4">
                 <div class="card card-chart">
-                    <div class="card-header card-header-danger">
-                        <div class="ct-chart" id="completedTasksChart"></div>
+                    <div class="card-header card-header-warning">
+                        <div class="ct-chart" id="websiteViewsChart">
+                            Orders
+                        </div>
                     </div>
                     <div class="card-body">
-                        <h4 class="card-title">Completed Tasks</h4>
-                        <p class="card-category">Last Campaign Performance</p>
+                        <h4 class="card-title"></h4>
+                        <p class="card-category">
+                            <app-order-bar-chart [amounts]="orderAmountArray" [ids]="orderIdArray">
+                            </app-order-bar-chart>
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">access_time</i> updated 2 days ago
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card card-chart">
+                    <div class="card-header card-header-warning">
+                        <div class="ct-chart" id="productsPriceChart"></div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Products</h4>
+                        <p class="card-category">
+                            <app-product-bar-chart [price]="productPriceArray" [ids]="productIdArray">
+                            </app-product-bar-chart>
+                      </p>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
@@ -175,7 +211,8 @@
                                                     </label>
                                                 </div>
                                             </td>
-                                            <td>Sign contract for "What are conference organizers afraid of?"</td>
+                                            <td>Sign contract for "What are conference organizers afraid of?"
+                                            </td>
                                             <td class="td-actions text-right">
                                                 <button type="button" rel="tooltip" title="Edit Task"
                                                     class="btn btn-primary btn-link btn-sm">
@@ -198,7 +235,8 @@
                                                     </label>
                                                 </div>
                                             </td>
-                                            <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
+                                            <td>Lines From Great Russian Literature? Or E-mails From My Boss?
+                                            </td>
                                             <td class="td-actions text-right">
                                                 <button type="button" rel="tooltip" title="Edit Task"
                                                     class="btn btn-primary btn-link btn-sm">
@@ -221,7 +259,8 @@
                                                     </label>
                                                 </div>
                                             </td>
-                                            <td>Flooded: One year later, assessing what was lost and what was found when
+                                            <td>Flooded: One year later, assessing what was lost and what was
+                                                found when
                                                 a ravaging rain swept through metro Detroit
                                             </td>
                                             <td class="td-actions text-right">
@@ -277,7 +316,8 @@
                                                     </label>
                                                 </div>
                                             </td>
-                                            <td>Flooded: One year later, assessing what was lost and what was found when
+                                            <td>Flooded: One year later, assessing what was lost and what was
+                                                found when
                                                 a ravaging rain swept through metro Detroit
                                             </td>
                                             <td class="td-actions text-right">
@@ -302,7 +342,8 @@
                                                     </label>
                                                 </div>
                                             </td>
-                                            <td>Sign contract for "What are conference organizers afraid of?"</td>
+                                            <td>Sign contract for "What are conference organizers afraid of?"
+                                            </td>
                                             <td class="td-actions text-right">
                                                 <button type="button" rel="tooltip" title="Edit Task"
                                                     class="btn btn-primary btn-link btn-sm">
@@ -331,7 +372,8 @@
                                                     </label>
                                                 </div>
                                             </td>
-                                            <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
+                                            <td>Lines From Great Russian Literature? Or E-mails From My Boss?
+                                            </td>
                                             <td class="td-actions text-right">
                                                 <button type="button" rel="tooltip" title="Edit Task"
                                                     class="btn btn-primary btn-link btn-sm">
@@ -355,7 +397,8 @@
                                                     </label>
                                                 </div>
                                             </td>
-                                            <td>Flooded: One year later, assessing what was lost and what was found when
+                                            <td>Flooded: One year later, assessing what was lost and what was
+                                                found when
                                                 a ravaging rain swept through metro Detroit
                                             </td>
                                             <td class="td-actions text-right">
@@ -381,7 +424,8 @@
                                                     </label>
                                                 </div>
                                             </td>
-                                            <td>Sign contract for "What are conference organizers afraid of?"</td>
+                                            <td>Sign contract for "What are conference organizers afraid of?"
+                                            </td>
                                             <td class="td-actions text-right">
                                                 <button type="button" rel="tooltip" title="Edit Task"
                                                     class="btn btn-primary btn-link btn-sm">
