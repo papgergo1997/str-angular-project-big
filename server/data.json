@@ -9,7 +9,7 @@
       "price": 1500,
       "featured": true,
       "active": false
-    },
+    },    
     {
       "id": 2,
       "name": "Szemölcsölő, Wartkilla",
@@ -121,34 +121,14 @@
       "active": "true"
     },
     {
-      "id": 16,
-      "catID": 4,
-      "name": "nem",
-      "type": "tagu",
-      "description": "cacD",
-      "price": 0,
-      "featured": false,
-      "active": false
-    },
-    {
       "id": 18,
       "catID": 7,
-      "name": "gerjed elem",
+      "name": "Gerjedelem",
       "type": "kütyü",
-      "description": "dvdv",
-      "price": 0,
+      "description": "Ha kell egy kis izgalom az életedbe!! Helyezd el ezt az elemet az intestinum rectumba és gerjedsz majd, mit a Sokol rádió.",
+      "price": 12313,
       "featured": "true",
       "active": false
-    },
-    {
-      "id": 20,
-      "catID": 1111,
-      "name": "nem vizsg a Nn7",
-      "type": "nemvizsgálja 45",
-      "description": "itt mindegy a szám vagy betű? 444555",
-      "price": 121333,
-      "featured": "true",
-      "active": "true"
     },
     {
       "id": 21,
@@ -167,6 +147,16 @@
       "type": "kütyü",
       "description": "Where's The Food?",
       "price": 12345,
+      "featured": "true",
+      "active": "true"
+    },
+    {
+      "id": 23,
+      "catID": 3,
+      "name": "Nagyító",
+      "type": "emberes",
+      "description": "Unokád született, tanácstalan vagy, hogy mit hogyan kell csinálni? Hívd ezt a nagyszerű trénert, aki betanít, hogyan legyél a legynagyobb nagyi.",
+      "price": 220000,
       "featured": "true",
       "active": "true"
     }
@@ -191,7 +181,7 @@
   "bills": [
     {
       "id": 1,
-      "orderID": 111234,
+      "orderID": 11,
       "amount": 31000,
       "status": "new"
     },
@@ -221,14 +211,14 @@
     },
     {
       "id": 7,
-      "orderID": 10,
+      "orderID": 100,
       "amount": 6000,
       "status": "new"
     },
     {
       "id": 8,
       "orderID": 256,
-      "amount": 4552211,
+      "amount": 45522,
       "status": "new"
     },
     {
@@ -240,38 +230,20 @@
     {
       "id": 12,
       "orderID": 158,
-      "amount": 58,
+      "amount": 58000,
       "status": "paid"
     },
     {
-      "id": 13,
-      "orderID": 33,
-      "amount": 124555,
-      "status": "new"
-    },
-    {
       "id": 14,
-      "orderID": 44,
+      "orderID": 442,
       "amount": 4577,
       "status": "paid"
     },
     {
       "id": 15,
-      "orderID": 42,
+      "orderID": 420,
       "amount": 77770,
       "status": "new"
-    },
-    {
-      "id": 12,
-      "orderID": 452223341,
-      "amount": 5,
-      "status": "new"
-    },
-    {
-      "id": 13,
-      "orderID": 111111111,
-      "amount": 7,
-      "status": "paid"
     }
   ],
   "customers": [
