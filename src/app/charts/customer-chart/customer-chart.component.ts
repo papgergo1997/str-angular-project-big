@@ -30,9 +30,7 @@ export class CustomerChartComponent implements OnInit {
           hoverBackgroundColor: 'blue',
         }
       ];
-    }, 150);
-
-    console.log(this.customers, this.countries)
+    }, 200)
   }
 
 }
