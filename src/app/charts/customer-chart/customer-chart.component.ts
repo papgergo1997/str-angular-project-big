@@ -23,10 +23,14 @@ export class CustomerChartComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.barChartData = [
-      { data: this.customers, label: 'Customers / Countries', backgroundColor: 'orange' }
-    ];
-    console.log(this.customers, this.countries)
+    setTimeout(() => {
+      this.barChartData = [
+        {
+          data: this.customers, label: 'Customers', backgroundColor: '#10b7cb',
+          hoverBackgroundColor: 'blue',
+        }
+      ];
+    }, 200)
   }
 
 }
