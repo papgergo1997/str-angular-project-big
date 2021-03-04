@@ -29,6 +29,7 @@ export class DashboardComponent implements OnInit {
   billIdArray: any[] = [];
   billBackgroundColorArray: string[] = [];
   revenue: number = 0;
+  chartType: string = 'bar';
 
   // Order grafikonhoz.
   orderList$: BehaviorSubject<Order[]> = this.orderService.orderList$;
@@ -184,6 +185,13 @@ export class DashboardComponent implements OnInit {
         }
       });
     });
+  }
+
+  onChartTypePie() {
+    this.chartType = 'doughnut';
+  }
+  onChartTypeBar() {
+    this.chartType = 'bar';
   }
 
   rgb(): number {
