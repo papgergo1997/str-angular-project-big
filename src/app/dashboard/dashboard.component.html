@@ -86,13 +86,20 @@
             <div class="col-md-6">
                 <div class="card card-chart">
                     <div class="card-header card-header-success">
-                        Bills (value/id)
+
+                        <div>Bills (value/id)
+                            <div>
+                                <i (click)="onChartTypeBar()" class="material-icons iconhover">bar_chart</i>
+                                <i (click)="onChartTypePie()" class="material-icons iconhover">pie_chart</i>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="card-body">
                         <h4 class="card-title"></h4>
                         <p class="card-category">
-                            <app-bill-bar-chart [bgc]="billBackgroundColorArray" [amounts]="billAmountArray"
-                                [ids]="billIdArray">
+                            <app-bill-bar-chart [chartType]="chartType" [bgc]="billBackgroundColorArray"
+                                [amounts]="billAmountArray" [ids]="billIdArray">
                             </app-bill-bar-chart>
                         </p>
                     </div>
