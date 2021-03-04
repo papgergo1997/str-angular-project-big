@@ -45,7 +45,10 @@
                                         (dragover)="$event.preventDefault()"
                                         (dragstart)="onHeaderDragStart($event)"
                                         (drop)="onHeaderDrop($event)"
-                                        (click)="onChangeSort(col.key)">{{ col.title }}</th>
+                                        (click)="onChangeSort(col.key)">
+                                        <i *ngIf="ascend" class="fa fa-sort-alpha-desc" aria-hidden="true"></i>
+                                        <i *ngIf="!ascend" class="fa fa-sort-alpha-asc" aria-hidden="true"></i> &nbsp;
+                                        {{ col.title }}</th>
                                         <th></th>
                                     </tr>
                                     <!-- <th> ID </th>
