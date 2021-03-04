@@ -35,6 +35,7 @@ export class DashboardComponent implements OnInit {
   orderList$: BehaviorSubject<Order[]> = this.orderService.orderList$;
   orderAmountArray: number[] = [];
   orderIdArray: any[] = [];
+  orderNumber: number = 0;
 
   // Product grafikonhoz.
   productList$: BehaviorSubject<Product[]> = this.productService.list$;
@@ -103,6 +104,12 @@ export class DashboardComponent implements OnInit {
       });
     });
 
+    this.orderList$.subscribe( orders => {
+      orders.forEach( () => {
+        this.orderNumber += 1;
+      } )
+    } )
+
     // Product grafikonhoz.
     this.productList$.subscribe(data => {
       data.forEach(item => {
@@ -156,9 +163,9 @@ export class DashboardComponent implements OnInit {
     });
 
     // this counts new  orders
-    this.orderList$.subscribe(data => {
-      data.forEach(item => {
-        switch (item.status) {
+    this.orderList$.subscribe(orders => {
+      orders.forEach(order => {
+        switch (order.status) {
           case 'new':
             this.accum_active_unpaid_orders += 1;
             this.warn_acum = this.accum_bill + this.accum_active_unpaid_orders;
