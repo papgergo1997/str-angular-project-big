@@ -62,21 +62,16 @@
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="card card-stats">
-                    <div class="card-header card-header-danger card-header-icon">
+                    <div class="card-header card-header-warning card-header-icon">
                         <div class="card-icon">
-                            <i class="material-icons">info_outline</i>
+                            <i class="material-icons">shopping_cart</i>
                         </div>
-                        <p class="card-category">Payment Issues</p>
-                        <h3 class="card-title">{{warn_acum}}</h3>
+                        <p class="card-category">Number of orders</p>
+                        <h3 class="card-title">{{ orderNumber }}</h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
-                            <i class="material-icons">local_offer</i> new bills to be processed = {{accum_bill}}
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <div class="stats">
-                            <i class="material-icons">local_offer</i> unpaid orders = {{accum_active_unpaid_orders}}
+                          <i class="material-icons">local_offer</i> Number of unpaid orders: {{accum_active_unpaid_orders}}
                         </div>
                     </div>
                 </div>
