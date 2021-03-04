@@ -35,6 +35,7 @@ import { FeaturedPipe } from './pipe/featured.pipe';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,6 +64,7 @@ import { FeaturedPipe } from './pipe/featured.pipe';
     BillGeoChartComponent,
     NumberhuPipe,
     FeaturedPipe,
+    
   ],
   imports: [
     HttpClientModule,
