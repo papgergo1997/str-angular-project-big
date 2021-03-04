@@ -61,7 +61,7 @@
                                 <tbody>
                                     <tr *ngFor="let product of productList | async | filter:filterKey:phrase | sort: sortKey: ascend |slice: (indexPage -1)*pagiLength: indexPage*pagiLength">
                                         <td *ngFor="let col of cols">{{ product[col.key] }}
-
+                                            
                                         </td>
                                         <td></td>
                                         <!-- <td>
@@ -96,6 +96,21 @@
                                             </div>
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <th class="sortedHeads" *ngFor="let col of cols" id="{{ col.key }}"
+                                        draggable="true">{{ col.title }}
+                                        </th>
+                                        <th></th>
+                                        <th class="sumCell">
+                                          Current price:&nbsp;
+                                          {{ productList | async | filter:filterKey:phrase | slice: (indexPage -1)*pagiLength:
+                                          indexPage*pagiLength | summary:'price' }} <br>
+                                          Total price:&nbsp;
+                                          {{ productList | async | summary:'price' }}
+                                        </th>
+                                       
+                                    </tr>
+
                                 </tbody>
                             </table>
                         </div>

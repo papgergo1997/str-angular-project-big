@@ -12,7 +12,7 @@
 
       <div class="form-group">
         <label for="">name</label>
-        <input name="name" [(ngModel)]="product.name" type="text" class="form-control" pattern=".{3,15}" required>
+        <input name="name" [(ngModel)]="product.name" type="text" class="form-control" pattern=".{3,30}" required>
         <div [hidden]="productForm.controls.name?.valid" class="error-message">
           Name must start with an UPPERCASE character, and must be 3 characters long at least
         </div>
@@ -20,7 +20,7 @@
 
       <div class="form-group">
         <label for="">type</label>
-        <input name="type" [(ngModel)]="product.type" type="text" class="form-control" pattern=".{3,15}" required>
+        <input name="type" [(ngModel)]="product.type" type="text" class="form-control" pattern=".{3,25}" required>
         <div [hidden]="productForm.controls.type?.valid" class="error-message">
           Type must be 3 characters long at least!
         </div>
@@ -28,9 +28,9 @@
 
       <div class="form-group">
         <label for="">description</label>
-        <input name="description" [(ngModel)]="product.description" type="text" class="form-control" pattern=".{3,200}" required>
+        <input name="description" [(ngModel)]="product.description" type="text" class="form-control" pattern=".{3,500}" required>
         <div [hidden]="productForm.controls.description?.valid" class="error-message">
-          Description must be 3-200 characters long!
+          Description must be 3-500 characters long!
         </div>
       </div>
 
