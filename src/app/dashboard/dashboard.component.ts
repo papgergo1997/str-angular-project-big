@@ -23,21 +23,25 @@ export class DashboardComponent implements OnInit {
   timer: number = 0;
   seconds: number = 0;
 
-  
+  // Bill grafikonhoz.
   billList$: BehaviorSubject<Bill[]> = this.billService.list$;
   billAmountArray: number[] = [];
   billIdArray: any[] = [];
   billBackgroundColorArray: string[] = [];
-
   revenue: number = 0;
+  chartType: string = 'bar';
+
+  // Order grafikonhoz.
+  orderList$: BehaviorSubject<Order[]> = this.orderService.orderList$;
+  orderAmountArray: number[] = [];
+  orderIdArray: any[] = [];
+  orderNumber: number = 0;
+
+  // Product grafikonhoz.
   productList$: BehaviorSubject<Product[]> = this.productService.list$;
   productPriceArray: number[] = [];
   productIdArray: any[] = [];
   productPrices: number = 0;
-
-  orderList$: BehaviorSubject<Order[]> = this.orderService.orderList$;
-  orderAmountArray: number[] = [];
-  orderIdArray: any[] = [];
 
   accum_bill = 0;
   accum_active_customers = 0;
@@ -45,18 +49,21 @@ export class DashboardComponent implements OnInit {
   accum_active_unpaid_orders = 0;
   warn_acum = 0;
 
+  // Customer grafikonhoz.
   customerList$: BehaviorSubject<Customer[]> = this.customerService.list$;
+  customerBGCA: string[] = [];
   countryArray: any[] = [];
   customerArray: any[] = [];
   customerData: number[] = [];
   countryData: any[] = [];
+  customerChartType: string = 'bar';
 
 
   constructor(
     private billService: BillService,
     private orderService: OrderService,
-    private customerService: CustomerService,
-    private productService: ProductService
+    private productService: ProductService,
+    private customerService: CustomerService
   ) {
   }
 
@@ -71,28 +78,46 @@ export class DashboardComponent implements OnInit {
       this.seconds += 1
     }, 1000);
 
-
+    // Bill grafikonhoz.
     this.billList$.subscribe(data => {
       data.forEach(item => {
         this.billAmountArray.push(item.amount);
         this.revenue += item.amount;
         this.billBackgroundColorArray.push(`rgb(${this.rgb()}, ${this.rgb()}, ${this.rgb()})`)
       });
-
     });
-
-    this.productList$.subscribe(data => {
-      data.forEach(item => {
-        this.productPriceArray.push(item.price);
-        this.productPrices += item.price;
-      });
-
-    })
 
     this.billList$.subscribe(data => {
       data.forEach(item => {
         this.billIdArray.push(item.id);
       })
+    })
+
+    // Order grafikonhoz.
+    this.orderList$.subscribe(orders => {
+      orders.forEach(order => {
+        this.orderAmountArray.push(order.amount);
+      });
+    });
+
+    this.orderList$.subscribe(orders => {
+      orders.forEach(order => {
+        this.orderIdArray.push(order.id);
+      });
+    });
+
+    this.orderList$.subscribe( orders => {
+      orders.forEach( () => {
+        this.orderNumber += 1;
+      } )
+    } )
+
+    // Product grafikonhoz.
+    this.productList$.subscribe(data => {
+      data.forEach(item => {
+        this.productPriceArray.push(item.price);
+        this.productPrices += item.price;
+      });
     })
 
     this.productList$.subscribe(data => {
@@ -101,12 +126,14 @@ export class DashboardComponent implements OnInit {
       })
     })
 
-
+    // Customer grafikonhoz.
     this.customerList$.subscribe(data => {
       data.forEach(item => {
         this.countryArray.push(item.address.country)
+        this.customerBGCA.push(`rgb(${this.rgb()}, ${this.rgb()}, ${this.rgb()})`);
       })
-      this.countryArray.forEach((el: any) => { this.countryData[el] = this.countryData[el] ? (this.countryData[el] += 1) : 1; });
+      this.countryArray.forEach((el: any) => { this.countryData[el] = this.countryData[el] ? (this.countryData[el] += 1) : 1; }
+      );
       this.countryData = Object.keys(this.countryData);
     })
 
@@ -124,7 +151,7 @@ export class DashboardComponent implements OnInit {
     //   data.forEach(item => {
     //     this.countryArray.push(item.active);
     //   })
-    // })  
+    // })
 
 
 
@@ -134,22 +161,23 @@ export class DashboardComponent implements OnInit {
         switch (item.status) {
           case 'new':
             this.accum_bill += 1;
-            warner();
+
         }
       });
     });
-    // this counts new  orders
 
-    this.orderList$.subscribe(data => {
-      data.forEach(item => {
-        switch (item.status) {
+    // this counts new  orders
+    this.orderList$.subscribe(orders => {
+      orders.forEach(order => {
+        switch (order.status) {
           case 'new':
             this.accum_active_unpaid_orders += 1;
-            warner();
+            this.warn_acum = this.accum_bill + this.accum_active_unpaid_orders;
         }
       });
     });
 
+    // this counts active products
 
     this.productList$.subscribe(data => {
       data.forEach(item => {
@@ -169,23 +197,19 @@ export class DashboardComponent implements OnInit {
         }
       });
     });
-    // buggy , needs to be async somehow
-    const
-      warner = (): void => {
-        this.warn_acum = this.accum_bill + this.accum_active_unpaid_orders;
-      };
+  }
 
-    this.orderService.getAll();
-    this.orderList$.subscribe(data => {
-      data.forEach(item => {
-        this.orderAmountArray.push(item.amount);
-      });
-    });
-    this.orderList$.subscribe(data => {
-      data.forEach(item => {
-        this.orderIdArray.push(item.id);
-      });
-    });
+  onChartTypePie() {
+    this.chartType = 'doughnut';
+  }
+  onChartTypeBar() {
+    this.chartType = 'bar';
+  }
+  onCustomerChartTypePie() {
+    this.customerChartType = 'pie';
+  }
+  onCustomerChartTypeBar() {
+    this.customerChartType = 'bar';
   }
 
   rgb(): number {
