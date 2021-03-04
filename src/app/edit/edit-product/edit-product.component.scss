@@ -1,3 +1,15 @@
+.card .card-header-success {
+  background: linear-gradient(60deg,#bb926694,#a05443);
+}
+
+.card [class*="card-header-"] .card-title, .card [class*="card-header-"] .card-title a, .card [class*="card-header-"] .icon i {
+  color: #583f33;
+}
+
+.card [class*="card-header-"] .card-title + .card-category {
+  color: hsla(0, 13.4%, 30.8%, 0.8);
+}
+
 .btn.btn-primary {
 
     color: #454d5a;
@@ -16,7 +28,7 @@
 }
 
 .btn.btn-primary:hover {
-    color: #c2c3c6;    
+    color: #c2c3c6;
     background-color: #d4a884;
     border-color: #ec6729;
     box-shadow: 0 2px 2px 0 rgba(212, 109, 0, 0.14),0 3px 1px -2px rgba(212, 70, 0, 0.2),0 1px 5px 0 rgba(212, 119, 0, 0.12);
@@ -31,7 +43,7 @@
     position: absolute;
     animation: error 1s 1;
   }
-  
+
   @keyframes error{
     0% {
       right: -300px;
@@ -39,25 +51,24 @@
     50% {
       right: -15px;
     }
-    
+
   }
-  
-  .fa-refresh {
+
+  .save {
     animation: rotate 1s linear infinite;
   }
-  
+
   @keyframes rotate {
     0% {
      transform: rotate(0);
     }
-    
+
     50%{
-      transform: rotate(180deg);
-    }
-    
-    100%{
-      transform: rotate(360deg);
+      transform: rotate(-180deg);
     }
 
+    100%{
+      transform: rotate(-360deg);
+    }
   }
 
