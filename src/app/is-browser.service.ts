@@ -5,10 +5,9 @@ import {isPlatformBrowser} from '@angular/common';
   providedIn: 'root'
 })
 export class IsBrowserService {
-
+  isBrowser: boolean;
   // tslint:disable-next-line:ban-types
-  private isBrowser: boolean;
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
-    this.isBrowser = isPlatformBrowser(this.platformId);
+  constructor( @Inject(PLATFORM_ID) private platformId: Object) {
+    this.isBrowser = isPlatformBrowser(platformId);
   }
 }
