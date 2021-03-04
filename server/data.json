@@ -7,8 +7,8 @@
       "catID": 1,
       "description": "Nagy hatékonyságú, gyorsan felszívódó krém. Leginkább különféle ficek, külsődleges kezelésére, de ficamokra is jó. Highly effective, fast absorbing cream. Mostly for external treatment of various strain, but also for strain",
       "price": 1500,
-      "featured": "false",
-      "active": false
+      "featured": false,
+      "active": true
     },
     {
       "id": 2,
@@ -18,7 +18,7 @@
       "description": "Ez a nagyszerű kenőcs öl, cs, és ölő, rákenhető a szemre és/vagy ölcsre. This great ointment kills, cs, and kills, can be applied to the eyes and / or ointment",
       "price": 500,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 3,
@@ -27,8 +27,8 @@
       "catID": 1,
       "description": "Évek óta szenved, mert nem gombás a lába vagy a körme? Kiközösítik a trendi gombázók? Itt a megoldás!! Bárhová felkenhető gombásító. Have you been suffering for years because your feet or nails are not fungal? Excluded by trendy mushrooms? Here is the solution !! Mushroomer that can be spread anywhere.",
       "price": 2534,
-      "featured": "false",
-      "active": false
+      "featured": true,
+      "active": true
     },
     {
       "id": 4,
@@ -38,7 +38,7 @@
       "description": "Több évtizednyi kutatómunka után magyar szakemberek elkészítették a This-t is bind-oló arrow function-t. Most bevezető akciós áron! After several decades of research, Hungarian experts created this arrow-binding arrow function. Now at an introductory discount!",
       "price": 253000,
       "featured": "true",
-      "active": false
+      "active": true
     },
     {
       "id": 5,
@@ -48,7 +48,7 @@
       "description": "A fából vaskarika már unalmas. Itt az új találmány! A vasból fanégyzet! Rengeteg okos funkcióval! Például, ha matek órán ki kell számítani egy négyzet területét, itt van a fanégyzet! The wooden iron ring is already boring. Here is the new invention! Wooden square made of iron! Lots of smart features! For example, if you need to calculate the area of ​​a square in math class, here is the tree square! ",
       "price": 3000,
       "featured": "false",
-      "active": false
+      "active": true
     },
     {
       "id": 6,
@@ -58,7 +58,7 @@
       "description": "Csúfolnak, mert kocka vagy? Vedd elő az antikockát és mutasd meg nekik, hogy nem. Bármit vagy bárkit kockátlanít. Are they making fun of you because you're a dice? Take out the anti-cube and show them you don't. You risk anything or anyone.",
       "price": 2400,
       "featured": "false",
-      "active": "true"
+      "active": true
     },
     {
       "id": 7,
@@ -68,7 +68,7 @@
       "description": "Egyedülálló GPS rendszer, ha nem tudod merre tovább. Csak írj be egy helyet, címet, a keresőbe. Ez az egyedi GPS garantáltan nem oda fog vezetni. Random felfedezőknek. A unique GPS system if you don't know where to go next. Just enter a place, address, in the search engine. This unique GPS is guaranteed not to lead you there. For random explorers",
       "price": 3000,
       "featured": "false",
-      "active": false
+      "active": true
     },
     {
       "id": 8,
@@ -78,7 +78,7 @@
       "description": "Egy jó választás, ha Kell a házisárkány a háznál. A good choice if you need a kite(virago) at the house.",
       "price": 100000,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 9,
@@ -88,7 +88,7 @@
       "description": "Forró napokra a legjobb. Ettől a váratlan idegentől a házadban garantáltan kiráz a hideg. Best for hot days. From this unexpected stranger, the cold in your house is guaranteed to shake.",
       "price": 1000000,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 10,
@@ -98,7 +98,7 @@
       "description": "Szemesnek áll a világ. Ez nagyon igaz rá, szinte bárhol képes állni. Stand up-okra, munkások mellé, ünnepségekre, stb. Most extra jótállással. The world is eye-catching. This is very true of him, he can stand almost anywhere. For stand-ups, workers, celebrations, etc. Now with an extra warranty.",
       "price": 50000,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 11,
@@ -108,7 +108,7 @@
       "description": "Gyenge vagy, mindenki, bárki és akárki megver? Erre a hősre van szükséged! Megseverő szuperereje, hogy erősengyenge. Ő egy ember, aki biztosan nem fog megverni. Are you weak, everyone, anyone and anyone beat you? You need this hero! Disruptive superpower to be (strongonweak) very weak. He’s a man who’s definitely not going to beat him.",
       "price": 1100000,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 15,
@@ -118,7 +118,7 @@
       "description": "csak próbabbabababbabababab",
       "price": 20123,
       "featured": "false",
-      "active": "true"
+      "active": true
     },
     {
       "id": 18,
@@ -128,7 +128,7 @@
       "description": "Ha kell egy kis izgalom az életedbe!! Helyezd el ezt az elemet az intestinum rectumba és gerjedsz majd, mint a Sokol rádió.",
       "price": 12313,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 21,
@@ -138,7 +138,7 @@
       "description": "Programozó lettél és nem tudsz mit kezdeni a rengeteg béreddel?!! Itt a Bér Gyilkos kenőcs, ha  ezt rákened kinyírja mindet. Csak erős idegzetűeknek!!!",
       "price": 223123,
       "featured": true,
-      "active": "true"
+      "active": true
     },
     {
       "id": 22,
@@ -148,7 +148,7 @@
       "description": "Where's The Food?",
       "price": 12345,
       "featured": "false",
-      "active": "true"
+      "active": true
     },
     {
       "id": 23,
@@ -158,7 +158,7 @@
       "description": "Unokád született, tanácstalan vagy, hogy mit hogyan kell csinálni? Hívd ezt a nagyszerű trénert, aki betanít, hogyan legyél a legynagyobb nagyi.",
       "price": 220000,
       "featured": true,
-      "active": "true"
+      "active": true
     }
   ],
   "categories": [

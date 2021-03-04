@@ -63,7 +63,7 @@ export class DashboardComponent implements OnInit {
     private billService: BillService,
     private orderService: OrderService,
     private productService: ProductService,
-    private customerService: CustomerService,
+    private customerService: CustomerService
   ) {
   }
 
@@ -178,6 +178,7 @@ export class DashboardComponent implements OnInit {
     });
 
     // this counts active products
+
     this.productList$.subscribe(data => {
       data.forEach(item => {
         switch (item.active) {
