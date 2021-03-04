@@ -56,7 +56,6 @@ export class DashboardComponent implements OnInit {
     private billService: BillService,
     private orderService: OrderService,
     private customerService: CustomerService,
-    private productsservice: ProductService,
     private productService: ProductService
   ) {
   }
@@ -151,15 +150,15 @@ export class DashboardComponent implements OnInit {
       });
     });
     // this counts active products
-    this.productsservice.getAll();
-    this.productList$.subscribe(data => {
-      data.forEach(item => {
-        switch (item.active) {
-          case true:
-            this.accum_active_products += 1;
-        }
-      });
-    });
+    // this.productsservice.getAll();
+    // this.productList$.subscribe(data => {
+    //   data.forEach(item => {
+    //     switch (item.active) {
+    //       case true:
+    //         this.accum_active_products += 1;
+    //     }
+    //   });
+    // });
     // this counts active users
     this.customerList$.subscribe(data => {
       data.forEach(item => {

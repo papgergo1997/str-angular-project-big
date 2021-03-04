@@ -44,10 +44,8 @@
 
       <div class="form-group">
         <label for="">featured</label>
-        <select name="featured" [(ngModel)]="product.featured" class="form-control" >
-          <option>false</option>
-          <option>true</option>
-        </select>
+        <input name="featured" [(ngModel)]="product.featured" class="form-control"  type="checkbox" name="featured" checked>
+        
       </div>
 
       <div class="form-group">

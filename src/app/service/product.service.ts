@@ -12,7 +12,7 @@ export class ProductService {
 
   list$: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>([]);
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { this.getAll(); }
 
   getAll(): void {
     this.http.get<Product[]>(this.apiUrl).subscribe(

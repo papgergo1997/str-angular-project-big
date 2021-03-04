@@ -7,7 +7,7 @@
       "catID": 1,
       "description": "Nagy hatékonyságú, gyorsan felszívódó krém. Leginkább különféle ficek, külsődleges kezelésére, de ficamokra is jó. Highly effective, fast absorbing cream. Mostly for external treatment of various strain, but also for strain",
       "price": 1500,
-      "featured": "false",
+      "featured": false,
       "active": false
     },
     {
@@ -27,7 +27,7 @@
       "catID": 1,
       "description": "Évek óta szenved, mert nem gombás a lába vagy a körme? Kiközösítik a trendi gombázók? Itt a megoldás!! Bárhová felkenhető gombásító. Have you been suffering for years because your feet or nails are not fungal? Excluded by trendy mushrooms? Here is the solution !! Mushroomer that can be spread anywhere.",
       "price": 2534,
-      "featured": "false",
+      "featured": true,
       "active": false
     },
     {
