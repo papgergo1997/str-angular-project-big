@@ -274,7 +274,7 @@
       "id": 17,
       "orderID": 15,
       "amount": 15600,
-      "country": "Turkey",
+      "country": "Italy",
       "status": "new"
     },
     {
@@ -303,6 +303,20 @@
       "orderID": 77,
       "amount": 44000,
       "country": "Ireland",
+      "status": "new"
+    },
+    {
+      "id": 22,
+      "orderID": 3,
+      "amount": 23500,
+      "country": "Italy",
+      "status": "new"
+    },
+    {
+      "id": 23,
+      "orderID": 10,
+      "amount": 20000,
+      "country": "Germany",
       "status": "new"
     }
   ],
