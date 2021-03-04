@@ -532,20 +532,6 @@
       "active": false
     },
     {
-      "id": 18,
-      "firstName": "Freddie",
-      "lastName": "Kupis",
-      "email": "fkupish@shop-pro.jp",
-      "address": {
-        "zip": "J968",
-        "country": "Japan",
-        "city": "Tokio",
-        "street": "Pine View Way",
-        "notes": "10603"
-      },
-      "active": true
-    },
-    {
       "id": 19,
       "firstName": "Henry",
       "lastName": "Pierre",
@@ -752,20 +738,6 @@
         "city": "Szilvásvárad",
         "street": "Rákóczi Ferenc utca",
         "notes": "13"
-      },
-      "active": false
-    },
-    {
-      "id": 35,
-      "firstName": "Jon",
-      "lastName": "Snow",
-      "email": "jon.snow@nightwatchmail.corg",
-      "address": {
-        "zip": "RG4355",
-        "country": "England",
-        "city": "Roadtown",
-        "street": "London Rd",
-        "notes": "24"
       },
       "active": false
     },
@@ -1285,7 +1257,7 @@
         "street": "Warner Plaza",
         "notes": "36"
       },
-      "active": false
+      "active": true
     },
     {
       "id": 73,
@@ -1313,7 +1285,7 @@
         "street": "Express Court",
         "notes": "3528"
       },
-      "active": false
+      "active": true
     },
     {
       "id": 75,
@@ -1341,7 +1313,7 @@
         "street": "Troy Alley",
         "notes": "87721"
       },
-      "active": false
+      "active": true
     },
     {
       "id": 77,
@@ -1355,7 +1327,7 @@
         "street": "Old Gate Parkway",
         "notes": "40"
       },
-      "active": false
+      "active": true
     },
     {
       "id": 78,
@@ -1383,7 +1355,7 @@
         "street": "Basil Lane",
         "notes": "7"
       },
-      "active": false
+      "active": true
     },
     {
       "id": 80,
@@ -1411,7 +1383,49 @@
         "street": "Cappadocia Street",
         "notes": "54"
       },
+      "active": true
+    },
+    {
+      "id": 82,
+      "firstName": "Frodo",
+      "lastName": "Baggins",
+      "email": "frodo.baggins@shire.ork",
+      "address": {
+        "zip": "SH13",
+        "country": "Eriador",
+        "city": "Hobbiton",
+        "street": "Bree Rd.",
+        "notes": "12"
+      },
       "active": false
+    },
+    {
+      "id": 83,
+      "firstName": "Bilbo",
+      "lastName": "Baggins",
+      "email": "bbaggins@shire.gov",
+      "address": {
+        "zip": "SH13",
+        "country": "Eriador",
+        "city": "Hobbiton",
+        "street": "Bree Rd.",
+        "notes": "12"
+      },
+      "active": false
+    },
+    {
+      "id": 84,
+      "firstName": "Jon",
+      "lastName": "Snow",
+      "email": "jon.snow@nightwatchmail.org",
+      "address": {
+        "zip": "WE422",
+        "country": "Westeros",
+        "city": "The  Wall ",
+        "street": "Wall's Street",
+        "notes": "5"
+      },
+      "active": true
     }
   ],
   "orders": [
