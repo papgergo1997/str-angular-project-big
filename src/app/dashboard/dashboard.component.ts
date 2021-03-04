@@ -92,7 +92,7 @@ export class DashboardComponent implements OnInit {
     // Order grafikonhoz.
     this.orderList$.subscribe(orders => {
       orders.forEach(order => {
-          this.orderAmountArray.push(order.amount);
+        this.orderAmountArray.push(order.amount);
       });
     });
 
@@ -184,13 +184,6 @@ export class DashboardComponent implements OnInit {
         }
       });
     });
-
-    // buggy , needs to be async somehow
-    const
-      warner = (): void => {
-        this.warn_acum = this.accum_bill + this.accum_active_unpaid_orders;
-      };
-
   }
 
   rgb(): number {
