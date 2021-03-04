@@ -134,7 +134,7 @@ export class DashboardComponent implements OnInit {
         switch (item.status) {
           case 'new':
             this.accum_bill += 1;
-            warner();
+
         }
       });
     });
@@ -144,12 +144,11 @@ export class DashboardComponent implements OnInit {
         switch (item.status) {
           case 'new':
             this.accum_active_unpaid_orders += 1;
-            warner();
+            this.warn_acum = this.accum_bill + this.accum_active_unpaid_orders;
         }
       });
     });
     // this counts active products
-
     this.productList$.subscribe(data => {
       data.forEach(item => {
         switch (item.active) {
@@ -167,12 +166,6 @@ export class DashboardComponent implements OnInit {
         }
       });
     });
-    // buggy , needs to be async somehow
-    const
-      warner = (): void => {
-        this.warn_acum = this.accum_bill + this.accum_active_unpaid_orders;
-      };
-
 
     this.orderList$.subscribe(data => {
       data.forEach(item => {
