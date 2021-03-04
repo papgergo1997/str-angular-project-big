@@ -5,7 +5,15 @@
     </ol>
 </nav>
 <div class="row">
-    <div *ngIf="(customers$ | async) as customer" class="col-6 offset-3">
+  <div class="col-6 offset-3">
+    <div class="card">
+
+      <div class="card-header card-header-info">
+        <h4 class="card-title">Edit customer</h4>
+        <p class="card-category">Complete your modification of the customer!</p>
+      </div>
+
+      <div *ngIf="(customers$ | async) as customer" class="card-body">
         <form #customerForm="ngForm" (ngSubmit)="onUpdate(customerForm, customer)">
             <div class="form-group">
                 <label for="">FirstName</label>
@@ -83,14 +91,17 @@
             </div>
             <button *ngIf="customer.id != 0" [disabled]="customerForm.invalid || submitted" type="submit"
                 class="btn btn-info btn-block btn-lg mt-3">
-                <i *ngIf="!submitted" class="fa fa-save"></i>
-                <i *ngIf="submitted" class="fa fa-refresh"></i>
+                <span *ngIf="!submitted" class="material-icons">save_alt</span>
+                <span *ngIf="submitted" class="material-icons save">cached</span>
             </button>
             <button *ngIf="customer.id == 0" [disabled]="customerForm.invalid || submitted" type="submit"
                 class="btn btn-success btn-block btn-lg mt-3">
-                <i *ngIf="!submitted" class="fa fa-save"></i>
-                <i *ngIf="submitted" class="fa fa-refresh"></i>
+                <span *ngIf="!submitted" class="material-icons">save_alt</span>
+                <span *ngIf="submitted" class="material-icons save">cached</span>
             </button>
         </form>
+      </div>
+
     </div>
+  </div>
 </div>

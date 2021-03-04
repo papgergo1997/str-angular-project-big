@@ -12,9 +12,11 @@ export class OrderService {
   apiUrl = 'http://localhost:3000/orders';
   orderList$: BehaviorSubject<Order[]> = new BehaviorSubject<Order[]>([]);
 
-  constructor(private http: HttpClient) {
-    this.getAll()
-  }
+  constructor(
+    private http: HttpClient
+  ) {
+    this.getAll();
+   }
 
   getAll(): void {
     this.http.get<Order[]>(this.apiUrl).subscribe(

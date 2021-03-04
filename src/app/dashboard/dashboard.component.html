@@ -143,7 +143,11 @@
                     </div>
                     <div class="card-footer">
                         <div class="stats">
-                            <i class="material-icons">access_time</i> updated 2 days ago
+                          <i class="material-icons">access_time</i>
+                          updated {{timer}}
+                            <span *ngIf="timer != 1">&nbsp;minutes&nbsp;</span>
+                            <span *ngIf="timer == 1">&nbsp;minute&nbsp;</span>
+                          ago
                         </div>
                     </div>
                 </div>
@@ -168,6 +172,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
         <div class="row">
             <div class="col-lg-6 col-md-12">

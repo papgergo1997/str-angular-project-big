@@ -34,7 +34,6 @@ import { NumberhuPipe } from './pipe/numberhu.pipe';
 import { FeaturedPipe } from './pipe/featured.pipe';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
