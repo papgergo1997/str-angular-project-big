@@ -17,7 +17,7 @@ export class EditProductComponent implements OnInit {
   updating = false;
 
   product$: Observable<Product> = this.activatedRoute.params.pipe(
-    switchMap( params => this.productService.get(params.id))
+    switchMap(params => this.productService.get(params.id))
   );
 
   // product: Product = new Product();
@@ -29,17 +29,18 @@ export class EditProductComponent implements OnInit {
     private toastr: ToastrService,
   ) { }
 
-  ngOnInit( ): void { }
+  ngOnInit(): void { }
 
   onUpdate(form: NgForm, product: Product): void {
-    this.updating = true;
     if (product.id === 0) {
-      this.productService.create(product);
-      this.router.navigate(['products']);
+      this.updating = true;
+      this.productService.create(product).subscribe(
+        ev => this.router.navigate(['products']))
       this.showSuccess();
     } else {
-      this.productService.update(product);
-      this.router.navigate(['products'])
+      this.updating = true;
+      this.productService.update(product).subscribe(
+        ev => this.router.navigate(['products']))
       this.showInfo();
     }
   }

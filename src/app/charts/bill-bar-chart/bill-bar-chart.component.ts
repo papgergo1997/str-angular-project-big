@@ -9,12 +9,14 @@ export class BillBarChartComponent implements OnInit {
 
   @Input() amounts: number[] = [];
   @Input() ids: any[] = [];
+  @Input() bgc: string[] = [];
+  @Input() chartType: any = 'bar';
 
   barChartOptions = {
     scaleShowVerticalLines: false,
     responsive: true
   }
-  barChartType: any = 'bar';
+  // chartType: any = 'bar';
   barChartLegend = true;
   barChartData: any[] = [];
 
@@ -22,7 +24,7 @@ export class BillBarChartComponent implements OnInit {
 
   ngOnInit(): void {
     this.barChartData = [
-      { data: this.amounts, label: 'Bill value', backgroundColor: 'green' }
+      { data: this.amounts, label: 'Bill value', backgroundColor: this.bgc, hoverBackgroundColor: 'darkgreen', borderColor: 'white', borderWidth: 1 }
     ];
   }
 
