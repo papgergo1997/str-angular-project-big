@@ -28,9 +28,16 @@
             <div class="table-responsive">
               <table class="table table-striped">
                 <thead class="text-warning">
-                  <th class="sortedHeads" *ngFor="let col of orderCols" id="{{ col.key }}" draggable="true"
-                    (dragover)="$event.preventDefault()" (dragstart)="onHeaderDragStart($event)"
-                    (drop)="onHeaderDrop($event)" (click)="onChangeSort(col.key)">
+                  <th
+                  class="sortedHeads"
+                  *ngFor="let col of orderCols"
+                  id="{{ col.key }}"
+                  draggable="true"
+                  (dragover)="$event.preventDefault()"
+                  (dragstart)="onHeaderDragStart($event)"
+                  (drop)="onHeaderDrop($event)"
+                  (click)="onChangeSort(col.key)"
+                  >
                     <i *ngIf="ascend" class="fa fa-sort-amount-desc" aria-hidden="true"></i>
                     <i *ngIf="!ascend" class="fa fa-sort-amount-asc" aria-hidden="true"></i> &nbsp;
                     {{ col.title }}
