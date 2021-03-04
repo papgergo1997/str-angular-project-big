@@ -12,7 +12,9 @@ export class ProductService {
 
   list$: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>([]);
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.getAll()
+  }
 
   getAll(): void {
     this.http.get<Product[]>(this.apiUrl).subscribe(
@@ -36,9 +38,9 @@ export class ProductService {
 
 
   update(product: Product): void {
-   this.http.patch<Product>(`${this.apiUrl}/${product.id}`, product).subscribe(
-     () => this.getAll()
-   );
+    this.http.patch<Product>(`${this.apiUrl}/${product.id}`, product).subscribe(
+      () => this.getAll()
+    );
   }
 
   remove(product: Product): void {
