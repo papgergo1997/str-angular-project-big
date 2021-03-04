@@ -90,23 +90,17 @@ export class DashboardComponent implements OnInit {
     })
 
     // Order grafikonhoz.
-    if(this.orderAmountArray.length === 0) {
-      this.orderAmountArray = [];
-      this.orderList$.subscribe(orders => {
-        orders.forEach(order => {
-            this.orderAmountArray.push(order.amount);
-        });
+    this.orderList$.subscribe(orders => {
+      orders.forEach(order => {
+          this.orderAmountArray.push(order.amount);
       });
-    };
+    });
 
-    if (this.orderIdArray.length === 0) {
-      this.orderIdArray = [];
-      this.orderList$.subscribe(orders => {
-        orders.forEach(order => {
-          this.orderIdArray.push(order.id);
-        });
+    this.orderList$.subscribe(orders => {
+      orders.forEach(order => {
+        this.orderIdArray.push(order.id);
       });
-    };
+    });
 
     // Product grafikonhoz.
     this.productList$.subscribe(data => {
@@ -155,7 +149,7 @@ export class DashboardComponent implements OnInit {
         switch (item.status) {
           case 'new':
             this.accum_bill += 1;
-            warner();
+
         }
       });
     });
@@ -166,13 +160,12 @@ export class DashboardComponent implements OnInit {
         switch (item.status) {
           case 'new':
             this.accum_active_unpaid_orders += 1;
-            warner();
+            this.warn_acum = this.accum_bill + this.accum_active_unpaid_orders;
         }
       });
     });
 
     // this counts active products
-    this.productService.getAll();
     this.productList$.subscribe(data => {
       data.forEach(item => {
         switch (item.active) {
