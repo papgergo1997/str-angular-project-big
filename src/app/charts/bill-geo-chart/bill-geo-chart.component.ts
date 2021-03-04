@@ -25,11 +25,11 @@ export class BillGeoChartComponent implements OnInit {
         visuArray.push([item.country, item.amount]);
       });
       visuArray.sort();
+
       visuArray.unshift(['Regions', 'Amounts']);
       for (let i = 2; i < visuArray.length; i++) {
         if (visuArray[i][0] === visuArray[i - 1][0]) {
           visuArray[i][1] += visuArray[i - 1][1];
-          visuArray.splice(i - 1, 1);
         }
       };
 

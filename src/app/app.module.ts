@@ -31,7 +31,7 @@ import { OrderBarChartComponent } from './charts/order-bar-chart/order-bar-chart
 import { ShowLatestFivePipe } from './pipe/show-latest-five.pipe';
 import { BillGeoChartComponent } from './charts/bill-geo-chart/bill-geo-chart.component';
 import { NumberhuPipe } from './pipe/numberhu.pipe';
-
+import { FeaturedPipe } from './pipe/featured.pipe';
 
 
 @NgModule({
@@ -61,6 +61,8 @@ import { NumberhuPipe } from './pipe/numberhu.pipe';
     ShowLatestFivePipe,
     BillGeoChartComponent,
     NumberhuPipe,
+    FeaturedPipe,
+    
   ],
   imports: [
     HttpClientModule,

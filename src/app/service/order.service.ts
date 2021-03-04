@@ -12,7 +12,11 @@ export class OrderService {
   apiUrl = 'https://trainingapi.radicspatrik.com/orders';
   orderList$: BehaviorSubject<Order[]> = new BehaviorSubject<Order[]>([]);
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient
+  ) {
+    this.getAll();
+   }
 
   getAll(): void {
     this.http.get<Order[]>(this.apiUrl).subscribe(

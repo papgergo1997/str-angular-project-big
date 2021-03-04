@@ -5,7 +5,15 @@
     </ol>
 </nav>
 <div class="row">
-    <div *ngIf="(customers$ | async) as customer" class="col-6 offset-3">
+  <div class="col-6 offset-3">
+    <div class="card">
+
+      <div class="card-header card-header-info">
+        <h4 class="card-title">Edit customer</h4>
+        <p class="card-category">Complete your modification of the customer!</p>
+      </div>
+
+      <div *ngIf="(customers$ | async) as customer" class="card-body">
         <form #customerForm="ngForm" (ngSubmit)="onUpdate(customerForm, customer)">
             <div class="form-group">
                 <label for="">FirstName</label>
@@ -41,26 +49,26 @@
                     pattern="[A-Za-z ]{3,25}" placeholder="SAMPLE COUNTRY" required>
                 <div [hidden]="customerForm.controls.country?.valid || customerForm.controls.country?.pristine"
                     class="error-feedback">
-                    Wrong county format / The country must be 5-25 characters long
+                    Wrong county format / The country must be 3-25 characters long
                 </div>
             </div>
             <div class="form-group">
                 <label for="">City</label>
                 <input name="city" [(ngModel)]="customer.address.city" type="text" class="form-control"
-                    pattern="^[A-Z]{1}[A-Za-zÁÉŐÚŰÖÜÓÍáéőúűöüóí ]{4,24}$" placeholder="Sample City" required>
+                    pattern="^[A-Z]{1}[A-Za-zÁÉŐÚŰÖÜÓÍáéőúűöüóí ]{3,29}$" placeholder="Sample City" required>
                 <div [hidden]="customerForm.controls.city?.valid || customerForm.controls.city?.pristine"
                     class="error-feedback">
-                    Wrong city format / The city must be 5-25 characters long
+                    Wrong city format / The city must be 4-30 characters long
                 </div>
             </div>
             <div class="form-group">
                 <label for="">Street</label>
                 <input name="street" [(ngModel)]="customer.address.street" type="text" class="form-control"
-                    pattern="^[A-ZÁÉŰŐÚÖÜÓÍ0-9]{1}[A-Za-zÁÉŐÚŰÖÜÓÍáéőúűöüóí0-9. ]{4,24}$" placeholder="Sample Street"
+                    pattern="^[A-ZÁÉŰŐÚÖÜÓÍ0-9]{1}[A-Za-zÁÉŐÚŰÖÜÓÍáéőúűöüóí0-9.' ]{3,29}$" placeholder="Sample Street"
                     required>
                 <div [hidden]="customerForm.controls.street?.valid || customerForm.controls.street?.pristine"
                     class="error-feedback">
-                    Wrong Street format / The street must be 5-25 characters long
+                    Wrong Street format / The street must be 4-30 characters long
                 </div>
             </div>
             <div class="form-group">
@@ -83,14 +91,17 @@
             </div>
             <button *ngIf="customer.id != 0" [disabled]="customerForm.invalid || submitted" type="submit"
                 class="btn btn-info btn-block btn-lg mt-3">
-                <i *ngIf="!submitted" class="fa fa-save"></i>
-                <i *ngIf="submitted" class="fa fa-refresh"></i>
+                <span *ngIf="!submitted" class="material-icons">save_alt</span>
+                <span *ngIf="submitted" class="material-icons save">cached</span>
             </button>
             <button *ngIf="customer.id == 0" [disabled]="customerForm.invalid || submitted" type="submit"
                 class="btn btn-success btn-block btn-lg mt-3">
-                <i *ngIf="!submitted" class="fa fa-save"></i>
-                <i *ngIf="submitted" class="fa fa-refresh"></i>
+                <span *ngIf="!submitted" class="material-icons">save_alt</span>
+                <span *ngIf="submitted" class="material-icons save">cached</span>
             </button>
         </form>
+      </div>
+
     </div>
+  </div>
 </div>
