@@ -8,6 +8,7 @@ import { Order } from '../models/Order';
 import { OrderService } from '../service/order.service';
 import { ProductService } from '../service/product.service';
 import { Product } from '../models/Product';
+import {IsBrowserService} from '../is-browser.service';
 
 
 @Component({
@@ -17,8 +18,8 @@ import { Product } from '../models/Product';
 })
 export class DashboardComponent implements OnInit {
 
-  timer: number = 0;
-  seconds: number = 0;
+  timer = 0;
+  seconds = 0;
 
   productlist$: BehaviorSubject<Product[]> = this.productsservice.list$;
   billList$: BehaviorSubject<Bill[]> = this.billService.list$;
@@ -26,11 +27,11 @@ export class DashboardComponent implements OnInit {
   billIdArray: any[] = [];
   billBackgroundColorArray: string[] = [];
 
-  revenue: number = 0;
+  revenue = 0;
   productList$: BehaviorSubject<Product[]> = this.productService.list$;
   productPriceArray: number[] = [];
   productIdArray: any[] = [];
-  productPrices: number = 0;
+  productPrices = 0;
 
   orderList$: BehaviorSubject<Order[]> = this.orderService.orderList$;
   orderAmountArray: number[] = [];
@@ -50,6 +51,7 @@ export class DashboardComponent implements OnInit {
 
 
   constructor(
+    public isBrowserService: IsBrowserService,
     private billService: BillService,
     private orderService: OrderService,
     private customerService: CustomerService,
@@ -66,7 +68,7 @@ export class DashboardComponent implements OnInit {
         this.timer++;
         this.seconds = 0;
       }
-      this.seconds += 1
+      this.seconds += 1;
     }, 1000);
 
 
@@ -74,7 +76,7 @@ export class DashboardComponent implements OnInit {
       data.forEach(item => {
         this.billAmountArray.push(item.amount);
         this.revenue += item.amount;
-        this.billBackgroundColorArray.push(`rgb(${this.rgb()}, ${this.rgb()}, ${this.rgb()})`)
+        this.billBackgroundColorArray.push(`rgb(${this.rgb()}, ${this.rgb()}, ${this.rgb()})`);
       });
 
     });
@@ -85,36 +87,36 @@ export class DashboardComponent implements OnInit {
         this.productPrices += item.price;
       });
 
-    })
+    });
 
     this.billList$.subscribe(data => {
       data.forEach(item => {
         this.billIdArray.push(item.id);
-      })
-    })
+      });
+    });
 
     this.productList$.subscribe(data => {
       data.forEach(item => {
         this.productIdArray.push(item.id);
-      })
-    })
+      });
+    });
 
 
     this.customerList$.subscribe(data => {
       data.forEach(item => {
-        this.countryArray.push(item.address.country)
-      })
+        this.countryArray.push(item.address.country);
+      });
       this.countryArray.forEach((el: any) => { this.countryData[el] = this.countryData[el] ? (this.countryData[el] += 1) : 1; });
       this.countryData = Object.keys(this.countryData);
-    })
+    });
 
     this.customerList$.subscribe(data => {
       data.forEach(item => {
-        this.customerArray.push(item.address.country)
-      })
+        this.customerArray.push(item.address.country);
+      });
       this.customerArray.forEach((el: any) => { this.customerData[el] = this.customerData[el] ? (this.customerData[el] += 1) : 1; });
       this.customerData = Object.values(this.customerData);
-    })
+    });
 
     // this.customerData == this.countryArray.values.length
 

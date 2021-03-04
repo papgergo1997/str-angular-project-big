@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 
 export class OrderService {
 
-  apiUrl = 'http://localhost:3000/orders';
+  apiUrl = 'https://trainingapi.radicspatrik.com/orders';
   orderList$: BehaviorSubject<Order[]> = new BehaviorSubject<Order[]>([]);
 
   constructor(private http: HttpClient) { }

@@ -9,7 +9,7 @@ import { Customer } from '../models/Customer';
 export class CustomerService {
 
   list$: BehaviorSubject<Customer[]> = new BehaviorSubject<Customer[]>([]);
-  apiUrl = 'http://localhost:3000/customers';
+  apiUrl = 'https://trainingapi.radicspatrik.com/customers';
 
   constructor(private http: HttpClient) {
     this.getAll();

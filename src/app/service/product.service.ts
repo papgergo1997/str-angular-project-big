@@ -8,7 +8,7 @@ import { Product } from '../models/Product';
 })
 export class ProductService {
 
-  apiUrl = 'http://localhost:3000/products';
+  apiUrl = 'https://trainingapi.radicspatrik.com/products';
 
   list$: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>([]);
 

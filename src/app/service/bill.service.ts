@@ -9,7 +9,7 @@ import { Bill } from '../models/Bill';
 export class BillService {
 
   list$: BehaviorSubject<Bill[]> = new BehaviorSubject<Bill[]>([]);
-  apiUrl: string = 'http://localhost:3000/bills'
+  apiUrl: string = 'https://trainingapi.radicspatrik.com/bills'
 
   constructor(private http: HttpClient) {
     this.getAll();
