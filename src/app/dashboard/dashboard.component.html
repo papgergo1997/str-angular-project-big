@@ -173,10 +173,55 @@
                 </div>
             </div>
 
+            <div class="col-md-6">
+                <div class="card card-chart">
+                    <div class="card-header card-header-warning">
+                        <div class="ct-chart" id="productsPriceChart">Products</div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title"></h4>
+                        <p class="card-category">
+                            <app-proba-chart></app-proba-chart>
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">access_time</i> campaign sent 2 days ago
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
         <div class="row">
             <div class="col-lg-6 col-md-12">
-              <app-proba-chart></app-proba-chart>
+                <div class="card">
+                    <div class="card-header card-header-tabs card-header-primary">
+                        <h4 class="card-title">Featured products</h4>
+                        <p class="card-category">Show's the five featured products</p>
+                    </div>
+                    <div class="card-body table-responsive">
+                        <table class="table table-hover">
+                            <thead class="text-primary product">
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                            </thead>
+                            <tbody>
+                                <tr
+                                    *ngFor="let product of productList$ | async | featured:true | slice: (indexPage -1)*pagiLength: indexPage*pagiLength">
+                                    <td>{{product.id}}</td>
+                                    <td>{{product.name}}</td>
+                                    <td>{{product.description}}</td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- <app-pagination [length]="ArrayLength" (onLength)="onLength($event)" (onIndex)="onIndex($event)">
+                        </app-pagination> -->
+                    </div>
+                </div>
             </div>
             <div class="col-lg-6 col-md-12">
                 <div class="card">

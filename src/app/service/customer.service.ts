@@ -39,9 +39,10 @@ export class CustomerService {
     return this.http.patch<Customer>(`${this.apiUrl}/${customer.id}`, customer);
   }
 
-  remove(customer: Customer): Observable<Customer> {
-    console.log(customer);
-    return this.http.delete<Customer>(`${this.apiUrl}/${customer.id}`);
+  remove(customer: Customer): void {
+    this.http.delete<Customer>(`${this.apiUrl}/${customer.id}`).subscribe(
+      () => this.getAll()
+    );
   }
 
 }

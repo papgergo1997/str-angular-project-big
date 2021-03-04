@@ -16,6 +16,9 @@ import { Product } from '../models/Product';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  indexPage = 1;
+  pagiLength = 5;
+  ArrayLength = 0;
 
   timer: number = 0;
   seconds: number = 0;
