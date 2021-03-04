@@ -7,7 +7,7 @@
       "catID": 1,
       "description": "Nagy hatékonyságú, gyorsan felszívódó krém. Leginkább különféle ficek, külsődleges kezelésére, de ficamokra is jó. Highly effective, fast absorbing cream. Mostly for external treatment of various strain, but also for strain",
       "price": 1500,
-      "featured": true,
+      "featured": false,
       "active": true
     },
     {
