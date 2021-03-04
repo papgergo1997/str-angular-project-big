@@ -37,10 +37,8 @@ export class ProductService {
   // }
 
 
-  update(product: Product): void {
-    this.http.patch<Product>(`${this.apiUrl}/${product.id}`, product).subscribe(
-      () => this.getAll()
-    );
+  update(product: Product): Observable<Product> {
+    return this.http.patch<Product>(`${this.apiUrl}/${product.id}`, product)
   }
 
   remove(product: Product): void {
@@ -49,10 +47,8 @@ export class ProductService {
     );
   }
 
-  create(product: Product): void {
-    this.http.post<Product>(this.apiUrl, product).subscribe(
-      () => this.getAll()
-    );
+  create(product: Product): Observable<Product> {
+    return this.http.post<Product>(this.apiUrl, product)
   }
 
   // getFeatured(randomized?: boolean): Product[] {

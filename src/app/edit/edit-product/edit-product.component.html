@@ -28,7 +28,8 @@
 
       <div class="form-group">
         <label for="">description</label>
-        <input name="description" [(ngModel)]="product.description" type="text" class="form-control" pattern=".{3,500}" required>
+        <input name="description" [(ngModel)]="product.description" type="text" class="form-control" pattern=".{3,500}"
+          required>
         <div [hidden]="productForm.controls.description?.valid" class="error-message">
           Description must be 3-500 characters long!
         </div>
@@ -36,7 +37,8 @@
 
       <div class="form-group">
         <label for="">price</label>
-        <input name="price" [(ngModel)]="product.price" type="number" class="form-control" pattern="^[0-9]{1,20}$" required>
+        <input name="price" [(ngModel)]="product.price" type="number" class="form-control" pattern="^[0-9]{1,20}$"
+          required>
         <div [hidden]="productForm.controls.price?.valid" class="error-message">
           Price can only contain number and must be 1-20 characters long!
         </div>
@@ -44,7 +46,7 @@
 
       <div class="form-group">
         <label for="">featured</label>
-        <select name="featured" [(ngModel)]="product.featured" class="form-control" >
+        <select name="featured" [(ngModel)]="product.featured" class="form-control">
           <option>false</option>
           <option>true</option>
         </select>
@@ -52,7 +54,7 @@
 
       <div class="form-group">
         <label for="">active</label>
-        <select name="active" [(ngModel)]="product.active" class="form-control" >
+        <select name="active" [(ngModel)]="product.active" class="form-control">
           <option>false</option>
           <option>true</option>
         </select>
@@ -61,9 +63,9 @@
 
       <button [disabled]="productForm.invalid || updating" type="submit" class="btn btn-primary btn-block btn-lg">
 
-        <i *ngIf="!updating" class="fa fa-save">  save</i>
+        <i *ngIf="!updating" class="fa fa-save"> save</i>
 
-        <i *ngIf="updating" class="fa fa-refresh">refresh</i>
+        <i *ngIf="updating" class="fa fa-refresh"></i>
       </button>
 
     </form>
