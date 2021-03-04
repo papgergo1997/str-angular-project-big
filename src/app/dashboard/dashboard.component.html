@@ -86,13 +86,18 @@
             <div class="col-md-6">
                 <div class="card card-chart">
                     <div class="card-header card-header-success">
-                        <div class="ct-chart" id="dailySalesChart">Bills (value/id)</div>
+                        <div class="ct-chart d-flex justify-content-between" id="dailySalesChart">Bills (value/id)
+                            <div>
+                                <i (click)="onChartTypeBar()" class="material-icons iconhover">bar_chart</i>
+                                <i (click)="onChartTypePie()" class="material-icons iconhover">pie_chart</i>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-body">
                         <h4 class="card-title"></h4>
                         <p class="card-category">
-                            <app-bill-bar-chart [bgc]="billBackgroundColorArray" [amounts]="billAmountArray"
-                                [ids]="billIdArray">
+                            <app-bill-bar-chart [chartType]="chartType" [bgc]="billBackgroundColorArray"
+                                [amounts]="billAmountArray" [ids]="billIdArray">
                             </app-bill-bar-chart>
                         </p>
                     </div>
@@ -143,11 +148,11 @@
                     </div>
                     <div class="card-footer">
                         <div class="stats">
-                          <i class="material-icons">access_time</i>
-                          updated {{timer}}
+                            <i class="material-icons">access_time</i>
+                            updated {{timer}}
                             <span *ngIf="timer != 1">&nbsp;minutes&nbsp;</span>
                             <span *ngIf="timer == 1">&nbsp;minute&nbsp;</span>
-                          ago
+                            ago
                         </div>
                     </div>
                 </div>
