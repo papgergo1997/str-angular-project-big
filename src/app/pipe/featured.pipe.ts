@@ -6,7 +6,7 @@ import { Product } from '../models/Product';
 })
 export class FeaturedPipe implements PipeTransform {
 
-  transform(productList$: Product[], featured: boolean): Product[] {
+  transform(productList$: Product[] | null, featured: boolean): Product[] | null {
     if (!Array.isArray(productList$) || !featured) {
       return productList$
     }
