@@ -34,9 +34,6 @@ import { NumberhuPipe } from './pipe/numberhu.pipe';
 import { FeaturedPipe } from './pipe/featured.pipe';
 
 
-import { BarChartComponent } from './charts/order-bar-chart copy/order-bar-chart.component'
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,8 +62,6 @@ import { BarChartComponent } from './charts/order-bar-chart copy/order-bar-chart
     BillGeoChartComponent,
     NumberhuPipe,
     FeaturedPipe,
-
-    BarChartComponent,
   ],
   imports: [
     HttpClientModule,

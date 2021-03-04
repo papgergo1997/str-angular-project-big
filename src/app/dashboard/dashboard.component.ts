@@ -90,7 +90,6 @@ export class DashboardComponent implements OnInit {
     })
 
     // Order grafikonhoz.
-    this.orderService.getAll();
     if(this.orderAmountArray.length === 0) {
       this.orderAmountArray = [];
       this.orderList$.subscribe(orders => {
