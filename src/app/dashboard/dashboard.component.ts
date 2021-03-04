@@ -51,10 +51,12 @@ export class DashboardComponent implements OnInit {
 
   // Customer grafikonhoz.
   customerList$: BehaviorSubject<Customer[]> = this.customerService.list$;
+  customerBGCA: string[] = [];
   countryArray: any[] = [];
   customerArray: any[] = [];
   customerData: number[] = [];
   countryData: any[] = [];
+  customerChartType: string = 'bar';
 
 
   constructor(
@@ -128,8 +130,10 @@ export class DashboardComponent implements OnInit {
     this.customerList$.subscribe(data => {
       data.forEach(item => {
         this.countryArray.push(item.address.country)
+        this.customerBGCA.push(`rgb(${this.rgb()}, ${this.rgb()}, ${this.rgb()})`);
       })
-      this.countryArray.forEach((el: any) => { this.countryData[el] = this.countryData[el] ? (this.countryData[el] += 1) : 1; });
+      this.countryArray.forEach((el: any) => { this.countryData[el] = this.countryData[el] ? (this.countryData[el] += 1) : 1; }
+      );
       this.countryData = Object.keys(this.countryData);
     })
 
@@ -199,6 +203,12 @@ export class DashboardComponent implements OnInit {
   }
   onChartTypeBar() {
     this.chartType = 'bar';
+  }
+  onCustomerChartTypePie() {
+    this.customerChartType = 'pie';
+  }
+  onCustomerChartTypeBar() {
+    this.customerChartType = 'bar';
   }
 
   rgb(): number {

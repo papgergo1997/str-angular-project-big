@@ -108,11 +108,16 @@
                 <div class="card card-chart">
                     <div class="card-header card-header-info">
                         Customers /Countries
+                        <div>
+                            <i (click)="onCustomerChartTypeBar()" class="material-icons iconhover">bar_chart</i>
+                            <i (click)="onCustomerChartTypePie()" class="material-icons iconhover">pie_chart</i>
+                        </div>
                     </div>
                     <div class="card-body">
                         <h4 class="card-title"></h4>
                         <p class="card-category">
-                            <app-customer-chart [countries]="countryData" [customers]="customerData">
+                            <app-customer-chart [countries]="countryData" [customers]="customerData"
+                                [bgc]="customerBGCA" [barChartType]="customerChartType">
                             </app-customer-chart>
                         </p>
                     </div>
