@@ -73,6 +73,13 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
 
+
+    this.billService.getAll();
+    this.orderService.getAll();
+    this.customerService.getAll();
+    this.productsservice.getAll();
+    this.productService.getAll();
+
     setInterval(() => {
       if (this.seconds == 60) {
         this.timer++;
