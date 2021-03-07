@@ -27,7 +27,7 @@
       "catID": 1,
       "description": "Évek óta szenved, mert nem gombás a lába vagy a körme? Kiközösítik a trendi gombázók? Itt a megoldás!! Bárhová felkenhető gombásító. Have you been suffering for years because your feet or nails are not fungal? Excluded by trendy mushrooms? Here is the solution !! Mushroomer that can be spread anywhere.",
       "price": 2534,
-      "featured": true,
+      "featured": false,
       "active": true
     },
     {
@@ -37,8 +37,8 @@
       "catID": 2,
       "description": "Több évtizednyi kutatómunka után magyar szakemberek elkészítették a This-t is bind-oló arrow function-t. Most bevezető akciós áron! After several decades of research, Hungarian experts created this arrow-binding arrow function. Now at an introductory discount!",
       "price": 253000,
-      "featured": "true",
-      "active": true
+      "featured": false,
+      "active": false
     },
     {
       "id": 5,
@@ -77,7 +77,7 @@
       "catID": 3,
       "description": "Egy jó választás, ha Kell a házisárkány a háznál. A good choice if you need a kite(virago) at the house.",
       "price": 100000,
-      "featured": true,
+      "featured": false,
       "active": true
     },
     {
@@ -87,7 +87,7 @@
       "catID": 3,
       "description": "Forró napokra a legjobb. Ettől a váratlan idegentől a házadban garantáltan kiráz a hideg. Best for hot days. From this unexpected stranger, the cold in your house is guaranteed to shake.",
       "price": 1000000,
-      "featured": true,
+      "featured": false,
       "active": true
     },
     {
@@ -97,7 +97,7 @@
       "catID": 3,
       "description": "Szemesnek áll a világ. Ez nagyon igaz rá, szinte bárhol képes állni. Stand up-okra, munkások mellé, ünnepségekre, stb. Most extra jótállással. The world is eye-catching. This is very true of him, he can stand almost anywhere. For stand-ups, workers, celebrations, etc. Now with an extra warranty.",
       "price": 50000,
-      "featured": true,
+      "featured": false,
       "active": true
     },
     {
@@ -157,6 +157,16 @@
       "type": "emberes",
       "description": "Unokád született, tanácstalan vagy, hogy mit hogyan kell csinálni? Hívd ezt a nagyszerű trénert, aki betanít, hogyan legyél a legynagyobb nagyi.",
       "price": 220000,
+      "featured": true,
+      "active": true
+    },
+    {
+      "id": 24,
+      "catID": 2,
+      "name": "Bénázó",
+      "type": "Kütyü",
+      "description": "Álmodból felköltve is olyan hibátlanul írsz bármilyen nyelven, bármilyen kódot, mint egy Cod God. Nem tudsz hibázni, ezért minden munkát rádsóznak? Vedd meg a Bénázót és az MI-vel felvértezett tehát nem random, hibásan kódoló embert szimuláló kütyü mindent elintéz neked. 01000101111010101011111101010101011111111111111101000000000111110101011010101111111111111111110101010101010111111111111111111111111111111111111010101000000000000000111101011111111111110101010101010110101010111111110101011111111",
+      "price": 112000,
       "featured": true,
       "active": true
     }
